@@ -1,0 +1,3194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>CCB_writer API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>CCB_writer</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+#
+# Copyright (c) 2020 Analog Devices, Inc. All Rights Reserved.   
+# This software is proprietary to Analog Devices, Inc. and its licensors.  
+#
+
+import struct
+import numpy
+import numpy as np
+import sys
+import pickle
+from os import listdir
+from os.path import isfile, join
+import os
+import yaml
+import json
+from datetime import datetime
+
+
+CAL_BLOCK_ID_ADDRVAL_REGLIST  = &#39;A&#39;
+CAL_BLOCK_ID_DEVICE_CONFIG    = &#39;C&#39;
+CAL_BLOCK_ID_PIXEL_DEFECT     = &#39;D&#39;
+CAL_BLOCK_ID_FOI_MASK         = &#39;F&#39;
+CAL_BLOCK_ID_GEOMETRIC        = &#39;G&#39;
+CAL_BLOCK_ID_ILLUM_PROFILE    = &#39;I&#39;
+CAL_BLOCK_ID_LSDACS           = &#39;L&#39;
+CAL_BLOCK_ID_P0               = &#39;P&#39;
+CAL_BLOCK_ID_REGISTRATION     = &#39;R&#39;
+CAL_BLOCK_ID_SPATIAL_TEMPCOR  = &#39;S&#39;
+CAL_BLOCK_ID_TEMPCORRECTION   = &#39;T&#39;
+CAL_BLOCK_ID_RELATIVE_ILLUM   = &#39;V&#39;
+CAL_BLOCK_ID_COLUMN_DEFECT    = &#39;|&#39;
+CAL_BLOCK_ID_GAINCORRECTION   = 0xD7
+CAL_BLOCK_ID_HDR              = 0xFF
+
+CAL_HDR_V0_CONFIG_VER_STR_SIZE = 128
+CAL_HDR_V0_SERIAL_NUM_STR_SIZE = 32
+CAL_HDR_V0_CHIP_UNIQUE_ID_SIZE = 32
+
+# ccb_fname = &#39;tester.ccb&#39;
+
+def CompileBlocks(binaryCal, binaryCal_dtype, sizeCal, nBlocksCal,CalibfolderName,add_comp_P0, add_uncomp_P0):
+        &#39;&#39;&#39;
+                Function to compile calibration blocks and generate .ccb file 
+
+                Inputs: 
+                  binaryCal             - 2D array of binary of each block 
+                  binaryCal_dtype       - 2D array of binary data type of each block 
+                  sizeCal               - 1D array of size in bytes of each block 
+                  nBlocksCal            - 1D array of number of blocks of each block 
+                  CalibfolderName       - Name of calibration folder name 
+                  
+                Outputs: 
+                  None 
+                
+        &#39;&#39;&#39;
+
+        # print(binaryCal, binaryCal_dtype, sizeCal, nBlocksCal)
+
+        # Generate Header block
+        Header = np.array([], dtype=object)
+        Header_dtype = np.array([], dtype=object)
+
+        sizeCalBlocks = np.sum(sizeCal)
+        nBlocks = np.sum(nBlocksCal)
+        sizeFileHeader = 16
+
+        nBlocks_arr = np.array([nBlocks],dtype=np.uint16)
+        Header = np.append(Header, nBlocks_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        chip_id_arr = np.array([22833],dtype=np.uint16)
+        Header = np.append(Header, chip_id_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        nRows_arr = np.array([1024],dtype=np.uint16)
+        Header = np.append(Header, nRows_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        nCols_arr = np.array([1024],dtype=np.uint16)
+        Header = np.append(Header, nCols_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        configVersionString = &#39;6109.7&#39;
+        if len(CalibfolderName) &gt; 30:
+                serialNumber = CalibfolderName[-30:]
+                print(&#34;\n\nWARNING: Serial number length &gt; 30, truncated to last 30 characters\n\n&#34;)
+        else:
+                serialNumber = CalibfolderName
+        print(&#34;\nserialNumber in CCB:: &#34; + serialNumber + &#39;\n&#39;)
+        chipUID = &#39;P95C74.0Y_6_40_24&#39;
+
+        for i in range(CAL_HDR_V0_CONFIG_VER_STR_SIZE - len(configVersionString)):
+                configVersionString = configVersionString + &#39; &#39;
+
+        configVersionString = list(configVersionString)
+        for i in range(len(configVersionString)):
+                configVersionString[i] = ord(configVersionString[i])
+
+        for i in range(CAL_HDR_V0_SERIAL_NUM_STR_SIZE - len(serialNumber)):
+                serialNumber = serialNumber + &#39; &#39;
+
+        serialNumber = list(serialNumber)
+        for i in range(len(serialNumber)):
+                serialNumber[i] = ord(serialNumber[i])
+
+        for i in range(CAL_HDR_V0_CHIP_UNIQUE_ID_SIZE - len(chipUID)):
+                chipUID = chipUID + &#39; &#39;
+
+        chipUID = list(chipUID)
+        for i in range(len(chipUID)):
+                chipUID[i] = ord(chipUID[i])
+
+        configVersionString_arr = np.array(configVersionString,dtype=np.int8)
+        Header = np.append(Header, configVersionString_arr)
+        for i in range(CAL_HDR_V0_CONFIG_VER_STR_SIZE):
+                Header_dtype = np.append(Header_dtype, np.dtype(np.int8))
+
+        serialNumber_arr = np.array(serialNumber,dtype=np.int8)
+        Header = np.append(Header, serialNumber_arr)
+        for i in range(CAL_HDR_V0_SERIAL_NUM_STR_SIZE):
+                Header_dtype = np.append(Header_dtype, np.dtype(np.int8))
+
+        chipUID_arr = np.array(chipUID,dtype=np.int8)
+        Header = np.append(Header, chipUID_arr)
+        for i in range(CAL_HDR_V0_CHIP_UNIQUE_ID_SIZE):
+                Header_dtype = np.append(Header_dtype, np.dtype(np.int8))
+
+        controlAPIVersion_arr = np.array([67108867],dtype=np.uint32)
+        Header = np.append(Header, controlAPIVersion_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint32))
+
+        firmwareVersion_arr = np.array([17045510],dtype=np.uint32)
+        Header = np.append(Header, firmwareVersion_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint32))
+
+        calibVersionMajor_arr = np.array([6109],dtype=np.uint16)
+        Header = np.append(Header, calibVersionMajor_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        calibVersionMinor_arr = np.array([12007],dtype=np.uint16)
+        Header = np.append(Header, calibVersionMinor_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        configurationVersion_arr = np.array([400359431],dtype=np.uint32)
+        Header = np.append(Header, configurationVersion_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint32))
+
+        Header_info = dict()
+        Header_info[&#39;BlockID&#39;] = CAL_BLOCK_ID_HDR
+        Header_info[&#39;BlockVersion&#39;] = 3
+        Header_info[&#39;BlockCalibVer&#39;] = 0
+        Header_info[&#39;BlockSize&#39;] = 216
+        Header_info[&#39;CheckSum&#39;] = 195693386
+        Header_info[&#39;CalibrationYear&#39;] = 2019
+        Header_info[&#39;CalibrationMonth&#39;] = 3
+        Header_info[&#39;CalibrationDay&#39;] = 22
+        Header_info[&#39;CalibrationHour&#39;] = 15
+        Header_info[&#39;CalibrationMinute&#39;] = 23
+        Header_info[&#39;CalibrationSecond&#39;] = 8
+        Header_info[&#39;CalibrationPass&#39;] = 1
+
+        Header, Header_dtype, Header_size, Header_nBlock = AddCalBlockInfo(Header_info, Header, Header_dtype, 216, 0)
+
+        # Generate File_Header
+
+        File_Header = np.array([],dtype=object)
+        File_Header_dtype = np.array([],dtype=object)
+
+        calibFileVersion_arr = np.array([771],dtype=np.uint16)
+        File_Header = np.append(File_Header, calibFileVersion_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint16))
+
+        calibVersion_arr = np.array([769],dtype=np.uint16)
+        File_Header = np.append(File_Header, calibVersion_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint16))
+
+        sizeOfCalibHeader_arr = np.array([240],dtype=np.uint16)
+        File_Header = np.append(File_Header, sizeOfCalibHeader_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint16))
+
+        rsvd_arr = np.array([0],dtype=np.uint8)
+        File_Header = np.append(File_Header, rsvd_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint8))
+
+        sizeOfCalibFileHeader_arr = np.array([16],dtype=np.uint8)
+        File_Header = np.append(File_Header, sizeOfCalibFileHeader_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint8))
+
+        sizeOfCalibrationFile_arr = np.array([sizeCalBlocks + Header_size + 16],dtype=np.uint32)
+        File_Header = np.append(File_Header, sizeOfCalibrationFile_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint32))
+
+        rsvdSize_arr = np.array([0],dtype=np.uint32)
+        File_Header = np.append(File_Header, rsvdSize_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint32))
+
+        if add_comp_P0:
+                ccb_P0_compression = &#34;_compressed&#34;
+        else:
+                ccb_P0_compression = &#34;&#34;
+
+        ccb_file_name = os.path.join(CalibfolderName, CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;)
+
+        if os.path.exists(ccb_file_name):
+                now = datetime.now()
+                print(&#39;\nALERT: &#39; + ccb_file_name + &#39; already exists&#39;)
+                os.rename(ccb_file_name, os.path.join(CalibfolderName, str(now.strftime(&#39;CCB_old_%Y%m%d_%H%M%S.ccb&#39;))))
+                print(&#39;ALERT: RENAMING OLD FOLDER: &#39; + ccb_file_name + &#39; as &#39;+ os.path.join(CalibfolderName, str(now.strftime(&#39;CCB_old_%Y%m%d_%H%M%S.ccb&#39;))) +&#39;\n&#39;)
+
+        write_file = open(os.path.join(CalibfolderName, CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;), &#34;wb&#34;)
+        write_file.close()
+        write_file = open(os.path.join(CalibfolderName, CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;), &#34;ab&#34;)
+
+        print(&#39;WRITING TO FILE: &#39; + CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;)
+
+        for i in range(len(File_Header)):
+                tmp = np.array([File_Header[i]], dtype=File_Header_dtype[i])
+                tmp.tofile(write_file, format=&#39;%d&#39;)
+                #print(File_Header_dtype[i])
+
+        for i in range(len(Header)):
+                tmp = np.array([Header[i]], dtype=Header_dtype[i])
+                tmp.tofile(write_file, format=&#39;%d&#39;)
+
+        # f = open(CalibfolderName + &#39;/binaryCal.pkl&#39;, &#39;wb&#39;)
+        # pickle.dump(binaryCal, f)
+        # f.close()
+
+        # f = open(CalibfolderName + &#39;/binaryCal_dtype.pkl&#39;, &#39;wb&#39;)
+        # pickle.dump(binaryCal_dtype, f)
+        # f.close()
+
+        for i in range(len(binaryCal)):
+                tmp = np.array([binaryCal[i]], dtype=binaryCal_dtype[i])
+                tmp.tofile(write_file, format=&#39;%d&#39;)
+
+
+        write_file.close()
+
+        return os.path.join(CalibfolderName, CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;)
+
+
+def AddCalBlockInfo(blockInfo, binary, binary_dtype, sizeBlock, nBlocks):
+        &#39;&#39;&#39;
+                Function to generate calibration information 
+
+                Inputs: 
+                  blockInfo             - Refer to dictionary mentioned below 
+                  binary                - Binary data of the calibration block 
+                  binary_dtype          - Binary data data-type of the calibration block 
+                  sizeBlock             - Size of block in bytes 
+                  nBlocks               - Number of blocks 
+                  
+                Outputs: 
+                  CalBlock              - Updated binary data of the calibration block 
+                  CalBlock_dtype        - Updated binary data of the calibration block 
+                  sizeBlock             - Updated size of block in bytes 
+                  nBlocks               - Updated number of blocks 
+                
+        &#39;&#39;&#39;
+
+
+        # blockInfo -&gt; Dictionary containing:
+        # uint8_t BlockID
+        # uint8_t BlockVersion
+        # uint16_t BlockCalibVer
+        # uint32_t BlockSize
+        # uint64_t CheckSum
+        # uint16_t CalibrationYear
+        # uint8_t CalibrationMonth
+        # uint8_t CalibrationDay
+        # uint8_t CalibrationHour
+        # uint8_t CalibrationMinute
+        # uint8_t CalibrationSecond
+        # uint8_t CalibrationPass
+
+        sizeInfo = 24
+
+        CalBlock = np.array([], dtype=object)
+        CalBlock_dtype = np.array([], dtype=object)
+
+        BlockID_arr = np.array([blockInfo[&#39;BlockID&#39;]],dtype=np.int8)
+        CalBlock = np.append(CalBlock, BlockID_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.int8))
+
+        BlockFormatVer_arr = np.array([blockInfo[&#39;BlockVersion&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, BlockFormatVer_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        BlockCalibVer_arr = np.array([blockInfo[&#39;BlockCalibVer&#39;]],dtype=np.uint16)
+        CalBlock = np.append(CalBlock, BlockCalibVer_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint16))
+
+        BlockSize_arr = np.array([blockInfo[&#39;BlockSize&#39;] + sizeInfo],dtype=np.uint32)
+        CalBlock = np.append(CalBlock, BlockSize_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint32))
+
+        Checksum_arr = np.array([blockInfo[&#39;CheckSum&#39;]],dtype=np.uint64)
+        CalBlock = np.append(CalBlock, Checksum_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint64))
+
+        CalibrationYear_arr = np.array([blockInfo[&#39;CalibrationYear&#39;]],dtype=np.uint16)
+        CalBlock = np.append(CalBlock, CalibrationYear_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint16))
+
+        CalibrationMonth_arr = np.array([blockInfo[&#39;CalibrationMonth&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationMonth_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationDay_arr = np.array([blockInfo[&#39;CalibrationDay&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationDay_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationHour_arr = np.array([blockInfo[&#39;CalibrationHour&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationHour_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationMinute_arr = np.array([blockInfo[&#39;CalibrationMinute&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationMinute_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationSecond_arr = np.array([blockInfo[&#39;CalibrationSecond&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationSecond_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationPass_arr = np.array([blockInfo[&#39;CalibrationPass&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationPass_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalBlock = np.append(CalBlock, binary)
+        CalBlock_dtype = np.append(CalBlock_dtype, binary_dtype)
+
+        return CalBlock, CalBlock_dtype, blockInfo[&#39;BlockSize&#39;] + sizeInfo, nBlocks
+
+
+def GenerateGainOffsetBlock(GO_cal_dict):
+        &#39;&#39;&#39;
+                Function to generate Gain and Offset calibration block
+
+                Inputs:
+                  GO_cal_dict           - Dictionary containing gain and offset data
+                  
+                Outputs:
+                  GOBlock               - Binary data of the calibration block
+                  GOBlock_dtype         - Binary data of the calibration block
+                  GO_size               - Size of block in bytes
+                  GO_nBlock             - Number of blocks
+                
+        &#39;&#39;&#39;
+        print(&#34;FOUND: Gain and Offset Calibration&#34;)
+
+        GOBlock = np.array([], dtype=object)
+        GOBlock_dtype = np.array([], dtype=object)
+
+        GO_size = 0
+        GO_nBlock = 1
+
+        GainCalConfigVersion_arr = np.array([GO_cal_dict[&#39;gainCalConfigVersion&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, GainCalConfigVersion_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+        GO_size = GO_size + 2
+
+        SubsamplingDataPresent_arr = np.array([63],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, SubsamplingDataPresent_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+        GO_size = GO_size + 2
+
+        ADC_IRamp_arr = np.array([GO_cal_dict[&#39;ADC&#39;][&#39;iramp&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, ADC_IRamp_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+        GO_size = GO_size + 2
+
+        ADC_UpdnoOffset_arr = np.array([GO_cal_dict[&#39;ADC&#39;][&#39;updnoffset&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, ADC_UpdnoOffset_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+        GO_size = GO_size + 2
+
+        gainComparator_keys = list(GO_cal_dict[&#39;gainComparator&#39;].keys())
+
+        Vref1Dac_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref1DAC&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref1Dac_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref1Set_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref1Set&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref1Set_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref2Dac_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref2DAC&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref2Dac_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref2Set_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref2Set&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref2Set_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref3Dac_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref3DAC&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref3Dac_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref3Set_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref3Set&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref3Set_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        if &#39;VCMDAC&#39; in gainComparator_keys:
+                VCMDac_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;VCMDAC&#39;]],dtype=np.uint8)
+                GOBlock = np.append(GOBlock, VCMDac_arr)
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+        else:
+                VCMDac_arr = np.array([0],dtype=np.uint8)
+                GOBlock = np.append(GOBlock, VCMDac_arr)
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        VCMSet_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;VCMSet&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, VCMSet_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+        GO_size = GO_size + 8
+
+        InverseGlobalADCGain_arr = np.array([GO_cal_dict[&#39;inverseGlobalADCGain&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, InverseGlobalADCGain_arr)
+        for i in range(len(GO_cal_dict[&#39;inverseGlobalADCGain&#39;])):
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+
+        GO_size = GO_size + len(GO_cal_dict[&#39;inverseGlobalADCGain&#39;])*2
+
+        PerColGainAdjustment_arr = np.array([GO_cal_dict[&#39;ramDataGain&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, PerColGainAdjustment_arr)
+        for i in range(len(GO_cal_dict[&#39;ramDataGain&#39;])):
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+
+        GO_size = GO_size + len(GO_cal_dict[&#39;ramDataGain&#39;])*2
+
+        PerColOffsetAdjustment_arr = np.array([GO_cal_dict[&#39;ramDataOffset&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, PerColOffsetAdjustment_arr)
+        for i in range(len(GO_cal_dict[&#39;ramDataOffset&#39;])):
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+
+        GO_size = GO_size + len(GO_cal_dict[&#39;ramDataOffset&#39;])*2
+
+        GO_info = dict()
+        GO_info[&#39;BlockID&#39;] = CAL_BLOCK_ID_GAINCORRECTION
+        GO_info[&#39;BlockVersion&#39;] = 1
+        GO_info[&#39;BlockCalibVer&#39;] = 12007
+        GO_info[&#39;BlockSize&#39;] = GO_size
+        # do not consider info size. It will be added later
+        try:
+                info = GO_cal_dict[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+        
+        GO_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        GO_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        GO_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        GO_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        GO_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        GO_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        GO_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        GO_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+        GOBlock, GOBlock_dtype, GO_size, GO_nBlock = AddCalBlockInfo(GO_info, GOBlock, GOBlock_dtype, GO_size, GO_nBlock)
+
+        return GOBlock, GOBlock_dtype, GO_size, GO_nBlock
+
+
+def GenerateAddressValuePairBlock(AddressValueRegisterList):
+        &#39;&#39;&#39;
+                Function to generate AddressValueRegisterList block
+
+                Inputs:
+                  AddressValueRegisterList  - Dictionary containing AddressValueRegisterList data
+                  
+                Outputs:
+                  AVRLBlock             - Binary data of the calibration block
+                  AVRLBlock_dtype       - Binary data of the calibration block
+                  AVRL_size             - Size of block in bytes
+                  AVRL_nBlock           - Number of blocks
+                
+        &#39;&#39;&#39;
+        print(&#34;FOUND: Address Value Register List&#34;)
+
+        try:
+                AddressValueRegisterList = AddressValueRegisterList[&#39;AddressValueRegisterList&#39;]
+        except:
+                pass
+
+        AVRLBlock = np.array([], dtype=object)
+        AVRLBlock_dtype = np.array([], dtype=object)
+
+        nTuples_arr = np.array([len(AddressValueRegisterList)],dtype=np.uint16)
+        AVRLBlock = np.append(AVRLBlock, nTuples_arr)
+        AVRLBlock_dtype = np.append(AVRLBlock_dtype, np.dtype(np.uint16))
+
+        rsvd_arr = np.array([0, 0, 0],dtype=np.uint16)
+        AVRLBlock = np.append(AVRLBlock, rsvd_arr)
+        for i in range(3):
+                AVRLBlock_dtype = np.append(AVRLBlock_dtype, np.dtype(np.uint16))
+
+        tuples_arr = np.array(np.array(AddressValueRegisterList).flatten(),dtype=np.uint16)
+        AVRLBlock = np.append(AVRLBlock, tuples_arr)
+        for i in range(len(np.array(AddressValueRegisterList).flatten())):
+                AVRLBlock_dtype = np.append(AVRLBlock_dtype, np.dtype(np.uint16))
+
+        AVRL_size = len(np.array(AddressValueRegisterList).flatten())*2 + 8
+        AVRL_nBlock = 1
+
+
+        AVRL_info = dict()
+        AVRL_info[&#39;BlockID&#39;] = ord(CAL_BLOCK_ID_ADDRVAL_REGLIST)
+        AVRL_info[&#39;BlockVersion&#39;] = 1
+        AVRL_info[&#39;BlockCalibVer&#39;] = 12007
+        AVRL_info[&#39;BlockSize&#39;] = AVRL_size
+        # do not consider info size. It will be added later
+
+        try:
+                info = AddressValueRegisterList[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+
+        AVRL_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        AVRL_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        AVRL_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        AVRL_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        AVRL_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        AVRL_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        AVRL_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        AVRL_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+        AVRLBlock, AVRLBlock_dtype, AVRL_size, AVRL_nBlock = AddCalBlockInfo(AVRL_info, AVRLBlock, AVRLBlock_dtype, AVRL_size, AVRL_nBlock)
+
+        return AVRLBlock, AVRLBlock_dtype, AVRL_size, AVRL_nBlock
+
+
+def GenerateP0TableBlock(P0Table, mode_info_arr, compressed_P0):
+        &#39;&#39;&#39;
+                Function to generate P0 calibration block
+
+                Inputs:
+                  P0Table               - P0 Table dims [h x c x nFreqs]
+                  mode_info_arr         - Dictionary containing information specific to
+                                          camera mode
+                  compressed_P0         - boolean to denote if the P0 table input is
+                                          compressed
+                  
+                Outputs:
+                  P0_Block              - Binary data of the calibration block
+                  P0_Block_dtype        - Binary data of the calibration block
+                  P0_size               - Size of block in bytes
+                  P0_nBlock             - Number of blocks
+                
+        &#39;&#39;&#39;
+
+        P0_Block = np.array([], dtype=object)
+        P0_Block_dtype = np.array([], dtype=object)
+
+        P0_size = 0
+        P0_nBlock = 1
+
+        mode_arr = np.array([mode_info_arr[0]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, mode_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        freqIndex_arr = np.array([mode_info_arr[1]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, freqIndex_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        freq_arr = np.array([mode_info_arr[2]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, freq_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        IntegrationTime_arr = np.array([mode_info_arr[3]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, IntegrationTime_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        nRowsCoeffs_arr = np.array([mode_info_arr[4]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, nRowsCoeffs_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        nColCoeffs_arr = np.array([mode_info_arr[5]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, nColCoeffs_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        AnalogBinRows_arr = np.array([mode_info_arr[6]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, AnalogBinRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        AnalogBinCols_arr = np.array([mode_info_arr[7]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, AnalogBinCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        DigitalBinRows_arr = np.array([mode_info_arr[8]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, DigitalBinRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        DigitalBinCols_arr = np.array([mode_info_arr[9]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, DigitalBinCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        SubSamplingRows_arr = np.array([mode_info_arr[10]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, SubSamplingRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        SubSamplingCols_arr = np.array([mode_info_arr[11]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, SubSamplingCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        SoftwareBinRows_arr = np.array([mode_info_arr[12]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, SoftwareBinRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        SoftwareBinCols_arr = np.array([mode_info_arr[13]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, SoftwareBinCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        nRows_arr = np.array([mode_info_arr[14]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, nRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        nCols_arr = np.array([mode_info_arr[15]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, nCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        OffsetRows_arr = np.array([mode_info_arr[16]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, OffsetRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        OffsetCols_arr = np.array([mode_info_arr[17]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, OffsetCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        if compressed_P0:
+                print(&#34;FOUND: Compressed P0 Table Mode:&#34;, mode_info_arr[0], &#34;Freq:&#34;, mode_info_arr[2])
+                P0RowCoefs = np.array(P0Table[&#39;P0RowCoefs&#39;], dtype=np.float32)
+                P0ColCoefs = np.array(P0Table[&#39;P0ColCoefs&#39;], dtype=np.float32)
+                P0ColCoefs = P0ColCoefs.reshape(len(P0ColCoefs),1)
+                P0ColCoefs = np.append(np.zeros([len(P0ColCoefs),2], dtype=np.float32), P0ColCoefs, axis = 1)
+                P0ColCoefs = P0ColCoefs.flatten()
+
+                P0Coeffs = np.append(P0RowCoefs, P0ColCoefs)
+
+                P0Coeffs_arr = np.array([P0Coeffs],dtype=np.float32)
+                P0_Block = np.append(P0_Block, P0Coeffs_arr)
+
+                tmp = [np.dtype(np.float32)] * len(P0Coeffs)
+                P0_Block_dtype = np.append(P0_Block_dtype, tmp)
+                # for i in range(len(P0Coeffs)):
+                #       P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.float32))
+
+                P0_size = P0_size + len(P0Coeffs) * 4
+
+        else:
+                print(&#34;FOUND: Uncompressed P0 Table Mode:&#34;, mode_info_arr[0], &#34;Freq:&#34;, mode_info_arr[2])
+                try:
+                        P0Table = P0Table[&#39;P0Table&#39;]
+                except:
+                        pass
+
+                P0Coeffs_arr = np.array(P0Table, dtype=np.float32).flatten()
+                P0_Block = list(P0_Block)
+                P0_Block.append(list(P0Coeffs_arr))
+                P0_Block = np.array(P0_Block, dtype=object)
+                P0_Block_dtype = np.append(P0_Block_dtype, [np.dtype(np.float32)])
+
+                # for i in range(len(P0Coeffs_arr)):
+                #       P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.float32))
+                P0_size = P0_size + len(P0Coeffs_arr) * 4
+
+
+
+        P0_info = dict()
+        P0_info[&#39;BlockID&#39;] = ord(CAL_BLOCK_ID_P0)
+        if compressed_P0:
+                P0_info[&#39;BlockVersion&#39;] = 4
+        else:
+                P0_info[&#39;BlockVersion&#39;] = 255
+        P0_info[&#39;BlockCalibVer&#39;] = 7005
+        P0_info[&#39;BlockSize&#39;] = P0_size
+        # do not consider info size. It will be added later
+
+        try:
+                info = P0Table[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+
+        P0_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        P0_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        P0_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        P0_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        P0_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        P0_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        P0_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        P0_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+        P0_Block, P0_Block_dtype, P0_size, P0_nBlock = AddCalBlockInfo(P0_info, P0_Block, P0_Block_dtype, P0_size, P0_nBlock)
+
+        return P0_Block, P0_Block_dtype, P0_size, P0_nBlock
+
+
+def GenerateGeometricBlock(GeoCal):
+        &#39;&#39;&#39;
+                Function to generate Geometric calibration block
+
+                Inputs:
+                  GeoCal                - Dictionary containing camera instrinsics data
+                  
+                Outputs:
+                  GeoBlock              - Binary data of the calibration block
+                  GeoBlock_dtype        - Binary data of the calibration block
+                  Geo_size              - Size of block in bytes
+                  Geo_nBlock            - Number of blocks
+                
+        &#39;&#39;&#39;
+        print(&#34;FOUND: Geometric Calibration Parameters&#34;)
+
+        GeoBlock = np.array([], dtype=object)
+        GeoBlock_dtype = np.array([], dtype=object)
+
+        Geo_size = 0
+        Geo_nBlock = 1
+
+        nRows_arr = np.array([1024],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, nRows_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        nCols_arr = np.array([1024],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, nCols_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        offsetRows_arr = np.array([0],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, offsetRows_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        offsetCols_arr = np.array([0],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, offsetCols_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        mode_arr = np.array([3],dtype=np.uint8)
+        GeoBlock = np.append(GeoBlock, mode_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint8))
+        Geo_size = Geo_size + 1
+
+        pixelBinning_arr = np.array([0],dtype=np.uint8)
+        GeoBlock = np.append(GeoBlock, pixelBinning_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint8))
+        Geo_size = Geo_size + 1
+
+        rsvd_arr = np.array([0],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, rsvd_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        CameraModel_arr = np.array([2],dtype=np.uint32)
+        GeoBlock = np.append(GeoBlock, CameraModel_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint32))
+        Geo_size = Geo_size + 4
+
+        Fc1_arr = np.array([GeoCal[&#39;Fc1&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Fc1_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Fc2_arr = np.array([GeoCal[&#39;Fc2&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Fc2_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        cc1_arr = np.array([GeoCal[&#39;cc1&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, cc1_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        cc2_arr = np.array([GeoCal[&#39;cc2&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, cc2_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Cx_arr = np.array([GeoCal[&#39;Cx&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Cx_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Cy_arr = np.array([GeoCal[&#39;Cy&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Cy_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc1_arr = np.array([GeoCal[&#39;Kc1&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc1_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc2_arr = np.array([GeoCal[&#39;Kc2&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc2_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc3_arr = np.array([GeoCal[&#39;Kc3&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc3_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc4_arr = np.array([GeoCal[&#39;Kc4&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc4_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc5_arr = np.array([GeoCal[&#39;Kc5&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc5_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc6_arr = np.array([GeoCal[&#39;Kc6&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc6_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Tx_arr = np.array([GeoCal[&#39;Tx&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Tx_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Ty_arr = np.array([GeoCal[&#39;Ty&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Ty_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+
+        Geo_info = dict()
+        Geo_info[&#39;BlockID&#39;] = ord(CAL_BLOCK_ID_GEOMETRIC)
+        Geo_info[&#39;BlockVersion&#39;] = 3
+        Geo_info[&#39;BlockCalibVer&#39;] = 12007
+        Geo_info[&#39;BlockSize&#39;] = Geo_size
+        # do not consider info size. It will be added later
+
+        try:
+                info = GeoCal[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+
+        Geo_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        Geo_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        Geo_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        Geo_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        Geo_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        Geo_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        Geo_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        Geo_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+
+        GeoBlock, GeoBlock_dtype, Geo_size, Geo_nBlock = AddCalBlockInfo(Geo_info, GeoBlock, GeoBlock_dtype, Geo_size, Geo_nBlock)
+
+        return GeoBlock, GeoBlock_dtype, Geo_size, Geo_nBlock
+
+
+def GenerateLSDACBlock(LSDACSetting):
+        &#39;&#39;&#39;
+                Function to generate LSDAC block
+
+                Inputs:
+                  LSDACSetting          - Dictionary containing LSDAC data
+                  
+                Outputs:
+                  LSDACBlock            - Binary data of the calibration block
+                  LSDACBlock_dtype      - Binary data of the calibration block
+                  LSDAC_size            - Size of block in bytes
+                  LSDAC_nBlock          - Number of blocks
+                
+        &#39;&#39;&#39;
+        print(&#34;FOUND: LSDAC Settings&#34;)
+
+        Endaddress_LSDAC = 0x1D21
+
+        LSDACBlock = np.array([], dtype=object)
+        LSDACBlock_dtype = np.array([], dtype=object)
+
+        LSDAC_size = 0
+        LSDAC_nBlock = 1
+
+        StartAddress_arr = np.array([Endaddress_LSDAC - 4*(len(LSDACSetting[&#39;value&#39;])-1)],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, StartAddress_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        nWrites_arr = np.array([len(LSDACSetting[&#39;value&#39;])],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, nWrites_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        ChecksumLSB_arr = np.array([LSDACSetting[&#39;checkSumLSB&#39;]],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, ChecksumLSB_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        ChecksumMSB_arr = np.array([LSDACSetting[&#39;checkSumMSB&#39;]],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, ChecksumMSB_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        Settings_arr = np.array(LSDACSetting[&#39;value&#39;],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, Settings_arr)
+
+        tmp = [np.dtype(np.uint16)] * len(Settings_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, tmp)
+        LSDAC_size = LSDAC_size + 2*len(Settings_arr)
+
+        rsvd_arr = np.array([0],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, rsvd_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        # print(len(Settings_arr))
+
+        LSDAC_info = dict()
+        LSDAC_info[&#39;BlockID&#39;] = ord(CAL_BLOCK_ID_LSDACS)
+        LSDAC_info[&#39;BlockVersion&#39;] = 1
+        LSDAC_info[&#39;BlockCalibVer&#39;] = 12007
+        LSDAC_info[&#39;BlockSize&#39;] = LSDAC_size
+        # do not consider info size. It will be added later
+
+        try:
+                info = LSDACSetting[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+
+        LSDAC_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        LSDAC_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        LSDAC_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        LSDAC_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        LSDAC_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        LSDAC_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        LSDAC_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        LSDAC_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+        LSDACBlock, LSDACBlock_dtype, LSDAC_size, LSDAC_nBlock = AddCalBlockInfo(LSDAC_info, LSDACBlock, LSDACBlock_dtype, LSDAC_size, LSDAC_nBlock)
+
+        return LSDACBlock, LSDACBlock_dtype, LSDAC_size, LSDAC_nBlock
+
+
+def GenerateCalBlock(calDir, CalibfolderName, config_yaml, add_comp_P0, add_uncomp_P0):
+        &#39;&#39;&#39;
+                Function to sort and format data to generate individual
+                calibration blocks
+
+                Inputs:
+                  calDir                - Calibration directory
+                  CalibfolderName       - Name of calibration folder (unique name)
+                  config_yaml           - Configuration yaml file
+                  
+                Outputs:
+                  binaryCal             - Binary data of all the calibration blocks
+                  binaryCal_dtype       - Binary data of all the calibration blocks
+                  sizeCal               - Size of blocks in bytes
+                  nBlocksCal            - Number of blocks
+                
+        &#39;&#39;&#39;
+        binaryCal = np.array([], dtype=object)
+        binaryCal_dtype = np.array([], dtype=object)
+        sizeCal = np.array([])
+        nBlocksCal = np.array([])
+
+        with open(config_yaml) as y:
+                yaml_file = yaml.load(y, Loader=yaml.SafeLoader)
+
+        AVRL_dir = yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_directory&#39;]
+        AVRL_file = str(yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_file_pkl&#39;])
+        
+        GO_dir = yaml_file[&#39;GainOffsetCalibration&#39;][&#39;output_directory&#39;]
+        GO_file = str(yaml_file[&#39;GainOffsetCalibration&#39;][&#39;output_file_pkl&#39;])
+
+        P0_dir = yaml_file[&#39;P0Calibration&#39;][&#39;output_directory&#39;]
+        P0_file_comp = str(yaml_file[&#39;P0Calibration&#39;][&#39;output_file_compressed_pkl&#39;])
+        P0_file_uncomp = str(yaml_file[&#39;P0Calibration&#39;][&#39;output_file_uncompressed_pkl&#39;])
+
+        Geo_dir = yaml_file[&#39;GeometricCalibration&#39;][&#39;output_directory&#39;]
+        Geo_file = str(yaml_file[&#39;GeometricCalibration&#39;][&#39;output_file_pkl&#39;])
+
+        LSDAC_dir = yaml_file[&#39;LSDACSetting&#39;][&#39;output_directory&#39;]
+        LSDAC_file = yaml_file[&#39;LSDACSetting&#39;][&#39;output_file_pkl&#39;]
+
+        # print(calDir)
+
+        if AVRL_dir in calDir:
+                mypath = os.path.join(CalibfolderName, AVRL_dir)
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                if AVRL_file + &#39;.pkl&#39; in calFiles:
+                        f = open(os.path.join(mypath, AVRL_dir + &#34;.pkl&#34;), &#34;rb&#34;)
+                        AddressValueRegisterList = pickle.load(f)
+                        f.close()
+                        AVRL, AVRL_dtype, sizeAVRL, nBlocksAVRL = GenerateAddressValuePairBlock(AddressValueRegisterList)
+                        binaryCal = np.append(binaryCal, AVRL)
+                        binaryCal_dtype = np.append(binaryCal_dtype, AVRL_dtype)
+                        sizeCal = np.append(sizeCal, sizeAVRL)
+                        nBlocksCal = np.append(nBlocksCal, nBlocksAVRL)
+
+        if GO_dir in calDir:
+                mypath = os.path.join(CalibfolderName, GO_dir)
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                if GO_file + &#39;.pkl&#39; in calFiles:
+                        f = open(os.path.join(mypath, GO_file + &#39;.pkl&#39;), &#34;rb&#34;)
+                        GO_cal_dict = pickle.load(f)
+                        f.close()
+                        GO, GO_dtype, sizeGO, nBlocksGO = GenerateGainOffsetBlock(GO_cal_dict)
+                        binaryCal = np.append(binaryCal, GO)
+                        binaryCal_dtype = np.append(binaryCal_dtype, GO_dtype)
+                        sizeCal = np.append(sizeCal, sizeGO)
+                        nBlocksCal = np.append(nBlocksCal, nBlocksGO)
+
+        if P0_dir in calDir:
+                mypath = os.path.join(CalibfolderName, P0_dir)
+                # Array (x axis)
+                #                          mode: 
+                #         freqIndex: 
+                #              freq: 
+                #   integrationTime: 
+                #         nRowCoefs: 
+                #         nColCoefs: 
+                #     analogBinRows: 
+                #     analogBinCols: 
+                #    digitalBinRows: 
+                #    digitalBinCols: 
+                #   subsamplingRows: 
+                #   subsamplingCols: 
+                #   softwareBinRows: 
+                #   softwareBinCols: 
+                #             nRows: 
+                #             nCols: 
+                #        offsetRows: 
+                #        offsetCols: 
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                mode_info_arr = np.array([[0,1,14200,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 0
+                                                                  [0,2,17750,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 0
+                                                                  [1,1,19800,0,1,3,2,1,1,2,1,1,1,1,288,320,90,96],  # 1
+                                                                  [1,2,18900,0,1,3,2,1,1,2,1,1,1,1,288,320,90,96],  # 1
+                                                                  [1,3,5400,0,1,3,2,1,1,2,1,1,1,1,288,320,90,96],  # 1
+                                                                  [4,1,19800,0,1,3,1,1,1,1,1,1,1,1,576,640,180,192],  # 4
+                                                                  [4,2,18900,0,1,3,1,1,1,1,1,1,1,1,576,640,180,192],  # 4
+                                                                  [4,3,5400,0,1,3,1,1,1,1,1,1,1,1,576,640,180,192],  # 4
+                                                                  [5,1,19800,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 5
+                                                                  [5,2,18900,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 5
+                                                                  [5,3,5400,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 5
+                                                                  [7,1,19800,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 7
+                                                                  [7,2,18900,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 7
+                                                                  [7,3,5400,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 7
+                                                                  [10,1,19800,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 10
+                                                                  [10,2,18900,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 10
+                                                                  [10,3,5400,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0]])  # 10
+                
+                if (P0_file_comp + &#39;0.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;0.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_0 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_0.keys())
+                        for i in range(2):
+                                mode_offset = 0
+                                compressed_P0 = True
+                                P0_0, P0_0_dtype, sizeP0_0, nBlocksP0_0 = GenerateP0TableBlock(P0Table_comp_mode_0[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_0)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_0_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_0)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_0)
+                
+                elif (P0_file_uncomp+&#39;0.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;0.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_0 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_0 = P0Table_mode_0[&#39;P0Table&#39;]
+                        except:
+                                pass
+
+                        for i in range(2):
+                                mode_offset = 0
+                                compressed_P0 = False
+                                P0_0, P0_0_dtype, sizeP0_0, nBlocksP0_0 = GenerateP0TableBlock(P0Table_mode_0[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_0)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_0_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_0)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_0)
+                else:
+                        pass
+
+                if (P0_file_comp + &#39;1.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;1.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_1 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_1.keys())
+                        for i in range(3):
+                                mode_offset = 2
+                                compressed_P0 = True
+                                P0_1, P0_1_dtype, sizeP0_1, nBlocksP0_1 = GenerateP0TableBlock(P0Table_comp_mode_1[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_1)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_1_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_1)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_1)
+                
+                elif (P0_file_uncomp+&#39;1.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;1.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_1 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_1 = P0Table_mode_1[&#39;P0Table&#39;]
+                        except:
+                                pass
+
+                        for i in range(3):
+                                mode_offset = 2
+                                compressed_P0 = False
+                                P0_1, P0_1_dtype, sizeP0_1, nBlocksP0_1 = GenerateP0TableBlock(P0Table_mode_1[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_1)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_1_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_1)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_1)
+                else:
+                        pass
+
+
+                if (P0_file_comp + &#39;4.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;4.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_4 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_4.keys())
+                        for i in range(3):
+                                mode_offset = 5
+                                compressed_P0 = True
+                                P0_4, P0_4_dtype, sizeP0_4, nBlocksP0_4 = GenerateP0TableBlock(P0Table_comp_mode_4[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_4)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_4_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_4)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_4)
+                
+                elif (P0_file_uncomp+&#39;4.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;4.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_4 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_4 = P0Table_mode_4[&#39;P0Table&#39;]
+                        except:
+                                pass
+                        for i in range(3):
+                                mode_offset = 5
+                                compressed_P0 = False
+                                P0_4, P0_4_dtype, sizeP0_4, nBlocksP0_4 = GenerateP0TableBlock(P0Table_mode_4[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_4)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_4_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_4)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_4)
+                else:
+                        pass
+
+
+                if (P0_file_comp+&#39;5.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;5.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_5 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_5.keys())
+                        for i in range(3):
+                                mode_offset = 8
+                                compressed_P0 = True
+                                P0_5, P0_5_dtype, sizeP0_5, nBlocksP0_5 = GenerateP0TableBlock(P0Table_comp_mode_5[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_5)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_5_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_5)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_5)
+                
+                elif (P0_file_uncomp+&#39;5.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;5.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_5 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_5 = P0Table_mode_5[&#39;P0Table&#39;]
+                        except:
+                                pass
+                        for i in range(3):
+                                mode_offset = 8
+                                compressed_P0 = False
+                                P0_5, P0_5_dtype, sizeP0_5, nBlocksP0_5 = GenerateP0TableBlock(P0Table_mode_5[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_5)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_5_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_5)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_5)
+                else:
+                        pass
+
+
+                if (P0_file_comp+&#39;7.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;7.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_7 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_7.keys())
+                        for i in range(3):
+                                mode_offset = 11
+                                compressed_P0 = True
+                                P0_7, P0_7_dtype, sizeP0_7, nBlocksP0_7 = GenerateP0TableBlock(P0Table_comp_mode_7[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_7)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_7_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_7)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_7)
+                
+                elif (P0_file_uncomp+&#39;7.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;7.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_7 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_7 = P0Table_mode_7[&#39;P0Table&#39;]
+                        except:
+                                pass
+                        for i in range(3):
+                                mode_offset = 11
+                                compressed_P0 = False
+                                P0_7, P0_7_dtype, sizeP0_7, nBlocksP0_7 = GenerateP0TableBlock(P0Table_mode_7[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_7)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_7_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_7)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_7)
+
+                else:
+                        pass
+
+
+                if (P0_file_comp+&#39;10.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath,P0_file_comp+&#34;10.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_10 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_10.keys())
+                        for i in range(3):
+                                mode_offset = 14
+                                compressed_P0 = True
+                                P0_10, P0_10_dtype, sizeP0_10, nBlocksP0_10 = GenerateP0TableBlock(P0Table_comp_mode_10[dict_keys[i]], 
+                                                                                                                                                                        mode_info_arr[mode_offset + i],
+                                                                                                                                                                        compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_10)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_10_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_10)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_10)
+                
+                elif (P0_file_uncomp+&#39;10.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath,P0_file_uncomp+&#34;10.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_10 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_10 = P0Table_mode_10[&#39;P0Table&#39;]
+                        except:
+                                pass
+                        for i in range(3):
+                                mode_offset = 14
+                                compressed_P0 = False
+                                P0_10, P0_10_dtype, sizeP0_10, nBlocksP0_10 = GenerateP0TableBlock(P0Table_mode_10[:,:,i], 
+                                                                                                                                                                        mode_info_arr[mode_offset + i],
+                                                                                                                                                                        compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_10)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_10_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_10)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_10)
+
+                else:
+                        pass
+
+
+
+        if Geo_dir in calDir:
+                mypath = os.path.join(CalibfolderName, Geo_dir)
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                if Geo_file+&#39;.pkl&#39; in calFiles:
+                        f = open(os.path.join(mypath, Geo_file+&#34;.pkl&#34;), &#34;rb&#34;)
+                        GeoCal = pickle.load(f)
+                        f.close()
+                        Geo, Geo_dtype, sizeGeo, nBlocksGeo = GenerateGeometricBlock(GeoCal)
+                        binaryCal = np.append(binaryCal, Geo)
+                        binaryCal_dtype = np.append(binaryCal_dtype, Geo_dtype)
+                        sizeCal = np.append(sizeCal, sizeGeo)
+                        nBlocksCal = np.append(nBlocksCal, nBlocksGeo)
+
+        if LSDAC_dir in calDir:
+                mypath = os.path.join(CalibfolderName, LSDAC_dir)
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                if LSDAC_file+&#39;.pkl&#39; in calFiles:
+                        f = open(os.path.join(mypath, LSDAC_file+&#34;.pkl&#34;), &#34;rb&#34;)
+                        LSDACSetting = pickle.load(f)
+                        f.close()
+                        LSDAC, LSDAC_dtype, sizeLSDAC, nBlocksLSDAC = GenerateLSDACBlock(LSDACSetting)
+                        binaryCal = np.append(binaryCal, LSDAC)
+                        binaryCal_dtype = np.append(binaryCal_dtype, LSDAC_dtype)
+                        sizeCal = np.append(sizeCal, sizeLSDAC)
+                        nBlocksCal = np.append(nBlocksCal, nBlocksLSDAC)
+
+
+        return binaryCal, binaryCal_dtype, sizeCal, nBlocksCal
+
+
+def GenerateDepthFlashJson(directory, sensorFW, comp_ccb):
+        &#34;&#34;&#34;
+                Generates json files for depth frame collection and
+                flashing ccb to module
+
+                Inputs:
+                  directory             - Directory to which json files are to be saved
+                  sensorFW              - name of cfg file to be used
+                  comp_ccb              - name of compressed ccb to be flashed
+                  
+                Outputs:
+                  flashConfigPath       - name of flash json config path
+                  depthConfigPath       - name of depth json config path
+        &#34;&#34;&#34;
+        Flashdict = dict()
+        Flashdict[&#34;sensorFirmware&#34;] = str(os.path.abspath(sensorFW))
+        Flashdict[&#34;CCB_Calibration&#34;] = str(os.path.abspath(comp_ccb))
+        Flashdict[&#34;VAUX_POWER_VOLTAGE&#34;] = &#34;18&#34;
+
+        FlashJsonObject = json.dumps(Flashdict, indent=4)
+
+        flashConfigPath = os.path.join(directory, &#39;flashConfig.json&#39;)
+        with open(flashConfigPath, &#39;w&#39;) as outfile:
+                outfile.write(FlashJsonObject)
+
+        Depthdict = dict()
+        Depthdict[&#34;VAUX_POWER_VOLTAGE&#34;] = &#34;18&#34;
+
+        DepthJsonObject = json.dumps(Depthdict, indent=4)
+
+        depthConfigPath = os.path.join(directory, &#39;depthConfig.json&#39;)
+        with open(depthConfigPath, &#39;w&#39;) as outfile:
+                outfile.write(DepthJsonObject)
+
+        return flashConfigPath, depthConfigPath
+
+
+
+def CCB_write(config_file, CalibfolderName):
+        &#39;&#39;&#39;
+                Generates .ccb calibration file
+
+                Inputs:
+                  config_file           - name of configuration (.cfg) file
+                  CalibfolderName       - name of calbration folder
+                  
+                Outputs:
+                  None
+                
+        &#39;&#39;&#39;
+
+        with open(config_file) as y:
+                file = yaml.load(y, Loader=yaml.SafeLoader)
+
+
+        add_comp_P0 = file[&#39;CCB&#39;][&#39;add_compressed_P0&#39;]
+        add_uncomp_P0 = file[&#39;CCB&#39;][&#39;add_uncompressed_P0&#39;]
+
+
+        mypath = CalibfolderName
+        # calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+        calDir = os.listdir(mypath)
+
+
+        if add_comp_P0:
+                binaryCal, binaryCal_dtype, sizeCal, nBlocksCal = GenerateCalBlock(calDir, CalibfolderName, config_file , add_comp_P0=True, add_uncomp_P0=False)
+                ccb_compressed_fname = CompileBlocks(binaryCal, binaryCal_dtype, sizeCal, nBlocksCal,CalibfolderName,add_comp_P0=True, add_uncomp_P0=False)
+
+                with open(os.path.join(CalibfolderName, &#39;header.yaml&#39;)) as y:
+                        header = yaml.load(y, Loader=yaml.SafeLoader)
+                
+                header[&#39;compressed_ccb&#39;] = ccb_compressed_fname
+                flashConfigPath, depthConfigPath = GenerateDepthFlashJson(os.path.join(CalibfolderName, &#39;SessionConfig&#39;), header[&#39;sensor_firmware&#39;], ccb_compressed_fname)
+                header[&#39;flashConfigJson&#39;] = os.path.abspath(flashConfigPath)
+                header[&#39;depthConfigJson&#39;] = os.path.abspath(depthConfigPath)
+
+                with open(os.path.join(CalibfolderName,&#39;header.yaml&#39;),&#39;w&#39;) as f:
+                        yaml.dump(header, f)
+
+
+        if add_uncomp_P0:
+                binaryCal, binaryCal_dtype, sizeCal, nBlocksCal = GenerateCalBlock(calDir, CalibfolderName, config_file , add_comp_P0=False, add_uncomp_P0=True)
+                ccb_fname = CompileBlocks(binaryCal, binaryCal_dtype, sizeCal, nBlocksCal,CalibfolderName,add_comp_P0=False, add_uncomp_P0=True)
+
+                with open(os.path.join(CalibfolderName, &#39;header.yaml&#39;)) as y:
+                        header = yaml.load(y, Loader=yaml.SafeLoader)
+                
+                header[&#39;ccb&#39;] = ccb_fname
+
+                with open(os.path.join(CalibfolderName,&#39;header.yaml&#39;),&#39;w&#39;) as f:
+                        yaml.dump(header, f)
+
+
+
+if __name__ == &#34;__main__&#34;:
+        a = input(&#34;Enter name of calibration file directory: &#34;)
+        CCB_write(config_file = &#34;./config/CalibrationConfig.yaml&#34;, CalibfolderName = a)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="CCB_writer.AddCalBlockInfo"><code class="name flex">
+<span>def <span class="ident">AddCalBlockInfo</span></span>(<span>blockInfo, binary, binary_dtype, sizeBlock, nBlocks)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to generate calibration information </p>
+<p>Inputs:
+blockInfo
+- Refer to dictionary mentioned below
+binary
+- Binary data of the calibration block
+binary_dtype
+- Binary data data-type of the calibration block
+sizeBlock
+- Size of block in bytes
+nBlocks
+- Number of blocks </p>
+<p>Outputs:
+CalBlock
+- Updated binary data of the calibration block
+CalBlock_dtype
+- Updated binary data of the calibration block
+sizeBlock
+- Updated size of block in bytes
+nBlocks
+- Updated number of blocks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def AddCalBlockInfo(blockInfo, binary, binary_dtype, sizeBlock, nBlocks):
+        &#39;&#39;&#39;
+                Function to generate calibration information 
+
+                Inputs: 
+                  blockInfo             - Refer to dictionary mentioned below 
+                  binary                - Binary data of the calibration block 
+                  binary_dtype          - Binary data data-type of the calibration block 
+                  sizeBlock             - Size of block in bytes 
+                  nBlocks               - Number of blocks 
+                  
+                Outputs: 
+                  CalBlock              - Updated binary data of the calibration block 
+                  CalBlock_dtype        - Updated binary data of the calibration block 
+                  sizeBlock             - Updated size of block in bytes 
+                  nBlocks               - Updated number of blocks 
+                
+        &#39;&#39;&#39;
+
+
+        # blockInfo -&gt; Dictionary containing:
+        # uint8_t BlockID
+        # uint8_t BlockVersion
+        # uint16_t BlockCalibVer
+        # uint32_t BlockSize
+        # uint64_t CheckSum
+        # uint16_t CalibrationYear
+        # uint8_t CalibrationMonth
+        # uint8_t CalibrationDay
+        # uint8_t CalibrationHour
+        # uint8_t CalibrationMinute
+        # uint8_t CalibrationSecond
+        # uint8_t CalibrationPass
+
+        sizeInfo = 24
+
+        CalBlock = np.array([], dtype=object)
+        CalBlock_dtype = np.array([], dtype=object)
+
+        BlockID_arr = np.array([blockInfo[&#39;BlockID&#39;]],dtype=np.int8)
+        CalBlock = np.append(CalBlock, BlockID_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.int8))
+
+        BlockFormatVer_arr = np.array([blockInfo[&#39;BlockVersion&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, BlockFormatVer_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        BlockCalibVer_arr = np.array([blockInfo[&#39;BlockCalibVer&#39;]],dtype=np.uint16)
+        CalBlock = np.append(CalBlock, BlockCalibVer_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint16))
+
+        BlockSize_arr = np.array([blockInfo[&#39;BlockSize&#39;] + sizeInfo],dtype=np.uint32)
+        CalBlock = np.append(CalBlock, BlockSize_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint32))
+
+        Checksum_arr = np.array([blockInfo[&#39;CheckSum&#39;]],dtype=np.uint64)
+        CalBlock = np.append(CalBlock, Checksum_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint64))
+
+        CalibrationYear_arr = np.array([blockInfo[&#39;CalibrationYear&#39;]],dtype=np.uint16)
+        CalBlock = np.append(CalBlock, CalibrationYear_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint16))
+
+        CalibrationMonth_arr = np.array([blockInfo[&#39;CalibrationMonth&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationMonth_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationDay_arr = np.array([blockInfo[&#39;CalibrationDay&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationDay_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationHour_arr = np.array([blockInfo[&#39;CalibrationHour&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationHour_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationMinute_arr = np.array([blockInfo[&#39;CalibrationMinute&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationMinute_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationSecond_arr = np.array([blockInfo[&#39;CalibrationSecond&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationSecond_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalibrationPass_arr = np.array([blockInfo[&#39;CalibrationPass&#39;]],dtype=np.uint8)
+        CalBlock = np.append(CalBlock, CalibrationPass_arr)
+        CalBlock_dtype = np.append(CalBlock_dtype, np.dtype(np.uint8))
+
+        CalBlock = np.append(CalBlock, binary)
+        CalBlock_dtype = np.append(CalBlock_dtype, binary_dtype)
+
+        return CalBlock, CalBlock_dtype, blockInfo[&#39;BlockSize&#39;] + sizeInfo, nBlocks</code></pre>
+</details>
+</dd>
+<dt id="CCB_writer.CCB_write"><code class="name flex">
+<span>def <span class="ident">CCB_write</span></span>(<span>config_file, CalibfolderName)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates .ccb calibration file</p>
+<h2 id="inputs">Inputs</h2>
+<p>config_file
+- name of configuration (.cfg) file
+CalibfolderName
+- name of calbration folder</p>
+<h2 id="outputs">Outputs</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def CCB_write(config_file, CalibfolderName):
+        &#39;&#39;&#39;
+                Generates .ccb calibration file
+
+                Inputs:
+                  config_file           - name of configuration (.cfg) file
+                  CalibfolderName       - name of calbration folder
+                  
+                Outputs:
+                  None
+                
+        &#39;&#39;&#39;
+
+        with open(config_file) as y:
+                file = yaml.load(y, Loader=yaml.SafeLoader)
+
+
+        add_comp_P0 = file[&#39;CCB&#39;][&#39;add_compressed_P0&#39;]
+        add_uncomp_P0 = file[&#39;CCB&#39;][&#39;add_uncompressed_P0&#39;]
+
+
+        mypath = CalibfolderName
+        # calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+        calDir = os.listdir(mypath)
+
+
+        if add_comp_P0:
+                binaryCal, binaryCal_dtype, sizeCal, nBlocksCal = GenerateCalBlock(calDir, CalibfolderName, config_file , add_comp_P0=True, add_uncomp_P0=False)
+                ccb_compressed_fname = CompileBlocks(binaryCal, binaryCal_dtype, sizeCal, nBlocksCal,CalibfolderName,add_comp_P0=True, add_uncomp_P0=False)
+
+                with open(os.path.join(CalibfolderName, &#39;header.yaml&#39;)) as y:
+                        header = yaml.load(y, Loader=yaml.SafeLoader)
+                
+                header[&#39;compressed_ccb&#39;] = ccb_compressed_fname
+                flashConfigPath, depthConfigPath = GenerateDepthFlashJson(os.path.join(CalibfolderName, &#39;SessionConfig&#39;), header[&#39;sensor_firmware&#39;], ccb_compressed_fname)
+                header[&#39;flashConfigJson&#39;] = os.path.abspath(flashConfigPath)
+                header[&#39;depthConfigJson&#39;] = os.path.abspath(depthConfigPath)
+
+                with open(os.path.join(CalibfolderName,&#39;header.yaml&#39;),&#39;w&#39;) as f:
+                        yaml.dump(header, f)
+
+
+        if add_uncomp_P0:
+                binaryCal, binaryCal_dtype, sizeCal, nBlocksCal = GenerateCalBlock(calDir, CalibfolderName, config_file , add_comp_P0=False, add_uncomp_P0=True)
+                ccb_fname = CompileBlocks(binaryCal, binaryCal_dtype, sizeCal, nBlocksCal,CalibfolderName,add_comp_P0=False, add_uncomp_P0=True)
+
+                with open(os.path.join(CalibfolderName, &#39;header.yaml&#39;)) as y:
+                        header = yaml.load(y, Loader=yaml.SafeLoader)
+                
+                header[&#39;ccb&#39;] = ccb_fname
+
+                with open(os.path.join(CalibfolderName,&#39;header.yaml&#39;),&#39;w&#39;) as f:
+                        yaml.dump(header, f)</code></pre>
+</details>
+</dd>
+<dt id="CCB_writer.CompileBlocks"><code class="name flex">
+<span>def <span class="ident">CompileBlocks</span></span>(<span>binaryCal, binaryCal_dtype, sizeCal, nBlocksCal, CalibfolderName, add_comp_P0, add_uncomp_P0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to compile calibration blocks and generate .ccb file </p>
+<p>Inputs:
+binaryCal
+- 2D array of binary of each block
+binaryCal_dtype
+- 2D array of binary data type of each block
+sizeCal
+- 1D array of size in bytes of each block
+nBlocksCal
+- 1D array of number of blocks of each block
+CalibfolderName
+- Name of calibration folder name </p>
+<p>Outputs:
+None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def CompileBlocks(binaryCal, binaryCal_dtype, sizeCal, nBlocksCal,CalibfolderName,add_comp_P0, add_uncomp_P0):
+        &#39;&#39;&#39;
+                Function to compile calibration blocks and generate .ccb file 
+
+                Inputs: 
+                  binaryCal             - 2D array of binary of each block 
+                  binaryCal_dtype       - 2D array of binary data type of each block 
+                  sizeCal               - 1D array of size in bytes of each block 
+                  nBlocksCal            - 1D array of number of blocks of each block 
+                  CalibfolderName       - Name of calibration folder name 
+                  
+                Outputs: 
+                  None 
+                
+        &#39;&#39;&#39;
+
+        # print(binaryCal, binaryCal_dtype, sizeCal, nBlocksCal)
+
+        # Generate Header block
+        Header = np.array([], dtype=object)
+        Header_dtype = np.array([], dtype=object)
+
+        sizeCalBlocks = np.sum(sizeCal)
+        nBlocks = np.sum(nBlocksCal)
+        sizeFileHeader = 16
+
+        nBlocks_arr = np.array([nBlocks],dtype=np.uint16)
+        Header = np.append(Header, nBlocks_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        chip_id_arr = np.array([22833],dtype=np.uint16)
+        Header = np.append(Header, chip_id_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        nRows_arr = np.array([1024],dtype=np.uint16)
+        Header = np.append(Header, nRows_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        nCols_arr = np.array([1024],dtype=np.uint16)
+        Header = np.append(Header, nCols_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        configVersionString = &#39;6109.7&#39;
+        if len(CalibfolderName) &gt; 30:
+                serialNumber = CalibfolderName[-30:]
+                print(&#34;\n\nWARNING: Serial number length &gt; 30, truncated to last 30 characters\n\n&#34;)
+        else:
+                serialNumber = CalibfolderName
+        print(&#34;\nserialNumber in CCB:: &#34; + serialNumber + &#39;\n&#39;)
+        chipUID = &#39;P95C74.0Y_6_40_24&#39;
+
+        for i in range(CAL_HDR_V0_CONFIG_VER_STR_SIZE - len(configVersionString)):
+                configVersionString = configVersionString + &#39; &#39;
+
+        configVersionString = list(configVersionString)
+        for i in range(len(configVersionString)):
+                configVersionString[i] = ord(configVersionString[i])
+
+        for i in range(CAL_HDR_V0_SERIAL_NUM_STR_SIZE - len(serialNumber)):
+                serialNumber = serialNumber + &#39; &#39;
+
+        serialNumber = list(serialNumber)
+        for i in range(len(serialNumber)):
+                serialNumber[i] = ord(serialNumber[i])
+
+        for i in range(CAL_HDR_V0_CHIP_UNIQUE_ID_SIZE - len(chipUID)):
+                chipUID = chipUID + &#39; &#39;
+
+        chipUID = list(chipUID)
+        for i in range(len(chipUID)):
+                chipUID[i] = ord(chipUID[i])
+
+        configVersionString_arr = np.array(configVersionString,dtype=np.int8)
+        Header = np.append(Header, configVersionString_arr)
+        for i in range(CAL_HDR_V0_CONFIG_VER_STR_SIZE):
+                Header_dtype = np.append(Header_dtype, np.dtype(np.int8))
+
+        serialNumber_arr = np.array(serialNumber,dtype=np.int8)
+        Header = np.append(Header, serialNumber_arr)
+        for i in range(CAL_HDR_V0_SERIAL_NUM_STR_SIZE):
+                Header_dtype = np.append(Header_dtype, np.dtype(np.int8))
+
+        chipUID_arr = np.array(chipUID,dtype=np.int8)
+        Header = np.append(Header, chipUID_arr)
+        for i in range(CAL_HDR_V0_CHIP_UNIQUE_ID_SIZE):
+                Header_dtype = np.append(Header_dtype, np.dtype(np.int8))
+
+        controlAPIVersion_arr = np.array([67108867],dtype=np.uint32)
+        Header = np.append(Header, controlAPIVersion_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint32))
+
+        firmwareVersion_arr = np.array([17045510],dtype=np.uint32)
+        Header = np.append(Header, firmwareVersion_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint32))
+
+        calibVersionMajor_arr = np.array([6109],dtype=np.uint16)
+        Header = np.append(Header, calibVersionMajor_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        calibVersionMinor_arr = np.array([12007],dtype=np.uint16)
+        Header = np.append(Header, calibVersionMinor_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint16))
+
+        configurationVersion_arr = np.array([400359431],dtype=np.uint32)
+        Header = np.append(Header, configurationVersion_arr)
+        Header_dtype = np.append(Header_dtype, np.dtype(np.uint32))
+
+        Header_info = dict()
+        Header_info[&#39;BlockID&#39;] = CAL_BLOCK_ID_HDR
+        Header_info[&#39;BlockVersion&#39;] = 3
+        Header_info[&#39;BlockCalibVer&#39;] = 0
+        Header_info[&#39;BlockSize&#39;] = 216
+        Header_info[&#39;CheckSum&#39;] = 195693386
+        Header_info[&#39;CalibrationYear&#39;] = 2019
+        Header_info[&#39;CalibrationMonth&#39;] = 3
+        Header_info[&#39;CalibrationDay&#39;] = 22
+        Header_info[&#39;CalibrationHour&#39;] = 15
+        Header_info[&#39;CalibrationMinute&#39;] = 23
+        Header_info[&#39;CalibrationSecond&#39;] = 8
+        Header_info[&#39;CalibrationPass&#39;] = 1
+
+        Header, Header_dtype, Header_size, Header_nBlock = AddCalBlockInfo(Header_info, Header, Header_dtype, 216, 0)
+
+        # Generate File_Header
+
+        File_Header = np.array([],dtype=object)
+        File_Header_dtype = np.array([],dtype=object)
+
+        calibFileVersion_arr = np.array([771],dtype=np.uint16)
+        File_Header = np.append(File_Header, calibFileVersion_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint16))
+
+        calibVersion_arr = np.array([769],dtype=np.uint16)
+        File_Header = np.append(File_Header, calibVersion_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint16))
+
+        sizeOfCalibHeader_arr = np.array([240],dtype=np.uint16)
+        File_Header = np.append(File_Header, sizeOfCalibHeader_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint16))
+
+        rsvd_arr = np.array([0],dtype=np.uint8)
+        File_Header = np.append(File_Header, rsvd_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint8))
+
+        sizeOfCalibFileHeader_arr = np.array([16],dtype=np.uint8)
+        File_Header = np.append(File_Header, sizeOfCalibFileHeader_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint8))
+
+        sizeOfCalibrationFile_arr = np.array([sizeCalBlocks + Header_size + 16],dtype=np.uint32)
+        File_Header = np.append(File_Header, sizeOfCalibrationFile_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint32))
+
+        rsvdSize_arr = np.array([0],dtype=np.uint32)
+        File_Header = np.append(File_Header, rsvdSize_arr)
+        File_Header_dtype = np.append(File_Header_dtype, np.dtype(np.uint32))
+
+        if add_comp_P0:
+                ccb_P0_compression = &#34;_compressed&#34;
+        else:
+                ccb_P0_compression = &#34;&#34;
+
+        ccb_file_name = os.path.join(CalibfolderName, CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;)
+
+        if os.path.exists(ccb_file_name):
+                now = datetime.now()
+                print(&#39;\nALERT: &#39; + ccb_file_name + &#39; already exists&#39;)
+                os.rename(ccb_file_name, os.path.join(CalibfolderName, str(now.strftime(&#39;CCB_old_%Y%m%d_%H%M%S.ccb&#39;))))
+                print(&#39;ALERT: RENAMING OLD FOLDER: &#39; + ccb_file_name + &#39; as &#39;+ os.path.join(CalibfolderName, str(now.strftime(&#39;CCB_old_%Y%m%d_%H%M%S.ccb&#39;))) +&#39;\n&#39;)
+
+        write_file = open(os.path.join(CalibfolderName, CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;), &#34;wb&#34;)
+        write_file.close()
+        write_file = open(os.path.join(CalibfolderName, CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;), &#34;ab&#34;)
+
+        print(&#39;WRITING TO FILE: &#39; + CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;)
+
+        for i in range(len(File_Header)):
+                tmp = np.array([File_Header[i]], dtype=File_Header_dtype[i])
+                tmp.tofile(write_file, format=&#39;%d&#39;)
+                #print(File_Header_dtype[i])
+
+        for i in range(len(Header)):
+                tmp = np.array([Header[i]], dtype=Header_dtype[i])
+                tmp.tofile(write_file, format=&#39;%d&#39;)
+
+        # f = open(CalibfolderName + &#39;/binaryCal.pkl&#39;, &#39;wb&#39;)
+        # pickle.dump(binaryCal, f)
+        # f.close()
+
+        # f = open(CalibfolderName + &#39;/binaryCal_dtype.pkl&#39;, &#39;wb&#39;)
+        # pickle.dump(binaryCal_dtype, f)
+        # f.close()
+
+        for i in range(len(binaryCal)):
+                tmp = np.array([binaryCal[i]], dtype=binaryCal_dtype[i])
+                tmp.tofile(write_file, format=&#39;%d&#39;)
+
+
+        write_file.close()
+
+        return os.path.join(CalibfolderName, CalibfolderName+ccb_P0_compression+&#39;.ccb&#39;)</code></pre>
+</details>
+</dd>
+<dt id="CCB_writer.GenerateAddressValuePairBlock"><code class="name flex">
+<span>def <span class="ident">GenerateAddressValuePairBlock</span></span>(<span>AddressValueRegisterList)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to generate AddressValueRegisterList block</p>
+<h2 id="inputs">Inputs</h2>
+<p>AddressValueRegisterList
+- Dictionary containing AddressValueRegisterList data</p>
+<h2 id="outputs">Outputs</h2>
+<p>AVRLBlock
+- Binary data of the calibration block
+AVRLBlock_dtype
+- Binary data of the calibration block
+AVRL_size
+- Size of block in bytes
+AVRL_nBlock
+- Number of blocks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GenerateAddressValuePairBlock(AddressValueRegisterList):
+        &#39;&#39;&#39;
+                Function to generate AddressValueRegisterList block
+
+                Inputs:
+                  AddressValueRegisterList  - Dictionary containing AddressValueRegisterList data
+                  
+                Outputs:
+                  AVRLBlock             - Binary data of the calibration block
+                  AVRLBlock_dtype       - Binary data of the calibration block
+                  AVRL_size             - Size of block in bytes
+                  AVRL_nBlock           - Number of blocks
+                
+        &#39;&#39;&#39;
+        print(&#34;FOUND: Address Value Register List&#34;)
+
+        try:
+                AddressValueRegisterList = AddressValueRegisterList[&#39;AddressValueRegisterList&#39;]
+        except:
+                pass
+
+        AVRLBlock = np.array([], dtype=object)
+        AVRLBlock_dtype = np.array([], dtype=object)
+
+        nTuples_arr = np.array([len(AddressValueRegisterList)],dtype=np.uint16)
+        AVRLBlock = np.append(AVRLBlock, nTuples_arr)
+        AVRLBlock_dtype = np.append(AVRLBlock_dtype, np.dtype(np.uint16))
+
+        rsvd_arr = np.array([0, 0, 0],dtype=np.uint16)
+        AVRLBlock = np.append(AVRLBlock, rsvd_arr)
+        for i in range(3):
+                AVRLBlock_dtype = np.append(AVRLBlock_dtype, np.dtype(np.uint16))
+
+        tuples_arr = np.array(np.array(AddressValueRegisterList).flatten(),dtype=np.uint16)
+        AVRLBlock = np.append(AVRLBlock, tuples_arr)
+        for i in range(len(np.array(AddressValueRegisterList).flatten())):
+                AVRLBlock_dtype = np.append(AVRLBlock_dtype, np.dtype(np.uint16))
+
+        AVRL_size = len(np.array(AddressValueRegisterList).flatten())*2 + 8
+        AVRL_nBlock = 1
+
+
+        AVRL_info = dict()
+        AVRL_info[&#39;BlockID&#39;] = ord(CAL_BLOCK_ID_ADDRVAL_REGLIST)
+        AVRL_info[&#39;BlockVersion&#39;] = 1
+        AVRL_info[&#39;BlockCalibVer&#39;] = 12007
+        AVRL_info[&#39;BlockSize&#39;] = AVRL_size
+        # do not consider info size. It will be added later
+
+        try:
+                info = AddressValueRegisterList[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+
+        AVRL_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        AVRL_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        AVRL_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        AVRL_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        AVRL_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        AVRL_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        AVRL_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        AVRL_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+        AVRLBlock, AVRLBlock_dtype, AVRL_size, AVRL_nBlock = AddCalBlockInfo(AVRL_info, AVRLBlock, AVRLBlock_dtype, AVRL_size, AVRL_nBlock)
+
+        return AVRLBlock, AVRLBlock_dtype, AVRL_size, AVRL_nBlock</code></pre>
+</details>
+</dd>
+<dt id="CCB_writer.GenerateCalBlock"><code class="name flex">
+<span>def <span class="ident">GenerateCalBlock</span></span>(<span>calDir, CalibfolderName, config_yaml, add_comp_P0, add_uncomp_P0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to sort and format data to generate individual
+calibration blocks</p>
+<h2 id="inputs">Inputs</h2>
+<p>calDir
+- Calibration directory
+CalibfolderName
+- Name of calibration folder (unique name)
+config_yaml
+- Configuration yaml file</p>
+<h2 id="outputs">Outputs</h2>
+<p>binaryCal
+- Binary data of all the calibration blocks
+binaryCal_dtype
+- Binary data of all the calibration blocks
+sizeCal
+- Size of blocks in bytes
+nBlocksCal
+- Number of blocks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GenerateCalBlock(calDir, CalibfolderName, config_yaml, add_comp_P0, add_uncomp_P0):
+        &#39;&#39;&#39;
+                Function to sort and format data to generate individual
+                calibration blocks
+
+                Inputs:
+                  calDir                - Calibration directory
+                  CalibfolderName       - Name of calibration folder (unique name)
+                  config_yaml           - Configuration yaml file
+                  
+                Outputs:
+                  binaryCal             - Binary data of all the calibration blocks
+                  binaryCal_dtype       - Binary data of all the calibration blocks
+                  sizeCal               - Size of blocks in bytes
+                  nBlocksCal            - Number of blocks
+                
+        &#39;&#39;&#39;
+        binaryCal = np.array([], dtype=object)
+        binaryCal_dtype = np.array([], dtype=object)
+        sizeCal = np.array([])
+        nBlocksCal = np.array([])
+
+        with open(config_yaml) as y:
+                yaml_file = yaml.load(y, Loader=yaml.SafeLoader)
+
+        AVRL_dir = yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_directory&#39;]
+        AVRL_file = str(yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_file_pkl&#39;])
+        
+        GO_dir = yaml_file[&#39;GainOffsetCalibration&#39;][&#39;output_directory&#39;]
+        GO_file = str(yaml_file[&#39;GainOffsetCalibration&#39;][&#39;output_file_pkl&#39;])
+
+        P0_dir = yaml_file[&#39;P0Calibration&#39;][&#39;output_directory&#39;]
+        P0_file_comp = str(yaml_file[&#39;P0Calibration&#39;][&#39;output_file_compressed_pkl&#39;])
+        P0_file_uncomp = str(yaml_file[&#39;P0Calibration&#39;][&#39;output_file_uncompressed_pkl&#39;])
+
+        Geo_dir = yaml_file[&#39;GeometricCalibration&#39;][&#39;output_directory&#39;]
+        Geo_file = str(yaml_file[&#39;GeometricCalibration&#39;][&#39;output_file_pkl&#39;])
+
+        LSDAC_dir = yaml_file[&#39;LSDACSetting&#39;][&#39;output_directory&#39;]
+        LSDAC_file = yaml_file[&#39;LSDACSetting&#39;][&#39;output_file_pkl&#39;]
+
+        # print(calDir)
+
+        if AVRL_dir in calDir:
+                mypath = os.path.join(CalibfolderName, AVRL_dir)
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                if AVRL_file + &#39;.pkl&#39; in calFiles:
+                        f = open(os.path.join(mypath, AVRL_dir + &#34;.pkl&#34;), &#34;rb&#34;)
+                        AddressValueRegisterList = pickle.load(f)
+                        f.close()
+                        AVRL, AVRL_dtype, sizeAVRL, nBlocksAVRL = GenerateAddressValuePairBlock(AddressValueRegisterList)
+                        binaryCal = np.append(binaryCal, AVRL)
+                        binaryCal_dtype = np.append(binaryCal_dtype, AVRL_dtype)
+                        sizeCal = np.append(sizeCal, sizeAVRL)
+                        nBlocksCal = np.append(nBlocksCal, nBlocksAVRL)
+
+        if GO_dir in calDir:
+                mypath = os.path.join(CalibfolderName, GO_dir)
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                if GO_file + &#39;.pkl&#39; in calFiles:
+                        f = open(os.path.join(mypath, GO_file + &#39;.pkl&#39;), &#34;rb&#34;)
+                        GO_cal_dict = pickle.load(f)
+                        f.close()
+                        GO, GO_dtype, sizeGO, nBlocksGO = GenerateGainOffsetBlock(GO_cal_dict)
+                        binaryCal = np.append(binaryCal, GO)
+                        binaryCal_dtype = np.append(binaryCal_dtype, GO_dtype)
+                        sizeCal = np.append(sizeCal, sizeGO)
+                        nBlocksCal = np.append(nBlocksCal, nBlocksGO)
+
+        if P0_dir in calDir:
+                mypath = os.path.join(CalibfolderName, P0_dir)
+                # Array (x axis)
+                #                          mode: 
+                #         freqIndex: 
+                #              freq: 
+                #   integrationTime: 
+                #         nRowCoefs: 
+                #         nColCoefs: 
+                #     analogBinRows: 
+                #     analogBinCols: 
+                #    digitalBinRows: 
+                #    digitalBinCols: 
+                #   subsamplingRows: 
+                #   subsamplingCols: 
+                #   softwareBinRows: 
+                #   softwareBinCols: 
+                #             nRows: 
+                #             nCols: 
+                #        offsetRows: 
+                #        offsetCols: 
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                mode_info_arr = np.array([[0,1,14200,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 0
+                                                                  [0,2,17750,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 0
+                                                                  [1,1,19800,0,1,3,2,1,1,2,1,1,1,1,288,320,90,96],  # 1
+                                                                  [1,2,18900,0,1,3,2,1,1,2,1,1,1,1,288,320,90,96],  # 1
+                                                                  [1,3,5400,0,1,3,2,1,1,2,1,1,1,1,288,320,90,96],  # 1
+                                                                  [4,1,19800,0,1,3,1,1,1,1,1,1,1,1,576,640,180,192],  # 4
+                                                                  [4,2,18900,0,1,3,1,1,1,1,1,1,1,1,576,640,180,192],  # 4
+                                                                  [4,3,5400,0,1,3,1,1,1,1,1,1,1,1,576,640,180,192],  # 4
+                                                                  [5,1,19800,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 5
+                                                                  [5,2,18900,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 5
+                                                                  [5,3,5400,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 5
+                                                                  [7,1,19800,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 7
+                                                                  [7,2,18900,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 7
+                                                                  [7,3,5400,0,1,3,2,2,1,1,1,1,1,1,512,512,0,0],  # 7
+                                                                  [10,1,19800,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 10
+                                                                  [10,2,18900,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0],  # 10
+                                                                  [10,3,5400,0,1,3,1,1,1,1,1,1,1,1,1024,1024,0,0]])  # 10
+                
+                if (P0_file_comp + &#39;0.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;0.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_0 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_0.keys())
+                        for i in range(2):
+                                mode_offset = 0
+                                compressed_P0 = True
+                                P0_0, P0_0_dtype, sizeP0_0, nBlocksP0_0 = GenerateP0TableBlock(P0Table_comp_mode_0[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_0)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_0_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_0)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_0)
+                
+                elif (P0_file_uncomp+&#39;0.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;0.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_0 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_0 = P0Table_mode_0[&#39;P0Table&#39;]
+                        except:
+                                pass
+
+                        for i in range(2):
+                                mode_offset = 0
+                                compressed_P0 = False
+                                P0_0, P0_0_dtype, sizeP0_0, nBlocksP0_0 = GenerateP0TableBlock(P0Table_mode_0[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_0)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_0_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_0)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_0)
+                else:
+                        pass
+
+                if (P0_file_comp + &#39;1.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;1.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_1 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_1.keys())
+                        for i in range(3):
+                                mode_offset = 2
+                                compressed_P0 = True
+                                P0_1, P0_1_dtype, sizeP0_1, nBlocksP0_1 = GenerateP0TableBlock(P0Table_comp_mode_1[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_1)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_1_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_1)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_1)
+                
+                elif (P0_file_uncomp+&#39;1.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;1.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_1 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_1 = P0Table_mode_1[&#39;P0Table&#39;]
+                        except:
+                                pass
+
+                        for i in range(3):
+                                mode_offset = 2
+                                compressed_P0 = False
+                                P0_1, P0_1_dtype, sizeP0_1, nBlocksP0_1 = GenerateP0TableBlock(P0Table_mode_1[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_1)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_1_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_1)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_1)
+                else:
+                        pass
+
+
+                if (P0_file_comp + &#39;4.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;4.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_4 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_4.keys())
+                        for i in range(3):
+                                mode_offset = 5
+                                compressed_P0 = True
+                                P0_4, P0_4_dtype, sizeP0_4, nBlocksP0_4 = GenerateP0TableBlock(P0Table_comp_mode_4[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_4)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_4_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_4)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_4)
+                
+                elif (P0_file_uncomp+&#39;4.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;4.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_4 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_4 = P0Table_mode_4[&#39;P0Table&#39;]
+                        except:
+                                pass
+                        for i in range(3):
+                                mode_offset = 5
+                                compressed_P0 = False
+                                P0_4, P0_4_dtype, sizeP0_4, nBlocksP0_4 = GenerateP0TableBlock(P0Table_mode_4[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_4)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_4_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_4)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_4)
+                else:
+                        pass
+
+
+                if (P0_file_comp+&#39;5.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;5.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_5 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_5.keys())
+                        for i in range(3):
+                                mode_offset = 8
+                                compressed_P0 = True
+                                P0_5, P0_5_dtype, sizeP0_5, nBlocksP0_5 = GenerateP0TableBlock(P0Table_comp_mode_5[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_5)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_5_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_5)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_5)
+                
+                elif (P0_file_uncomp+&#39;5.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;5.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_5 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_5 = P0Table_mode_5[&#39;P0Table&#39;]
+                        except:
+                                pass
+                        for i in range(3):
+                                mode_offset = 8
+                                compressed_P0 = False
+                                P0_5, P0_5_dtype, sizeP0_5, nBlocksP0_5 = GenerateP0TableBlock(P0Table_mode_5[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_5)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_5_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_5)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_5)
+                else:
+                        pass
+
+
+                if (P0_file_comp+&#39;7.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath, P0_file_comp+&#34;7.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_7 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_7.keys())
+                        for i in range(3):
+                                mode_offset = 11
+                                compressed_P0 = True
+                                P0_7, P0_7_dtype, sizeP0_7, nBlocksP0_7 = GenerateP0TableBlock(P0Table_comp_mode_7[dict_keys[i]], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_7)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_7_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_7)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_7)
+                
+                elif (P0_file_uncomp+&#39;7.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath, P0_file_uncomp+&#34;7.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_7 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_7 = P0Table_mode_7[&#39;P0Table&#39;]
+                        except:
+                                pass
+                        for i in range(3):
+                                mode_offset = 11
+                                compressed_P0 = False
+                                P0_7, P0_7_dtype, sizeP0_7, nBlocksP0_7 = GenerateP0TableBlock(P0Table_mode_7[:,:,i], 
+                                                                                                                                                                mode_info_arr[mode_offset + i],
+                                                                                                                                                                compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_7)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_7_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_7)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_7)
+
+                else:
+                        pass
+
+
+                if (P0_file_comp+&#39;10.pkl&#39; in calFiles) and add_comp_P0:
+                        f = open(os.path.join(mypath,P0_file_comp+&#34;10.pkl&#34;), &#34;rb&#34;)
+                        P0Table_comp_mode_10 = pickle.load(f)
+                        f.close()
+                        dict_keys = list(P0Table_comp_mode_10.keys())
+                        for i in range(3):
+                                mode_offset = 14
+                                compressed_P0 = True
+                                P0_10, P0_10_dtype, sizeP0_10, nBlocksP0_10 = GenerateP0TableBlock(P0Table_comp_mode_10[dict_keys[i]], 
+                                                                                                                                                                        mode_info_arr[mode_offset + i],
+                                                                                                                                                                        compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_10)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_10_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_10)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_10)
+                
+                elif (P0_file_uncomp+&#39;10.pkl&#39; in calFiles) and add_uncomp_P0:
+                        f = open(os.path.join(mypath,P0_file_uncomp+&#34;10.pkl&#34;), &#34;rb&#34;)
+                        P0Table_mode_10 = pickle.load(f)
+                        f.close()
+                        try:
+                                P0Table_mode_10 = P0Table_mode_10[&#39;P0Table&#39;]
+                        except:
+                                pass
+                        for i in range(3):
+                                mode_offset = 14
+                                compressed_P0 = False
+                                P0_10, P0_10_dtype, sizeP0_10, nBlocksP0_10 = GenerateP0TableBlock(P0Table_mode_10[:,:,i], 
+                                                                                                                                                                        mode_info_arr[mode_offset + i],
+                                                                                                                                                                        compressed_P0)
+                                binaryCal = np.append(binaryCal, P0_10)
+                                binaryCal_dtype = np.append(binaryCal_dtype, P0_10_dtype)
+                                sizeCal = np.append(sizeCal, sizeP0_10)
+                                nBlocksCal = np.append(nBlocksCal, nBlocksP0_10)
+
+                else:
+                        pass
+
+
+
+        if Geo_dir in calDir:
+                mypath = os.path.join(CalibfolderName, Geo_dir)
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                if Geo_file+&#39;.pkl&#39; in calFiles:
+                        f = open(os.path.join(mypath, Geo_file+&#34;.pkl&#34;), &#34;rb&#34;)
+                        GeoCal = pickle.load(f)
+                        f.close()
+                        Geo, Geo_dtype, sizeGeo, nBlocksGeo = GenerateGeometricBlock(GeoCal)
+                        binaryCal = np.append(binaryCal, Geo)
+                        binaryCal_dtype = np.append(binaryCal_dtype, Geo_dtype)
+                        sizeCal = np.append(sizeCal, sizeGeo)
+                        nBlocksCal = np.append(nBlocksCal, nBlocksGeo)
+
+        if LSDAC_dir in calDir:
+                mypath = os.path.join(CalibfolderName, LSDAC_dir)
+                calFiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+                if LSDAC_file+&#39;.pkl&#39; in calFiles:
+                        f = open(os.path.join(mypath, LSDAC_file+&#34;.pkl&#34;), &#34;rb&#34;)
+                        LSDACSetting = pickle.load(f)
+                        f.close()
+                        LSDAC, LSDAC_dtype, sizeLSDAC, nBlocksLSDAC = GenerateLSDACBlock(LSDACSetting)
+                        binaryCal = np.append(binaryCal, LSDAC)
+                        binaryCal_dtype = np.append(binaryCal_dtype, LSDAC_dtype)
+                        sizeCal = np.append(sizeCal, sizeLSDAC)
+                        nBlocksCal = np.append(nBlocksCal, nBlocksLSDAC)
+
+
+        return binaryCal, binaryCal_dtype, sizeCal, nBlocksCal</code></pre>
+</details>
+</dd>
+<dt id="CCB_writer.GenerateDepthFlashJson"><code class="name flex">
+<span>def <span class="ident">GenerateDepthFlashJson</span></span>(<span>directory, sensorFW, comp_ccb)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates json files for depth frame collection and
+flashing ccb to module</p>
+<h2 id="inputs">Inputs</h2>
+<p>directory
+- Directory to which json files are to be saved
+sensorFW
+- name of cfg file to be used
+comp_ccb
+- name of compressed ccb to be flashed</p>
+<h2 id="outputs">Outputs</h2>
+<p>flashConfigPath
+- name of flash json config path
+depthConfigPath
+- name of depth json config path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GenerateDepthFlashJson(directory, sensorFW, comp_ccb):
+        &#34;&#34;&#34;
+                Generates json files for depth frame collection and
+                flashing ccb to module
+
+                Inputs:
+                  directory             - Directory to which json files are to be saved
+                  sensorFW              - name of cfg file to be used
+                  comp_ccb              - name of compressed ccb to be flashed
+                  
+                Outputs:
+                  flashConfigPath       - name of flash json config path
+                  depthConfigPath       - name of depth json config path
+        &#34;&#34;&#34;
+        Flashdict = dict()
+        Flashdict[&#34;sensorFirmware&#34;] = str(os.path.abspath(sensorFW))
+        Flashdict[&#34;CCB_Calibration&#34;] = str(os.path.abspath(comp_ccb))
+        Flashdict[&#34;VAUX_POWER_VOLTAGE&#34;] = &#34;18&#34;
+
+        FlashJsonObject = json.dumps(Flashdict, indent=4)
+
+        flashConfigPath = os.path.join(directory, &#39;flashConfig.json&#39;)
+        with open(flashConfigPath, &#39;w&#39;) as outfile:
+                outfile.write(FlashJsonObject)
+
+        Depthdict = dict()
+        Depthdict[&#34;VAUX_POWER_VOLTAGE&#34;] = &#34;18&#34;
+
+        DepthJsonObject = json.dumps(Depthdict, indent=4)
+
+        depthConfigPath = os.path.join(directory, &#39;depthConfig.json&#39;)
+        with open(depthConfigPath, &#39;w&#39;) as outfile:
+                outfile.write(DepthJsonObject)
+
+        return flashConfigPath, depthConfigPath</code></pre>
+</details>
+</dd>
+<dt id="CCB_writer.GenerateGainOffsetBlock"><code class="name flex">
+<span>def <span class="ident">GenerateGainOffsetBlock</span></span>(<span>GO_cal_dict)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to generate Gain and Offset calibration block</p>
+<h2 id="inputs">Inputs</h2>
+<p>GO_cal_dict
+- Dictionary containing gain and offset data</p>
+<h2 id="outputs">Outputs</h2>
+<p>GOBlock
+- Binary data of the calibration block
+GOBlock_dtype
+- Binary data of the calibration block
+GO_size
+- Size of block in bytes
+GO_nBlock
+- Number of blocks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GenerateGainOffsetBlock(GO_cal_dict):
+        &#39;&#39;&#39;
+                Function to generate Gain and Offset calibration block
+
+                Inputs:
+                  GO_cal_dict           - Dictionary containing gain and offset data
+                  
+                Outputs:
+                  GOBlock               - Binary data of the calibration block
+                  GOBlock_dtype         - Binary data of the calibration block
+                  GO_size               - Size of block in bytes
+                  GO_nBlock             - Number of blocks
+                
+        &#39;&#39;&#39;
+        print(&#34;FOUND: Gain and Offset Calibration&#34;)
+
+        GOBlock = np.array([], dtype=object)
+        GOBlock_dtype = np.array([], dtype=object)
+
+        GO_size = 0
+        GO_nBlock = 1
+
+        GainCalConfigVersion_arr = np.array([GO_cal_dict[&#39;gainCalConfigVersion&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, GainCalConfigVersion_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+        GO_size = GO_size + 2
+
+        SubsamplingDataPresent_arr = np.array([63],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, SubsamplingDataPresent_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+        GO_size = GO_size + 2
+
+        ADC_IRamp_arr = np.array([GO_cal_dict[&#39;ADC&#39;][&#39;iramp&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, ADC_IRamp_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+        GO_size = GO_size + 2
+
+        ADC_UpdnoOffset_arr = np.array([GO_cal_dict[&#39;ADC&#39;][&#39;updnoffset&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, ADC_UpdnoOffset_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+        GO_size = GO_size + 2
+
+        gainComparator_keys = list(GO_cal_dict[&#39;gainComparator&#39;].keys())
+
+        Vref1Dac_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref1DAC&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref1Dac_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref1Set_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref1Set&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref1Set_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref2Dac_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref2DAC&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref2Dac_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref2Set_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref2Set&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref2Set_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref3Dac_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref3DAC&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref3Dac_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        Vref3Set_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;Vref3Set&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, Vref3Set_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        if &#39;VCMDAC&#39; in gainComparator_keys:
+                VCMDac_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;VCMDAC&#39;]],dtype=np.uint8)
+                GOBlock = np.append(GOBlock, VCMDac_arr)
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+        else:
+                VCMDac_arr = np.array([0],dtype=np.uint8)
+                GOBlock = np.append(GOBlock, VCMDac_arr)
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+
+        VCMSet_arr = np.array([GO_cal_dict[&#39;gainComparator&#39;][&#39;VCMSet&#39;]],dtype=np.uint8)
+        GOBlock = np.append(GOBlock, VCMSet_arr)
+        GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint8))
+        GO_size = GO_size + 8
+
+        InverseGlobalADCGain_arr = np.array([GO_cal_dict[&#39;inverseGlobalADCGain&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, InverseGlobalADCGain_arr)
+        for i in range(len(GO_cal_dict[&#39;inverseGlobalADCGain&#39;])):
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+
+        GO_size = GO_size + len(GO_cal_dict[&#39;inverseGlobalADCGain&#39;])*2
+
+        PerColGainAdjustment_arr = np.array([GO_cal_dict[&#39;ramDataGain&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, PerColGainAdjustment_arr)
+        for i in range(len(GO_cal_dict[&#39;ramDataGain&#39;])):
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+
+        GO_size = GO_size + len(GO_cal_dict[&#39;ramDataGain&#39;])*2
+
+        PerColOffsetAdjustment_arr = np.array([GO_cal_dict[&#39;ramDataOffset&#39;]],dtype=np.uint16)
+        GOBlock = np.append(GOBlock, PerColOffsetAdjustment_arr)
+        for i in range(len(GO_cal_dict[&#39;ramDataOffset&#39;])):
+                GOBlock_dtype = np.append(GOBlock_dtype, np.dtype(np.uint16))
+
+        GO_size = GO_size + len(GO_cal_dict[&#39;ramDataOffset&#39;])*2
+
+        GO_info = dict()
+        GO_info[&#39;BlockID&#39;] = CAL_BLOCK_ID_GAINCORRECTION
+        GO_info[&#39;BlockVersion&#39;] = 1
+        GO_info[&#39;BlockCalibVer&#39;] = 12007
+        GO_info[&#39;BlockSize&#39;] = GO_size
+        # do not consider info size. It will be added later
+        try:
+                info = GO_cal_dict[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+        
+        GO_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        GO_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        GO_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        GO_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        GO_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        GO_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        GO_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        GO_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+        GOBlock, GOBlock_dtype, GO_size, GO_nBlock = AddCalBlockInfo(GO_info, GOBlock, GOBlock_dtype, GO_size, GO_nBlock)
+
+        return GOBlock, GOBlock_dtype, GO_size, GO_nBlock</code></pre>
+</details>
+</dd>
+<dt id="CCB_writer.GenerateGeometricBlock"><code class="name flex">
+<span>def <span class="ident">GenerateGeometricBlock</span></span>(<span>GeoCal)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to generate Geometric calibration block</p>
+<h2 id="inputs">Inputs</h2>
+<p>GeoCal
+- Dictionary containing camera instrinsics data</p>
+<h2 id="outputs">Outputs</h2>
+<p>GeoBlock
+- Binary data of the calibration block
+GeoBlock_dtype
+- Binary data of the calibration block
+Geo_size
+- Size of block in bytes
+Geo_nBlock
+- Number of blocks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GenerateGeometricBlock(GeoCal):
+        &#39;&#39;&#39;
+                Function to generate Geometric calibration block
+
+                Inputs:
+                  GeoCal                - Dictionary containing camera instrinsics data
+                  
+                Outputs:
+                  GeoBlock              - Binary data of the calibration block
+                  GeoBlock_dtype        - Binary data of the calibration block
+                  Geo_size              - Size of block in bytes
+                  Geo_nBlock            - Number of blocks
+                
+        &#39;&#39;&#39;
+        print(&#34;FOUND: Geometric Calibration Parameters&#34;)
+
+        GeoBlock = np.array([], dtype=object)
+        GeoBlock_dtype = np.array([], dtype=object)
+
+        Geo_size = 0
+        Geo_nBlock = 1
+
+        nRows_arr = np.array([1024],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, nRows_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        nCols_arr = np.array([1024],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, nCols_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        offsetRows_arr = np.array([0],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, offsetRows_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        offsetCols_arr = np.array([0],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, offsetCols_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        mode_arr = np.array([3],dtype=np.uint8)
+        GeoBlock = np.append(GeoBlock, mode_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint8))
+        Geo_size = Geo_size + 1
+
+        pixelBinning_arr = np.array([0],dtype=np.uint8)
+        GeoBlock = np.append(GeoBlock, pixelBinning_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint8))
+        Geo_size = Geo_size + 1
+
+        rsvd_arr = np.array([0],dtype=np.uint16)
+        GeoBlock = np.append(GeoBlock, rsvd_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint16))
+        Geo_size = Geo_size + 2
+
+        CameraModel_arr = np.array([2],dtype=np.uint32)
+        GeoBlock = np.append(GeoBlock, CameraModel_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.uint32))
+        Geo_size = Geo_size + 4
+
+        Fc1_arr = np.array([GeoCal[&#39;Fc1&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Fc1_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Fc2_arr = np.array([GeoCal[&#39;Fc2&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Fc2_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        cc1_arr = np.array([GeoCal[&#39;cc1&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, cc1_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        cc2_arr = np.array([GeoCal[&#39;cc2&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, cc2_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Cx_arr = np.array([GeoCal[&#39;Cx&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Cx_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Cy_arr = np.array([GeoCal[&#39;Cy&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Cy_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc1_arr = np.array([GeoCal[&#39;Kc1&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc1_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc2_arr = np.array([GeoCal[&#39;Kc2&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc2_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc3_arr = np.array([GeoCal[&#39;Kc3&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc3_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc4_arr = np.array([GeoCal[&#39;Kc4&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc4_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc5_arr = np.array([GeoCal[&#39;Kc5&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc5_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Kc6_arr = np.array([GeoCal[&#39;Kc6&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Kc6_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Tx_arr = np.array([GeoCal[&#39;Tx&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Tx_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+        Ty_arr = np.array([GeoCal[&#39;Ty&#39;]],dtype=np.float32)
+        GeoBlock = np.append(GeoBlock, Ty_arr)
+        GeoBlock_dtype = np.append(GeoBlock_dtype, np.dtype(np.float32))
+        Geo_size = Geo_size + 4
+
+
+        Geo_info = dict()
+        Geo_info[&#39;BlockID&#39;] = ord(CAL_BLOCK_ID_GEOMETRIC)
+        Geo_info[&#39;BlockVersion&#39;] = 3
+        Geo_info[&#39;BlockCalibVer&#39;] = 12007
+        Geo_info[&#39;BlockSize&#39;] = Geo_size
+        # do not consider info size. It will be added later
+
+        try:
+                info = GeoCal[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+
+        Geo_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        Geo_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        Geo_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        Geo_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        Geo_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        Geo_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        Geo_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        Geo_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+
+        GeoBlock, GeoBlock_dtype, Geo_size, Geo_nBlock = AddCalBlockInfo(Geo_info, GeoBlock, GeoBlock_dtype, Geo_size, Geo_nBlock)
+
+        return GeoBlock, GeoBlock_dtype, Geo_size, Geo_nBlock</code></pre>
+</details>
+</dd>
+<dt id="CCB_writer.GenerateLSDACBlock"><code class="name flex">
+<span>def <span class="ident">GenerateLSDACBlock</span></span>(<span>LSDACSetting)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to generate LSDAC block</p>
+<h2 id="inputs">Inputs</h2>
+<p>LSDACSetting
+- Dictionary containing LSDAC data</p>
+<h2 id="outputs">Outputs</h2>
+<p>LSDACBlock
+- Binary data of the calibration block
+LSDACBlock_dtype
+- Binary data of the calibration block
+LSDAC_size
+- Size of block in bytes
+LSDAC_nBlock
+- Number of blocks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GenerateLSDACBlock(LSDACSetting):
+        &#39;&#39;&#39;
+                Function to generate LSDAC block
+
+                Inputs:
+                  LSDACSetting          - Dictionary containing LSDAC data
+                  
+                Outputs:
+                  LSDACBlock            - Binary data of the calibration block
+                  LSDACBlock_dtype      - Binary data of the calibration block
+                  LSDAC_size            - Size of block in bytes
+                  LSDAC_nBlock          - Number of blocks
+                
+        &#39;&#39;&#39;
+        print(&#34;FOUND: LSDAC Settings&#34;)
+
+        Endaddress_LSDAC = 0x1D21
+
+        LSDACBlock = np.array([], dtype=object)
+        LSDACBlock_dtype = np.array([], dtype=object)
+
+        LSDAC_size = 0
+        LSDAC_nBlock = 1
+
+        StartAddress_arr = np.array([Endaddress_LSDAC - 4*(len(LSDACSetting[&#39;value&#39;])-1)],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, StartAddress_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        nWrites_arr = np.array([len(LSDACSetting[&#39;value&#39;])],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, nWrites_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        ChecksumLSB_arr = np.array([LSDACSetting[&#39;checkSumLSB&#39;]],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, ChecksumLSB_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        ChecksumMSB_arr = np.array([LSDACSetting[&#39;checkSumMSB&#39;]],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, ChecksumMSB_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        Settings_arr = np.array(LSDACSetting[&#39;value&#39;],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, Settings_arr)
+
+        tmp = [np.dtype(np.uint16)] * len(Settings_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, tmp)
+        LSDAC_size = LSDAC_size + 2*len(Settings_arr)
+
+        rsvd_arr = np.array([0],dtype=np.uint16)
+        LSDACBlock = np.append(LSDACBlock, rsvd_arr)
+        LSDACBlock_dtype = np.append(LSDACBlock_dtype, np.dtype(np.uint16))
+        LSDAC_size = LSDAC_size + 2
+
+        # print(len(Settings_arr))
+
+        LSDAC_info = dict()
+        LSDAC_info[&#39;BlockID&#39;] = ord(CAL_BLOCK_ID_LSDACS)
+        LSDAC_info[&#39;BlockVersion&#39;] = 1
+        LSDAC_info[&#39;BlockCalibVer&#39;] = 12007
+        LSDAC_info[&#39;BlockSize&#39;] = LSDAC_size
+        # do not consider info size. It will be added later
+
+        try:
+                info = LSDACSetting[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+
+        LSDAC_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        LSDAC_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        LSDAC_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        LSDAC_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        LSDAC_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        LSDAC_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        LSDAC_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        LSDAC_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+        LSDACBlock, LSDACBlock_dtype, LSDAC_size, LSDAC_nBlock = AddCalBlockInfo(LSDAC_info, LSDACBlock, LSDACBlock_dtype, LSDAC_size, LSDAC_nBlock)
+
+        return LSDACBlock, LSDACBlock_dtype, LSDAC_size, LSDAC_nBlock</code></pre>
+</details>
+</dd>
+<dt id="CCB_writer.GenerateP0TableBlock"><code class="name flex">
+<span>def <span class="ident">GenerateP0TableBlock</span></span>(<span>P0Table, mode_info_arr, compressed_P0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to generate P0 calibration block</p>
+<h2 id="inputs">Inputs</h2>
+<p>P0Table
+- P0 Table dims [h x c x nFreqs]
+mode_info_arr
+- Dictionary containing information specific to
+camera mode
+compressed_P0
+- boolean to denote if the P0 table input is
+compressed</p>
+<h2 id="outputs">Outputs</h2>
+<p>P0_Block
+- Binary data of the calibration block
+P0_Block_dtype
+- Binary data of the calibration block
+P0_size
+- Size of block in bytes
+P0_nBlock
+- Number of blocks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GenerateP0TableBlock(P0Table, mode_info_arr, compressed_P0):
+        &#39;&#39;&#39;
+                Function to generate P0 calibration block
+
+                Inputs:
+                  P0Table               - P0 Table dims [h x c x nFreqs]
+                  mode_info_arr         - Dictionary containing information specific to
+                                          camera mode
+                  compressed_P0         - boolean to denote if the P0 table input is
+                                          compressed
+                  
+                Outputs:
+                  P0_Block              - Binary data of the calibration block
+                  P0_Block_dtype        - Binary data of the calibration block
+                  P0_size               - Size of block in bytes
+                  P0_nBlock             - Number of blocks
+                
+        &#39;&#39;&#39;
+
+        P0_Block = np.array([], dtype=object)
+        P0_Block_dtype = np.array([], dtype=object)
+
+        P0_size = 0
+        P0_nBlock = 1
+
+        mode_arr = np.array([mode_info_arr[0]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, mode_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        freqIndex_arr = np.array([mode_info_arr[1]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, freqIndex_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        freq_arr = np.array([mode_info_arr[2]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, freq_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        IntegrationTime_arr = np.array([mode_info_arr[3]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, IntegrationTime_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        nRowsCoeffs_arr = np.array([mode_info_arr[4]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, nRowsCoeffs_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        nColCoeffs_arr = np.array([mode_info_arr[5]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, nColCoeffs_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        AnalogBinRows_arr = np.array([mode_info_arr[6]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, AnalogBinRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        AnalogBinCols_arr = np.array([mode_info_arr[7]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, AnalogBinCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        DigitalBinRows_arr = np.array([mode_info_arr[8]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, DigitalBinRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        DigitalBinCols_arr = np.array([mode_info_arr[9]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, DigitalBinCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        SubSamplingRows_arr = np.array([mode_info_arr[10]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, SubSamplingRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        SubSamplingCols_arr = np.array([mode_info_arr[11]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, SubSamplingCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        SoftwareBinRows_arr = np.array([mode_info_arr[12]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, SoftwareBinRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        SoftwareBinCols_arr = np.array([mode_info_arr[13]],dtype=np.uint8)
+        P0_Block = np.append(P0_Block, SoftwareBinCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint8))
+        P0_size = P0_size + 1
+
+        nRows_arr = np.array([mode_info_arr[14]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, nRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        nCols_arr = np.array([mode_info_arr[15]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, nCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        OffsetRows_arr = np.array([mode_info_arr[16]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, OffsetRows_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        OffsetCols_arr = np.array([mode_info_arr[17]],dtype=np.uint16)
+        P0_Block = np.append(P0_Block, OffsetCols_arr)
+        P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.uint16))
+        P0_size = P0_size + 2
+
+        if compressed_P0:
+                print(&#34;FOUND: Compressed P0 Table Mode:&#34;, mode_info_arr[0], &#34;Freq:&#34;, mode_info_arr[2])
+                P0RowCoefs = np.array(P0Table[&#39;P0RowCoefs&#39;], dtype=np.float32)
+                P0ColCoefs = np.array(P0Table[&#39;P0ColCoefs&#39;], dtype=np.float32)
+                P0ColCoefs = P0ColCoefs.reshape(len(P0ColCoefs),1)
+                P0ColCoefs = np.append(np.zeros([len(P0ColCoefs),2], dtype=np.float32), P0ColCoefs, axis = 1)
+                P0ColCoefs = P0ColCoefs.flatten()
+
+                P0Coeffs = np.append(P0RowCoefs, P0ColCoefs)
+
+                P0Coeffs_arr = np.array([P0Coeffs],dtype=np.float32)
+                P0_Block = np.append(P0_Block, P0Coeffs_arr)
+
+                tmp = [np.dtype(np.float32)] * len(P0Coeffs)
+                P0_Block_dtype = np.append(P0_Block_dtype, tmp)
+                # for i in range(len(P0Coeffs)):
+                #       P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.float32))
+
+                P0_size = P0_size + len(P0Coeffs) * 4
+
+        else:
+                print(&#34;FOUND: Uncompressed P0 Table Mode:&#34;, mode_info_arr[0], &#34;Freq:&#34;, mode_info_arr[2])
+                try:
+                        P0Table = P0Table[&#39;P0Table&#39;]
+                except:
+                        pass
+
+                P0Coeffs_arr = np.array(P0Table, dtype=np.float32).flatten()
+                P0_Block = list(P0_Block)
+                P0_Block.append(list(P0Coeffs_arr))
+                P0_Block = np.array(P0_Block, dtype=object)
+                P0_Block_dtype = np.append(P0_Block_dtype, [np.dtype(np.float32)])
+
+                # for i in range(len(P0Coeffs_arr)):
+                #       P0_Block_dtype = np.append(P0_Block_dtype, np.dtype(np.float32))
+                P0_size = P0_size + len(P0Coeffs_arr) * 4
+
+
+
+        P0_info = dict()
+        P0_info[&#39;BlockID&#39;] = ord(CAL_BLOCK_ID_P0)
+        if compressed_P0:
+                P0_info[&#39;BlockVersion&#39;] = 4
+        else:
+                P0_info[&#39;BlockVersion&#39;] = 255
+        P0_info[&#39;BlockCalibVer&#39;] = 7005
+        P0_info[&#39;BlockSize&#39;] = P0_size
+        # do not consider info size. It will be added later
+
+        try:
+                info = P0Table[&#39;info&#39;]
+        except:
+                info = dict()
+                now = datetime.now()
+                info[&#39;CheckSum&#39;] = 0
+                info[&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                info[&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                info[&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                info[&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                info[&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                info[&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                info[&#39;Pass&#39;] = 1
+
+        P0_info[&#39;CheckSum&#39;] = info[&#39;CheckSum&#39;]
+        P0_info[&#39;CalibrationYear&#39;] = info[&#39;Year&#39;]
+        P0_info[&#39;CalibrationMonth&#39;] = info[&#39;Month&#39;]
+        P0_info[&#39;CalibrationDay&#39;] = info[&#39;Day&#39;]
+        P0_info[&#39;CalibrationHour&#39;] = info[&#39;Hour&#39;]
+        P0_info[&#39;CalibrationMinute&#39;] = info[&#39;Minute&#39;]
+        P0_info[&#39;CalibrationSecond&#39;] = info[&#39;Second&#39;]
+        P0_info[&#39;CalibrationPass&#39;] = info[&#39;Pass&#39;]
+
+        P0_Block, P0_Block_dtype, P0_size, P0_nBlock = AddCalBlockInfo(P0_info, P0_Block, P0_Block_dtype, P0_size, P0_nBlock)
+
+        return P0_Block, P0_Block_dtype, P0_size, P0_nBlock</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="CCB_writer.AddCalBlockInfo" href="#CCB_writer.AddCalBlockInfo">AddCalBlockInfo</a></code></li>
+<li><code><a title="CCB_writer.CCB_write" href="#CCB_writer.CCB_write">CCB_write</a></code></li>
+<li><code><a title="CCB_writer.CompileBlocks" href="#CCB_writer.CompileBlocks">CompileBlocks</a></code></li>
+<li><code><a title="CCB_writer.GenerateAddressValuePairBlock" href="#CCB_writer.GenerateAddressValuePairBlock">GenerateAddressValuePairBlock</a></code></li>
+<li><code><a title="CCB_writer.GenerateCalBlock" href="#CCB_writer.GenerateCalBlock">GenerateCalBlock</a></code></li>
+<li><code><a title="CCB_writer.GenerateDepthFlashJson" href="#CCB_writer.GenerateDepthFlashJson">GenerateDepthFlashJson</a></code></li>
+<li><code><a title="CCB_writer.GenerateGainOffsetBlock" href="#CCB_writer.GenerateGainOffsetBlock">GenerateGainOffsetBlock</a></code></li>
+<li><code><a title="CCB_writer.GenerateGeometricBlock" href="#CCB_writer.GenerateGeometricBlock">GenerateGeometricBlock</a></code></li>
+<li><code><a title="CCB_writer.GenerateLSDACBlock" href="#CCB_writer.GenerateLSDACBlock">GenerateLSDACBlock</a></code></li>
+<li><code><a title="CCB_writer.GenerateP0TableBlock" href="#CCB_writer.GenerateP0TableBlock">GenerateP0TableBlock</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

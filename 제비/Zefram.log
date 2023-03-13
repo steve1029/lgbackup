@@ -1,0 +1,396 @@
+2022-03-29 20:12:43,13060 V-2 
+*********** Starting Calibration for HNQ213415Q1Q7PX49  at 2022-03-29 20:12:43 ***********
+
+2022-03-29 20:12:43,13081 V-4 Using the following configuration parameters: 
+{
+    "DNLCalibration": {
+        "BISTNumFrames": 100,
+        "BISTPostResetDelay": 500,
+        "BISTTbcExp": 250000,
+        "CaptureFlatFieldImage": false,
+        "DNLStationType": "FFLP",
+        "EnableBIST": false,
+        "NormalModeAverageTDCs": true,
+        "ShortRangeAverageTDCs": true
+    },
+    "DOEs": {
+        "DarkBoxCaptureImage180": false,
+        "DarkBoxTargetDistanceCm": 15,
+        "LongExposureDOE": {
+            "SwizzleAnchorPixels": true,
+            "TOFNumFrames": 500,
+            "tbcexp": 800000
+        },
+        "SpotfinderMatchWPSG": true,
+        "VCSELCornerDOECondition": 0
+    },
+    "ImageScanUseCalibratedRSPX": true,
+    "IntrinsicCalibration": {
+        "EstimateDistortionCenter": true,
+        "UseEOLTxData": false
+    },
+    "P2PCalibration": {
+        "P2PStationType": "fiber",
+        "dynamicScan": true,
+        "tbcexp": 700000,
+        "tdcScanRepetitions": 3,
+        "tdctr1cOffset-fiber": 160,
+        "tdctr1cOffset-llg": 128,
+        "trgoutdelayOffset": 0
+    },
+    "T0Calibration": {
+        "BISTNumFrames": 100,
+        "BISTPostResetDelay": 500,
+        "captureNarrowPulse": true,
+        "captureWidePulse": false,
+        "maskGroupMask": 1,
+        "maskSetMask": 3,
+        "scanRepetitions": 1,
+        "tbcexp": 200000
+    },
+    "archiveOutputPath": "/Users/Federation/Finished2",
+    "autoflushRawData": true,
+    "bypassDXP": false,
+    "disableES2BadPixels": false,
+    "enableMacroModeTest": true,
+    "logLevel": 4,
+    "matlab": {
+        "display": false,
+        "jvm": false
+    },
+    "opModeRepetitions": 10,
+    "parallelCapture": {
+        "image": false,
+        "tof": true
+    },
+    "priModulation": true,
+    "rawDataOutputPath": "/Users/Federation/tmp",
+    "saveRawData": true,
+    "serverProcessCount": 13,
+    "sessionModel": "FederationPOR_pri",
+    "sessionTimeoutMinutes": 10,
+    "useNativeAlgo": true
+}
+2022-03-29 20:12:43,14519 V-4 [EOLTxSpotPowerDecoder] delegate invoked
+2022-03-29 20:12:43,14546 V-4 [PeriscopeQualityTester] delegate invoked
+2022-03-29 20:12:43,14648 V-4 PhoenixVersion, 3.7.2
+2022-03-29 20:12:43,14666 V-4 PhoenixCommit, 13066dea3ae29cf56f4b500c1825416eeabf2257
+2022-03-29 20:12:43,14697 V-4 DSIFederationVersion, 4ea93c1587619f200b4c1921e4a13d14aab013dd
+2022-03-29 20:12:43,14711 V-4 JasperDepth.version, 19.2
+2022-03-29 20:12:43,14731 V-4 [EOLspotPower2jlnm] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:12:43,14846 V-3 [JASPERL_STATION_FEDERATION_DARK] Established connection to remote calibration session
+2022-03-29 20:12:43,14906 V-1 [JASPERL_STATION_FEDERATION_DARK] Client commit: 13066dea3ae29cf56f4b500c1825416eeabf2257
+2022-03-29 20:12:43,15758 V-3 [JASPERL_STATION_FEDERATION_DARK] Client sending GenerateTestSequence request
+2022-03-29 20:12:43,27014 V-2 [JASPERL_STATION_FEDERATION_DARK] Requesting scan sequence for ReferenceScan
+2022-03-29 20:12:43,27116 V-4 [ReferenceScan] Attempting to retrieve ScanSequence
+2022-03-29 20:12:43,27755 V-2 [ReferenceScan] ScanSequence found.  Passing to client
+2022-03-29 20:12:43,29978 V-4 [JASPERL_STATION_FEDERATION_DARK] Received ScanSequence for ReferenceScan.  Sending to ScanDirector for translation
+2022-03-29 20:12:43,30817 V-2 [JASPERL_STATION_FEDERATION_DARK] Sending capture setttings for ReferenceScan to host application
+2022-03-29 20:12:43,30917 V-3 [JASPERL_STATION_FEDERATION_DARK] BatchModeEnabled=1
+2022-03-29 20:12:43,32700 V-4 [EOLspotPower2jlnm] done. Runtime=(0.17951) QueueTime=(0.000158)
+2022-03-29 20:12:43,32740 V-4 [EOLTxSpotPowerDecoder] Inserted calibration data (EOLTxSpotPower)
+2022-03-29 20:12:43,32822 V-4 [ExtractPeriscopeQuality] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:12:43,39192 V-4 [ExtractPeriscopeQuality] done. Runtime=(0.063537) QueueTime=(0.000149)
+2022-03-29 20:12:47,11009 V-4 [JASPERL_STATION_FEDERATION_DARK] Got 16 Periscope frames for ReferenceScan scan (1048576 bytes).  Converting to JRAW
+2022-03-29 20:12:47,14152 V-4 [ReferenceScan] Received frames.
+2022-03-29 20:12:47,14174 V-4 [ReferenceScan] Writing frames to disk (1048576 bytes)
+2022-03-29 20:12:47,14185 V-4 [ReferencePixelScanProcessor] delegate invoked
+2022-03-29 20:12:47,19787 V-4 [ReferencePixelScanProcessor] Inserted calibration data (RefSelect)
+2022-03-29 20:12:47,19807 V-4 [ReferencePixelScanProcessor] Inserted calibration data (T0Timing_WidePulse)
+2022-03-29 20:12:47,19828 V-4 [ReferencePixelScanProcessor] Inserted calibration data (T0Timing_NarrowPulse)
+2022-03-29 20:12:47,27328 V-2 [JASPERL_STATION_FEDERATION_DARK] Requesting scan sequence for GateTimingScan
+2022-03-29 20:12:47,27400 V-4 [GateTimingScan] Attempting to retrieve ScanSequence
+2022-03-29 20:12:47,28039 V-2 [GateTimingScan] ScanSequence found.  Passing to client
+2022-03-29 20:12:47,30229 V-4 [JASPERL_STATION_FEDERATION_DARK] Received ScanSequence for GateTimingScan.  Sending to ScanDirector for translation
+2022-03-29 20:12:47,31322 V-2 [JASPERL_STATION_FEDERATION_DARK] Sending capture setttings for GateTimingScan to host application
+2022-03-29 20:12:47,31410 V-3 [JASPERL_STATION_FEDERATION_DARK] BatchModeEnabled=1
+2022-03-29 20:12:49,16890 V-4 [JASPERL_STATION_FEDERATION_DARK] Got 28 Periscope frames for GateTimingScan scan (1835008 bytes).  Converting to JRAW
+2022-03-29 20:12:49,22080 V-4 [GateTimingScan] Received frames.
+2022-03-29 20:12:49,22101 V-4 [GateTimingScan] Writing frames to disk (1835008 bytes)
+2022-03-29 20:12:49,22112 V-4 [NetDelayFinder] delegate invoked
+2022-03-29 20:12:49,22254 V-4 [gateCalibrator] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:12:49,27293 V-4 [gateCalibrator] done. Runtime=(0.050254) QueueTime=(0.00012)
+2022-03-29 20:12:49,27362 V-4 [NetDelayFinder] Inserted calibration data (GateTiming)
+2022-03-29 20:12:49,35114 V-2 [JASPERL_STATION_FEDERATION_DARK] Requesting scan sequence for ImageX2_15cm_NR
+2022-03-29 20:12:49,35225 V-4 [ImageX2_15cm_NR] Attempting to retrieve ScanSequence
+2022-03-29 20:12:49,35617 V-2 [ImageX2_15cm_NR] ScanSequence found.  Passing to client
+2022-03-29 20:12:49,37472 V-4 [JASPERL_STATION_FEDERATION_DARK] Received ScanSequence for ImageX2_15cm_NR.  Sending to ScanDirector for translation
+2022-03-29 20:12:49,38232 V-2 [JASPERL_STATION_FEDERATION_DARK] Sending capture setttings for ImageX2_15cm_NR to host application
+2022-03-29 20:12:49,38298 V-3 [JASPERL_STATION_FEDERATION_DARK] BatchModeEnabled=1
+2022-03-29 20:12:51,73054 V-4 [JASPERL_STATION_FEDERATION_DARK] Got 90 Periscope frames for ImageX2_15cm_NR scan (5898240 bytes).  Converting to JRAW
+2022-03-29 20:12:51,83010 V-4 [ImageX2_15cm_NR] Received frames.
+2022-03-29 20:12:51,83033 V-4 [ImageX2_15cm_NR] Writing frames to disk (5898240 bytes)
+2022-03-29 20:12:51,83045 V-4 [MacroSpotQualityTester] delegate invoked
+2022-03-29 20:12:51,83235 V-4 [TestMacroSpots] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:12:52,20562 V-4 [TestMacroSpots] done. Runtime=(0.373125) QueueTime=(0.000127)
+2022-03-29 20:12:52,30667 V-3 [JASPERL_STATION_FEDERATION_DARK] EndTest called.  Moving to next station
+2022-03-29 20:13:00,14160 V-3 [JASPERL_STATION_FEDERATION_FFLP] Established connection to remote calibration session
+2022-03-29 20:13:00,14239 V-1 [JASPERL_STATION_FEDERATION_FFLP] Client commit: 13066dea3ae29cf56f4b500c1825416eeabf2257
+2022-03-29 20:13:00,15065 V-3 [JASPERL_STATION_FEDERATION_FFLP] Client sending GenerateTestSequence request
+2022-03-29 20:13:00,26601 V-2 [JASPERL_STATION_FEDERATION_FFLP] Requesting scan sequence for DNL_CW_ShortRange
+2022-03-29 20:13:00,26736 V-4 [DNL_CW_ShortRange] Attempting to retrieve ScanSequence
+2022-03-29 20:13:00,27027 V-2 [DNL_CW_ShortRange] ScanSequence found.  Passing to client
+2022-03-29 20:13:00,27951 V-4 [JASPERL_STATION_FEDERATION_FFLP] Received ScanSequence for DNL_CW_ShortRange.  Sending to ScanDirector for translation
+2022-03-29 20:13:00,28568 V-2 [JASPERL_STATION_FEDERATION_FFLP] Sending capture setttings for DNL_CW_ShortRange to host application
+2022-03-29 20:13:00,28693 V-3 [JASPERL_STATION_FEDERATION_FFLP] BatchModeEnabled=1
+2022-03-29 20:13:04,92598 V-4 [JASPERL_STATION_FEDERATION_FFLP] Got 100 Periscope frames for DNL_CW_ShortRange scan (6553600 bytes).  Converting to JRAW
+2022-03-29 20:13:05,02107 V-4 [DNL_CW_ShortRange] Received frames.
+2022-03-29 20:13:05,02129 V-4 [DNL_CW_ShortRange] Writing frames to disk (6553600 bytes)
+2022-03-29 20:13:05,15666 V-2 [JASPERL_STATION_FEDERATION_FFLP] Requesting scan sequence for DNL_CW_Normal
+2022-03-29 20:13:05,15750 V-4 [DNL_CW_Normal] Attempting to retrieve ScanSequence
+2022-03-29 20:13:05,15929 V-2 [DNL_CW_Normal] ScanSequence found.  Passing to client
+2022-03-29 20:13:05,17635 V-4 [JASPERL_STATION_FEDERATION_FFLP] Received ScanSequence for DNL_CW_Normal.  Sending to ScanDirector for translation
+2022-03-29 20:13:05,18202 V-2 [JASPERL_STATION_FEDERATION_FFLP] Sending capture setttings for DNL_CW_Normal to host application
+2022-03-29 20:13:05,18272 V-3 [JASPERL_STATION_FEDERATION_FFLP] BatchModeEnabled=1
+2022-03-29 20:13:10,40429 V-4 [JASPERL_STATION_FEDERATION_FFLP] Got 100 Periscope frames for DNL_CW_Normal scan (6553600 bytes).  Converting to JRAW
+2022-03-29 20:13:10,49292 V-4 [DNL_CW_Normal] Received frames.
+2022-03-29 20:13:10,49315 V-4 [DNL_CW_Normal] Writing frames to disk (6553600 bytes)
+2022-03-29 20:13:10,49328 V-4 [DNLProcessor] delegate invoked
+2022-03-29 20:13:10,49647 V-4 [ProcessDNL] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:10,59229 V-4 [ProcessDNL] done. Runtime=(0.095672) QueueTime=(0.000152)
+2022-03-29 20:13:10,59480 V-4 [DNLProcessor] Inserted calibration data (DNLCorrection)
+2022-03-29 20:13:10,60053 V-3 [JASPERL_STATION_FEDERATION_FFLP] EndTest called.  Moving to next station
+2022-03-29 20:13:13,19174 V-3 [JASPERL_STATION_FEDERATION_RAIL] Established connection to remote calibration session
+2022-03-29 20:13:13,19262 V-1 [JASPERL_STATION_FEDERATION_RAIL] Client commit: 13066dea3ae29cf56f4b500c1825416eeabf2257
+2022-03-29 20:13:13,20070 V-3 [JASPERL_STATION_FEDERATION_RAIL] Client sending GenerateTestSequence request
+2022-03-29 20:13:13,31843 V-2 [JASPERL_STATION_FEDERATION_RAIL] Requesting scan sequence for ImageX4_100cm_NR
+2022-03-29 20:13:13,31931 V-4 [ImageX4_100cm_NR] Attempting to retrieve ScanSequence
+2022-03-29 20:13:13,32633 V-2 [ImageX4_100cm_NR] ScanSequence found.  Passing to client
+2022-03-29 20:13:13,36169 V-4 [JASPERL_STATION_FEDERATION_RAIL] Received ScanSequence for ImageX4_100cm_NR.  Sending to ScanDirector for translation
+2022-03-29 20:13:13,37625 V-2 [JASPERL_STATION_FEDERATION_RAIL] Sending capture setttings for ImageX4_100cm_NR to host application
+2022-03-29 20:13:13,37707 V-3 [JASPERL_STATION_FEDERATION_RAIL] BatchModeEnabled=1
+2022-03-29 20:13:20,41159 V-4 [JASPERL_STATION_FEDERATION_RAIL] Got 180 Periscope frames for ImageX4_100cm_NR scan (11796480 bytes).  Converting to JRAW
+2022-03-29 20:13:20,60352 V-4 [ImageX4_100cm_NR] Received frames.
+2022-03-29 20:13:20,60379 V-4 [ImageX4_100cm_NR] Writing frames to disk (11796480 bytes)
+2022-03-29 20:13:20,60390 V-4 [SpotFinder-ImageX4_100cm_NR] delegate invoked
+2022-03-29 20:13:20,82809 V-4 [SpotFinder-ImageX4_100cm_NR] Inserted calibration data (SpotCentroids_100cm)
+2022-03-29 20:13:20,82825 V-4 [TOF_100cm_OP_WPSG_ScanGenerator] delegate invoked
+2022-03-29 20:13:20,82850 V-4 TOF_100cm_OP_WPSG_ScanGenerator using SpotCentroids_100cm adjusted to 100cm.
+2022-03-29 20:13:20,82869 V-4 [ApplyParallaxCompensation] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:20,91664 V-4 [ApplyParallaxCompensation] done. Runtime=(0.087826) QueueTime=(0.000105)
+2022-03-29 20:13:23,84997 V-2 [JASPERL_STATION_FEDERATION_RAIL] Requesting scan sequence for Image_100cm
+2022-03-29 20:13:23,85149 V-4 [Image_100cm] Attempting to retrieve ScanSequence
+2022-03-29 20:13:23,85371 V-2 [Image_100cm] ScanSequence found.  Passing to client
+2022-03-29 20:13:23,87049 V-4 [JASPERL_STATION_FEDERATION_RAIL] Received ScanSequence for Image_100cm.  Sending to ScanDirector for translation
+2022-03-29 20:13:23,87760 V-2 [JASPERL_STATION_FEDERATION_RAIL] Sending capture setttings for Image_100cm to host application
+2022-03-29 20:13:23,87848 V-3 [JASPERL_STATION_FEDERATION_RAIL] BatchModeEnabled=1
+2022-03-29 20:13:25,93908 V-4 [JASPERL_STATION_FEDERATION_RAIL] Got 45 Periscope frames for Image_100cm scan (2949120 bytes).  Converting to JRAW
+2022-03-29 20:13:26,02237 V-4 [Image_100cm] Received frames.
+2022-03-29 20:13:26,02259 V-4 [Image_100cm] Writing frames to disk (2949120 bytes)
+2022-03-29 20:13:26,02270 V-4 [ContrastCorrectedSpotFinder-100cm] delegate invoked
+2022-03-29 20:13:26,15824 V-2 [JASPERL_STATION_FEDERATION_RAIL] Requesting scan sequence for TOF_100cm_OP_WPSG
+2022-03-29 20:13:26,15959 V-4 [TOF_100cm_OP_WPSG] Attempting to retrieve ScanSequence
+2022-03-29 20:13:26,16603 V-2 [TOF_100cm_OP_WPSG] ScanSequence found.  Passing to client
+2022-03-29 20:13:26,19063 V-4 [JASPERL_STATION_FEDERATION_RAIL] Received ScanSequence for TOF_100cm_OP_WPSG.  Sending to ScanDirector for translation
+2022-03-29 20:13:26,19728 V-2 [JASPERL_STATION_FEDERATION_RAIL] Sending capture setttings for TOF_100cm_OP_WPSG to host application
+2022-03-29 20:13:26,19798 V-3 [JASPERL_STATION_FEDERATION_RAIL] BatchModeEnabled=1
+2022-03-29 20:13:27,09166 V-4 [StrayQualityTester] delegate invoked
+2022-03-29 20:13:27,09202 V-4 [StrayShapeTester] delegate invoked
+2022-03-29 20:13:27,09226 V-4 [TestSpotQuality] delegate invoked
+2022-03-29 20:13:27,09267 V-4 [P2PScanPreProcessor] delegate invoked
+2022-03-29 20:13:27,09312 V-4 [TOF_DarkBox_OP_NPSRF_ScanGenerator] delegate invoked
+2022-03-29 20:13:27,09340 V-4 [ContrastCorrectedSpotFinder-100cm] Inserted calibration data (SpotCentroids_60cm)
+2022-03-29 20:13:27,09366 V-4 [TOF_60cm_OP_NPSRF_ScanGenerator] delegate invoked
+2022-03-29 20:13:27,09386 V-4 TOF_DarkBox_OP_NPSRF_ScanGenerator using SpotCentroids_60cm adjusted to 30cm.
+2022-03-29 20:13:27,09425 V-4 TOF_60cm_OP_NPSRF_ScanGenerator using SpotCentroids_60cm adjusted to 60cm.
+2022-03-29 20:13:27,09442 V-4 [ApplyParallaxCompensation] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:27,09467 V-4 [ApplyParallaxCompensation] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:27,19195 V-4 [ApplyParallaxCompensation] done. Runtime=(0.097276) QueueTime=(0.000426)
+2022-03-29 20:13:27,27993 V-4 [ApplyParallaxCompensation] done. Runtime=(0.087939) QueueTime=(0.097443)
+2022-03-29 20:13:27,42889 V-4 [TestSpotQuality] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:27,42979 V-4 [TestStrayShape] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:27,42995 V-4 [TestStrayQuality] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:27,43019 V-4 [DynamicP2PScan] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:28,42395 V-4 [JASPERL_STATION_FEDERATION_RAIL] Got 40 Periscope frames for TOF_100cm_OP_WPSG scan (2621440 bytes).  Converting to JRAW
+2022-03-29 20:13:28,47274 V-4 [TOF_100cm_OP_WPSG] Received frames.
+2022-03-29 20:13:28,47298 V-4 [TOF_100cm_OP_WPSG] Writing frames to disk (2621440 bytes)
+2022-03-29 20:13:28,49744 V-4 [TestSpotQuality] done. Runtime=(1.06765) QueueTime=(0.000891)
+2022-03-29 20:13:28,49761 V-3 
+=====TestSpotQuality MATLAB OUTPUT====
+Calibration does not contain JLNV. Will use default values
+
+2022-03-29 20:13:28,65117 V-2 [JASPERL_STATION_FEDERATION_RAIL] Requesting scan sequence for Image_90cm
+2022-03-29 20:13:28,65215 V-4 [Image_90cm] Attempting to retrieve ScanSequence
+2022-03-29 20:13:28,65469 V-2 [Image_90cm] ScanSequence found.  Passing to client
+2022-03-29 20:13:28,66378 V-4 [JASPERL_STATION_FEDERATION_RAIL] Received ScanSequence for Image_90cm.  Sending to ScanDirector for translation
+2022-03-29 20:13:28,66814 V-2 [JASPERL_STATION_FEDERATION_RAIL] Sending capture setttings for Image_90cm to host application
+2022-03-29 20:13:28,66895 V-3 [JASPERL_STATION_FEDERATION_RAIL] BatchModeEnabled=1
+2022-03-29 20:13:30,33439 V-4 [TestStrayShape] done. Runtime=(1.83692) QueueTime=(1.06766)
+2022-03-29 20:13:31,01987 V-4 [TestStrayQuality] done. Runtime=(0.685506) QueueTime=(2.90458)
+2022-03-29 20:13:31,02009 V-3 
+=====TestStrayQuality MATLAB OUTPUT====
+Calibration does not contain JLNV. Will use default values
+Calibration does not contain JLNV. Will use default values
+
+2022-03-29 20:13:31,30163 V-4 [DynamicP2PScan] done. Runtime=(0.281745) QueueTime=(3.59009)
+2022-03-29 20:13:31,30198 V-4 [P2PScanPreProcessor] Inserted calibration data (P2PScanSettings)
+2022-03-29 20:13:31,71315 V-4 [JASPERL_STATION_FEDERATION_RAIL] Got 45 Periscope frames for Image_90cm scan (2949120 bytes).  Converting to JRAW
+2022-03-29 20:13:31,76377 V-4 [Image_90cm] Received frames.
+2022-03-29 20:13:31,76399 V-4 [Image_90cm] Writing frames to disk (2949120 bytes)
+2022-03-29 20:13:31,89427 V-2 [JASPERL_STATION_FEDERATION_RAIL] Requesting scan sequence for Image_80cm
+2022-03-29 20:13:31,89511 V-4 [Image_80cm] Attempting to retrieve ScanSequence
+2022-03-29 20:13:31,89735 V-2 [Image_80cm] ScanSequence found.  Passing to client
+2022-03-29 20:13:31,90700 V-4 [JASPERL_STATION_FEDERATION_RAIL] Received ScanSequence for Image_80cm.  Sending to ScanDirector for translation
+2022-03-29 20:13:31,91110 V-2 [JASPERL_STATION_FEDERATION_RAIL] Sending capture setttings for Image_80cm to host application
+2022-03-29 20:13:31,91174 V-3 [JASPERL_STATION_FEDERATION_RAIL] BatchModeEnabled=1
+2022-03-29 20:13:34,31332 V-4 [JASPERL_STATION_FEDERATION_RAIL] Got 45 Periscope frames for Image_80cm scan (2949120 bytes).  Converting to JRAW
+2022-03-29 20:13:34,36294 V-4 [Image_80cm] Received frames.
+2022-03-29 20:13:34,36316 V-4 [Image_80cm] Writing frames to disk (2949120 bytes)
+2022-03-29 20:13:34,36328 V-4 [FeatureExtractor] delegate invoked
+2022-03-29 20:13:34,36561 V-4 [ExtractFeatures] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:34,49281 V-2 [JASPERL_STATION_FEDERATION_RAIL] Requesting scan sequence for TOF_60cm_OP_NPSRF
+2022-03-29 20:13:34,49376 V-4 [TOF_60cm_OP_NPSRF] Attempting to retrieve ScanSequence
+2022-03-29 20:13:34,49978 V-2 [TOF_60cm_OP_NPSRF] ScanSequence found.  Passing to client
+2022-03-29 20:13:34,52705 V-4 [JASPERL_STATION_FEDERATION_RAIL] Received ScanSequence for TOF_60cm_OP_NPSRF.  Sending to ScanDirector for translation
+2022-03-29 20:13:34,53550 V-2 [JASPERL_STATION_FEDERATION_RAIL] Sending capture setttings for TOF_60cm_OP_NPSRF to host application
+2022-03-29 20:13:34,53749 V-3 [JASPERL_STATION_FEDERATION_RAIL] BatchModeEnabled=1
+2022-03-29 20:13:35,73100 V-4 [ExtractFeatures] done. Runtime=(1.36525) QueueTime=(0.000131)
+2022-03-29 20:13:35,73183 V-4 [FeatureExtractor] Inserted calibration data (Features)
+2022-03-29 20:13:35,73211 V-4 [IntrinsicsCalibrator] delegate invoked
+2022-03-29 20:13:35,73557 V-4 [CalibrateIntrinsics] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:36,51322 V-4 [CalibrateIntrinsics] done. Runtime=(0.777493) QueueTime=(0.000127)
+2022-03-29 20:13:36,51342 V-3 
+=====CalibrateIntrinsics MATLAB OUTPUT====
+경고: 변수 이름이 유효한 MATLAB 식별자가 될 수 있도록 수정되었습니다. 원래 이름은 VariableDescriptions 속성에 저장되었습니다.
+
+2022-03-29 20:13:36,51424 V-4 [SpotMarginTester] delegate invoked
+2022-03-29 20:13:36,51447 V-4 [IntrinsicsCalibrator] Inserted calibration data (RxIntrinsics)
+2022-03-29 20:13:36,51465 V-4 Inserted calibration data OpticalSystemParams
+2022-03-29 20:13:36,51667 V-4 [TestSpotsMargins] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:36,77176 V-4 [TestSpotsMargins] done. Runtime=(0.254921) QueueTime=(0.000136)
+2022-03-29 20:13:36,77196 V-3 
+=====TestSpotsMargins MATLAB OUTPUT====
+Calibration does not contain JLNV. Will use default values
+Calibration does not contain JLNV. Will use default values
+
+2022-03-29 20:13:37,99199 V-4 [JASPERL_STATION_FEDERATION_RAIL] Got 40 Periscope frames for TOF_60cm_OP_NPSRF scan (2621440 bytes).  Converting to JRAW
+2022-03-29 20:13:38,04106 V-4 [TOF_60cm_OP_NPSRF] Received frames.
+2022-03-29 20:13:38,04131 V-4 [TOF_60cm_OP_NPSRF] Writing frames to disk (2621440 bytes)
+2022-03-29 20:13:38,04143 V-4 [PulseShapeProcessor] delegate invoked
+2022-03-29 20:13:38,04611 V-4 [CalibratePulseShape] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:38,17269 V-2 [JASPERL_STATION_FEDERATION_RAIL] Requesting scan sequence for TOF_DarkBox_OP_NPSRF
+2022-03-29 20:13:38,17360 V-4 [TOF_DarkBox_OP_NPSRF] Attempting to retrieve ScanSequence
+2022-03-29 20:13:38,18057 V-2 [TOF_DarkBox_OP_NPSRF] ScanSequence found.  Passing to client
+2022-03-29 20:13:38,20594 V-4 [JASPERL_STATION_FEDERATION_RAIL] Received ScanSequence for TOF_DarkBox_OP_NPSRF.  Sending to ScanDirector for translation
+2022-03-29 20:13:38,21305 V-2 [JASPERL_STATION_FEDERATION_RAIL] Sending capture setttings for TOF_DarkBox_OP_NPSRF to host application
+2022-03-29 20:13:38,21387 V-3 [JASPERL_STATION_FEDERATION_RAIL] BatchModeEnabled=1
+2022-03-29 20:13:38,50027 V-4 [CalibratePulseShape] done. Runtime=(0.453988) QueueTime=(0.000171)
+2022-03-29 20:13:38,50185 V-4 [PulseShapeQualityTester] delegate invoked
+2022-03-29 20:13:38,50212 V-4 [DXPRunner-RefPixelParams] delegate invoked
+2022-03-29 20:13:38,50233 V-4 Inserted calibration data PulseTemplate
+2022-03-29 20:13:38,50287 V-4 [DXPRunner-Cal] delegate invoked
+2022-03-29 20:13:38,50510 V-4 [TestPulseShapeQuality] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:38,57272 V-4 [TestPulseShapeQuality] done. Runtime=(0.066501) QueueTime=(0.001108)
+2022-03-29 20:13:38,57303 V-4 [RunDXP] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:39,04189 V-4 [RunDXP] done. Runtime=(0.46796) QueueTime=(0.00118)
+2022-03-29 20:13:39,04208 V-3 
+=====RunDXP MATLAB OUTPUT====
+Calibration does not contain JLNV. Will use default values
+Calibration does not contain JLNV. Will use default values
+
+2022-03-29 20:13:39,04223 V-4 [RunDXP] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:39,04241 V-4 [ReferencePixelsParamsExtractor] delegate invoked
+2022-03-29 20:13:39,04259 V-4 [DXPRunner-RefPixelParams] Inserted calibration data (ReferencePixelParamsDepthFrames)
+2022-03-29 20:13:39,77516 V-4 [RunDXP] done. Runtime=(0.732772) QueueTime=(0.000483)
+2022-03-29 20:13:39,77534 V-3 
+=====RunDXP MATLAB OUTPUT====
+Calibration does not contain JLNV. Will use default values
+Calibration does not contain JLNV. Will use default values
+
+2022-03-29 20:13:39,77556 V-4 [DXPRunner-Cal] Inserted calibration data (PPCDepthFrames)
+2022-03-29 20:13:39,91095 V-4 [ExtractRefPixelsParams] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:13:39,99052 V-4 [ExtractRefPixelsParams] done. Runtime=(0.079397) QueueTime=(0.00015)
+2022-03-29 20:13:39,99162 V-4 Inserted calibration data ReferencePixelParams
+2022-03-29 20:13:39,99174 V-4 Inserted calibration data ReferencePixelTiming
+2022-03-29 20:13:41,25692 V-4 [JASPERL_STATION_FEDERATION_RAIL] Got 40 Periscope frames for TOF_DarkBox_OP_NPSRF scan (2621440 bytes).  Converting to JRAW
+2022-03-29 20:13:41,30684 V-4 [TOF_DarkBox_OP_NPSRF] Received frames.
+2022-03-29 20:13:41,30706 V-4 [TOF_DarkBox_OP_NPSRF] Writing frames to disk (2621440 bytes)
+2022-03-29 20:13:41,40356 V-3 [JASPERL_STATION_FEDERATION_RAIL] EndTest called.  Moving to next station
+2022-03-29 20:13:48,18204 V-3 [JASPERL_STATION_FEDERATION_P2P_LLG] Established connection to remote calibration session
+2022-03-29 20:13:48,18289 V-1 [JASPERL_STATION_FEDERATION_P2P_LLG] Client commit: 13066dea3ae29cf56f4b500c1825416eeabf2257
+2022-03-29 20:13:48,19112 V-3 [JASPERL_STATION_FEDERATION_P2P_LLG] Client sending GenerateTestSequence request
+2022-03-29 20:13:48,30462 V-2 [JASPERL_STATION_FEDERATION_P2P_LLG] Requesting scan sequence for P2PScan
+2022-03-29 20:13:48,30626 V-4 [P2PScan] Attempting to retrieve ScanSequence
+2022-03-29 20:13:48,31616 V-2 [P2PScan] ScanSequence found.  Passing to client
+2022-03-29 20:13:48,36588 V-4 [JASPERL_STATION_FEDERATION_P2P_LLG] Received ScanSequence for P2PScan.  Sending to ScanDirector for translation
+2022-03-29 20:13:48,38584 V-2 [JASPERL_STATION_FEDERATION_P2P_LLG] Sending capture setttings for P2PScan to host application
+2022-03-29 20:13:48,38705 V-3 [JASPERL_STATION_FEDERATION_P2P_LLG] BatchModeEnabled=1
+2022-03-29 20:14:00,29090 V-4 [JASPERL_STATION_FEDERATION_P2P_LLG] Got 262 Periscope frames for P2PScan scan (17170432 bytes).  Converting to JRAW
+2022-03-29 20:14:00,59605 V-4 [P2PScan] Received frames.
+2022-03-29 20:14:00,59630 V-4 [P2PScan] Writing frames to disk (17170432 bytes)
+2022-03-29 20:14:00,59642 V-4 [P2PProcessor] delegate invoked
+2022-03-29 20:14:00,60123 V-4 [ProcessP2P] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:00,71596 V-3 [JASPERL_STATION_FEDERATION_P2P_LLG] EndTest called.  Moving to next station
+2022-03-29 20:14:01,91977 V-4 [ProcessP2P] done. Runtime=(1.31837) QueueTime=(0.000152)
+2022-03-29 20:14:01,92041 V-3 
+=====ProcessP2P MATLAB OUTPUT====
+Calibration does not contain JLNV. Will use default values
+Calibration does not contain JLNV. Will use default values
+
+2022-03-29 20:14:01,92173 V-4 [P2PProcessor] Inserted calibration data (P2PSkews)
+2022-03-29 20:14:01,92191 V-4 [P2PProcessor] Inserted calibration data (P2PNVM)
+2022-03-29 20:14:01,92215 V-4 [TOFCalibrator] delegate invoked
+2022-03-29 20:14:02,31151 V-4 [CalibrateTOF] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:02,50529 V-4 [CalibrateTOF] done. Runtime=(0.193623) QueueTime=(0.000154)
+2022-03-29 20:14:02,50602 V-4 Inserted calibration data SpotBiases
+2022-03-29 20:14:02,50619 V-4 [TOFCalibrator] Inserted calibration data (AlternateAbsSkews)
+2022-03-29 20:14:02,50636 V-4 [DXPRunner-Test-RSPX1] delegate invoked
+2022-03-29 20:14:02,50656 V-4 [DXPRunner-Test] delegate invoked
+2022-03-29 20:14:02,51011 V-4 [createNVMfromAFDR] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:02,51092 V-4 [RunDXP] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:03,26240 V-4 [createNVMfromAFDR] done. Runtime=(0.750638) QueueTime=(0.001634)
+2022-03-29 20:14:03,83750 V-4 [RunDXP] done. Runtime=(0.575056) QueueTime=(0.751502)
+2022-03-29 20:14:03,83770 V-3 
+=====RunDXP MATLAB OUTPUT====
+Calibration does not contain JLNV. Will use default values
+Calibration does not contain JLNV. Will use default values
+
+2022-03-29 20:14:03,83790 V-4 [RunDXP] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:03,83815 V-4 [DXPRunner-Test-RSPX1] Inserted calibration data (DepthQualityDepthFramesRSPX1)
+2022-03-29 20:14:04,42856 V-4 [RunDXP] done. Runtime=(0.590447) QueueTime=(0.00059)
+2022-03-29 20:14:04,42879 V-3 
+=====RunDXP MATLAB OUTPUT====
+Calibration does not contain JLNV. Will use default values
+Calibration does not contain JLNV. Will use default values
+
+2022-03-29 20:14:04,42900 V-4 [DXPRunner-Test] Inserted calibration data (DepthQualityDepthFrames)
+2022-03-29 20:14:04,42936 V-4 [ReferencePixelIntensityTester] delegate invoked
+2022-03-29 20:14:04,42962 V-4 [CalibrationQualityTester] delegate invoked
+2022-03-29 20:14:04,43002 V-4 [PlaneCalculator] delegate invoked
+2022-03-29 20:14:04,93938 V-4 [TestRefIntensity] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:05,25147 V-3 [JASPERL_STATION_FEDERATION_NVM] Established connection to remote calibration session
+2022-03-29 20:14:05,25205 V-1 [JASPERL_STATION_FEDERATION_NVM] Client commit: 13066dea3ae29cf56f4b500c1825416eeabf2257
+2022-03-29 20:14:05,25974 V-3 [JASPERL_STATION_FEDERATION_NVM] Client sending GenerateTestSequence request
+2022-03-29 20:14:05,26668 V-4 [TestRefIntensity] done. Runtime=(0.06716) QueueTime=(0.260118)
+2022-03-29 20:14:05,26698 V-4 [CalculatePlanes] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:05,26725 V-4 [TestCalibrationQuality] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:05,28558 V-4 [CalculatePlanes] done. Runtime=(0.018325) QueueTime=(0.000566)
+2022-03-29 20:14:05,28577 V-4 [PlaneCalculator] Inserted calibration data (PlaneEquations)
+2022-03-29 20:14:05,28591 V-4 [DepthQualityTester-RSPX1] delegate invoked
+2022-03-29 20:14:05,28611 V-4 [DepthQualityTester] delegate invoked
+2022-03-29 20:14:05,33973 V-2 [JASPERL_STATION_FEDERATION_NVM] Requesting scan sequence for NVMWrite
+2022-03-29 20:14:05,34100 V-4 [NVMWrite] Attempting to retrieve ScanSequence
+2022-03-29 20:14:05,34114 WARNING No scan generators associated with NVMWrite. Returning empty scan sequence
+2022-03-29 20:14:05,34212 V-4 [JASPERL_STATION_FEDERATION_NVM] Received ScanSequence for NVMWrite.  Sending to ScanDirector for translation
+2022-03-29 20:14:05,34305 V-2 [JASPERL_STATION_FEDERATION_NVM] Sending capture setttings for NVMWrite to host application
+2022-03-29 20:14:05,34377 V-3 [JASPERL_STATION_FEDERATION_NVM] BatchModeEnabled=1
+2022-03-29 20:14:05,37447 WARNING [JASPERL_STATION_FEDERATION_NVM] Received and NULL buffer for step NVMWrite
+2022-03-29 20:14:05,38242 V-4 [NVMWrite] Received frames.
+2022-03-29 20:14:05,38261 V-4 [NVMWrite] Writing frames to disk (0 bytes)
+2022-03-29 20:14:05,40988 V-2 [JASPERL_STATION_FEDERATION_NVM] Calibration Session complete.  Retrieving NVM Data and FOMs
+2022-03-29 20:14:05,67253 V-4 [TestCalibrationQuality] done. Runtime=(0.386942) QueueTime=(0.01889)
+2022-03-29 20:14:05,80387 V-4 [TestDepthQuality] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:06,06646 V-4 [TestDepthQuality] done. Runtime=(0.130725) QueueTime=(0.131862)
+2022-03-29 20:14:06,06661 V-4 [TestDepthQuality] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:06,17246 V-4 Waiting for at least DepthQualityTester
+2022-03-29 20:14:06,20380 V-4 [TestDepthQuality] done. Runtime=(0.137041) QueueTime=(0.00024)
+2022-03-29 20:14:06,33446 V-4 [TestDepthQuality] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:06,61757 V-4 [TestDepthQuality] done. Runtime=(0.147854) QueueTime=(0.135261)
+2022-03-29 20:14:06,61776 V-4 [TestDepthQuality] Calling MATLAB function from JasperLCalibrationAlgorithms.ctf
+2022-03-29 20:14:06,76101 V-4 [TestDepthQuality] done. Runtime=(0.143065) QueueTime=(0.000376)
+2022-03-29 20:14:06,94924 V-2 [JASPERL_STATION_FEDERATION_NVM] Got FOMs for unit HNQ213415Q1Q7PX49.  (3103)
+2022-03-29 20:14:06,98285 V-1 [JASPERL_STATION_FEDERATION_NVM] Got NVM map for HNQ213415Q1Q7PX49.
+2022-03-29 20:14:06,98360 V-1 [JASPERL_STATION_FEDERATION_NVM] Calibration complete for HNQ213415Q1Q7PX49.  Ending Session...
+2022-03-29 20:14:06,98429 V-4 Ending calibration session normally
+2022-03-29 20:14:06,98675 V-2 TotalTime: 83.857
+2022-03-29 20:14:06,99926 V-4 Dumping results to /Users/Federation/tmp/L02JAS_CALU_PRI-CALU-023_C3041_HNQ213415Q1Q7PX49_20220329201243

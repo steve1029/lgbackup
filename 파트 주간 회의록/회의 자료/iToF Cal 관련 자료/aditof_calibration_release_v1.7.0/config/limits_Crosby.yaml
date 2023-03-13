@@ -1,0 +1,116 @@
+---
+# Format : [min, max]
+# All voltages in volts unless specified
+# All current in mA unless specified
+Connectivity_ICQ:
+  Vmain_pre : [3, 5]
+  Imain_pre : [-1, 200]
+  Vsys_pre : [-1, 0.5]
+  Isys_pre : [-1, 1]
+  Vdepth_pre : [-1, 0.5]
+  Idepth_pre : [-1, 1]
+  Vaux_pre : [-1, 1]
+  Iaux_pre : [-1, 1]
+
+  Vmain_static : [3, 5]
+  Imain_static : [-1, 200]
+  Vsys_static : [3, 5]
+  Isys_static : [-1, 50]
+  Vdepth_static : [4, 6]
+  Idepth_static : [-1, 50]
+  Vaux_static : [21, 23]
+  Iaux_static : [-1, 100]
+
+  Vmain_on : [3, 5]
+  Imain_on : [-1, 300]
+  Vsys_on : [3, 5]
+  Isys_on : [-1, 50]
+  Vdepth_on : [4, 6]
+  Idepth_on : [-1, 50]
+  Vaux_on : [21, 23]
+  Iaux_on : [-1, 100]
+
+  VDDA1 : [1.24, 1.3]
+  VHIGH : [3.25, 3.45]
+  VLOW : [0.9, 1.1]
+  VLD : [6.8, 7.2]
+
+AddressValueRegisterList:
+  Vlow_lin_V : [0.95, 1.05]
+  Vlow_sw_V : [0.95, 1.05]
+
+GainOffsetCalibration:
+  adc_delay : [50, 55]
+  Gain0_MeasNative : [14.40, None]
+  Gain1_MeasNative : [6.60, None]
+  Gain2_MeasNative : [2.20, None]
+  Gain3_MeasNative : [0.60, None]
+  Gain0_ADC_min : [4, 100]
+  Gain1_ADC_min : [4, 100]
+  Gain2_ADC_min : [4, 100]
+  Gain0_ADC_max : [410, 510]
+  Gain1_ADC_max : [410, 510]
+  Gain2_ADC_max : [410, 510]
+  comp_vref1 : [33.0, None]
+  comp_vref2 : [68.0, None]
+  comp_vref3 : [295.0, None]
+
+BlemishCalibration:
+  nHotPixels : [-1, 5]
+  nDeadPixels : [-1, 5]
+  totalBadPixels : [-1, 100]
+  badPixelsCenter : [-1, 30]
+  badPixelsSides : [-1, 50]
+
+FocusVerification:
+  MTF50Center : [0.12, None]
+  MTF30Center : [0.25, None] 
+  MTF0p5NyqCenter : [0.275, None]
+  MTF30WtdMean : [0.23, None]
+  
+GeometricCalibration:
+  reprojection_error : [None, 0.15]
+  Fc1 : [700, 850]
+  Fc2 : [700, 850]
+  cc1 : [482, 542]
+  cc2 : [482, 542]
+
+P0Calibration:
+  DepthError_198Mhz : [-20, 20]
+  DepthError_189Mhz : [-20, 20]
+  DepthError_177Mhz : [-20, 20]  # 177.5 is rounded to 177
+  DepthError_142Mhz : [-20, 20]
+  DepthError_54Mhz : [-40, 40]
+  MinAB_198Mhz : [150, 600]
+  MaxAB_198Mhz : [1000, 2400]
+  MinAB_189Mhz : [150, 600]
+  MaxAB_189Mhz : [1000, 2400]
+  MinAB_177Mhz : [150, 600]  # 177.5 is rounded to 177
+  MaxAB_177Mhz : [1000, 2400]  # 177.5 is rounded to 177
+  MinAB_142Mhz : [150, 800]
+  MaxAB_142Mhz : [1000, 2800]
+  MinAB_54Mhz : [200, 800]
+  MaxAB_54Mhz : [1200, 3400]
+  EstDepthErr_mode_0 : [-8, 8]
+  EstDepthErr_mode_1 : [-8, 8]
+  EstDepthErr_mode_4 : [-8, 8]
+  EstDepthErr_mode_5 : [-8, 8]
+  EstDepthErr_mode_7 : [-8, 8]
+  EstDepthErr_mode_10 : [-8, 8]
+  Residue_Err_198Mhz : [-12, 12]
+  Residue_Err_189Mhz : [-12, 12]
+  Residue_Err_177Mhz : [-12, 12]  # 177.5 is rounded to 177
+  Residue_Err_142Mhz : [-12, 12]
+  Residue_Err_54Mhz : [-15, 15]
+
+CalibrationVerification:
+  AB_mean : [200, 5000] 
+  AB_std : [50, 1200]
+  max_coord : [400, 624] 
+  bright_center : [256, 768] 
+  dark_center : [405, None] 
+  profile_peaks : [412, 612] 
+  H_V_ratios : [0.4, 0.7] 
+  Diag_ratios : [0.25, 0.5] 
+  rms_error : [0.1, 1.75] # in mm
+  plane_dist : [451, 479] # in mm, +/-3% error for flat wall check at 465mm

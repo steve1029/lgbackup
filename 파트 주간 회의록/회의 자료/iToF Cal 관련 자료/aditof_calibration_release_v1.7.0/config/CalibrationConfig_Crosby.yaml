@@ -1,0 +1,212 @@
+---
+# Directory / files ending with '_' will have a suffix added to them
+# Input files must include the relative path and file extension
+# Output files must *not* include path and file extension
+module_class : "Crosby"  # OPTIONS : "Legacy", "Walden_R1", "Crosby"
+# configuration_file : "./config/Config_1000.04.cfg"
+IlluminationModule : "Intersil"    #Options: "ArcherI2C","ArcherSPI","Intersil"
+# output_directory : "CalibFiles_"  # This name also applied to ccb
+calibration_directory : "C:/Users/sc_lab_ais01/calibration"
+
+# NOTE: The following directories can have absolute path or path relative to calibration_directory
+
+limits_file : "./config/limits_Crosby.yaml"
+mode_info_file : "./config/CameraModeInfo.yaml"
+num_modes_cfg : 11 # 0->9 = 10 modes, 0->10 = 11
+
+
+ArcherSettings: 
+    SlaveID:    0x64
+    Ibias:      '0b'
+    duty: 'HF45p8_LF42p7'
+    RegsConfig: [[0x0404, 0x0001],
+                [0x0002, 0x0025],
+                [0x0404, 0x0001],
+                [0x0003, 0x2478],
+                [0x0002, 0x0022],
+                [0x0404, 0x0001],
+                [0x000D, 0x00E0],
+                [0x000E, 0x07C0],
+                [0x0004, 0x972F],
+                [0x0060, 0xA808],
+                [0x0005, 0x00F4],
+                [0x0006, 0x0000],
+                [0x0002, 0x002C]]
+
+
+Connectivity_ICQ:
+    configuration_file : "./config/Config_1000.03.cfg"
+    output_directory : "Connectivity_ICQ"
+    output_file_csv_report : "ICQ_report"
+    output_file_pkl : "Connectivity_ICQ"
+
+
+GainOffsetCalibration:
+    configuration_file : "./config/Config_1000.03.cfg"
+
+    configuration:
+        NFRAMES : 1
+        doplot : True 
+        ADC_FS : 1
+        gainCalSatLimit : 0.002 # 2/1000
+        offsetCalSatLimit : 0.002 # 2/1000
+        compCalThres : 0.995
+        compCalSatLimit : 0.002 # 2/1000
+        compCalMargin : [0.10, 0.06, 0.06]
+
+    ADC_calibration:
+        sensormodeID : 3 # PassiveIR
+        nFrames : 1
+        DAC_AMPTEST0 : 158 # ~1.61V
+        DAC_AMPTEST1 : 205 # ~2.05V
+        iramp : [100, 150, 200, 250]
+        ADC_FS : 2 # ADC Full Scale = 2Vpp
+        Cin : 1 # Ampgain setting of 1/13=0.99x
+        Cfb : 13
+        AmpGainMeas : 0.99 # actual amp gain (measured using two single ended probes)
+        cleanup : True # cleanup after calibration, i,e restore original settings
+
+    Comp_DAC_calibration:
+        NFRAMES : 1 # number of frames to collect per DAC step
+        doplot : True # flag to generate plots and intermediate outputs
+        compCalThres : 0.995 # Threshold for number of comparator samples per column that must have transitioned to the next gain (default if not specified is 99.5%)
+        compCalSatLimit : 0.002 # 2/1000, # Fail gain calibration if more than compCalSatLimit pixels are saturated within any column at the original comparator DAC setting (default if not specified is 2 pixels per column)
+        compCalMargin : [0.10, 0.06, 0.06] # Required margin from max/min ADC value.  This margin is used when adjusting comparator DAC after finding the existing switching point (default if not specified is 5% of full scale)
+
+    output_directory : "GO_output"
+    output_file_csv : "GO_cal_dict"
+    output_file_pkl : "GO_cal_dict"
+    output_file_csv_report : "GO_report"
+
+
+AddressValueRegisterList:
+    configuration_file : "./config/Config_1000.03.cfg"
+    output_directory : "AddressValueRegisterList"
+    output_file_csv_report : "Vlow_report"
+    output_file_pkl : "AddressValueRegisterList"
+    output_file_csv : "AddressValueRegisterList"
+
+
+Blemish:
+    configuration_file : "./config/Config_1000.03.cfg"
+    # gainOffsetCorrection : "./_tempCalFiles/GO_cal_dict.csv"
+    ini_file : "./config/Blemish_speedup.ini"
+    root_dir : "./config"
+    Nframes : 10
+    NWarmupFrames : 10
+    output_directory : "Blemish_output/"  # '/' is needed after the dir name
+    output_file_frames_pkl : "blemish_verification_frames"
+    output_file_pkl : "Blemish_verification"
+    output_file_csv_report : "Blemish_report"
+    also_save_image_as_bin : False
+
+
+FocusAdjustment:
+    configuration_file : "./config/Config_1000.03.cfg"
+    # gainOffsetCorrection : "./_tempCalFiles/GO_cal_dict.csv"
+    ini_file : "./config/Center_PartWay_MTF.ini"
+    root_dir : "./config"
+    Nframes : 10
+    InitWarmupFrames : 50
+    NWarmupFrames : 10
+    displayFrame : True
+    displayDuration : 4  # Time in seconds to display image
+    output_directory : "Focus_adjustment_output/"  # '/' is needed after the dir name
+    output_file_frames_pkl : "focus_adjustment_frames"
+    output_file_pkl : "focus_adjustment"
+    also_save_image_as_bin : True
+    lamp_control: False
+
+
+FocusVerification:
+    configuration_file : "./config/Config_1000.03.cfg"
+    # gainOffsetCorrection : "./_tempCalFiles/GO_cal_dict.csv"
+    ini_file : "./config/Center_PartWay_Verification_V.ini"
+    root_dir : "./config"
+    Nframes : 20
+    NWarmupFrames : 20
+    displayFrame : True
+    displayDuration : 1  # Time in seconds to display image
+    output_directory : "Focus_verification_output/"  # '/' is needed after the dir name
+    output_file_frames_pkl : "focus_verification_frames"
+    output_file_pkl : "Focus_verification"
+    output_file_csv_report : "Focus_report"
+    also_save_image_as_bin : False
+    lamp_control: False
+
+
+
+GeometricCalibration:
+    configuration_file : "./config/Config_1000.03.cfg"
+    # gainOffsetCorrection : "./_tempCalFiles/GO_cal_dict.csv"
+    calibration_mode : "capture"  # OPTIONS: "image", "csv", "capture"
+    input_file_csv : "./config/GeometricIntrinsics.csv"  # used if OPTION == "csv"
+    input_file_png : "./savedCalibrationFiles/Walden02_PCM_#50_Geometric.png"  # used if OPTION == "image"
+    capture_file_pkl : "Geometric_capture"  # used if OPTION == "capture"
+    coordinates_json_file : "./config/intrinsic_coordinates.json"
+    Nframes : 50
+    output_directory : "Geometric_output"
+    output_file_frames_pkl : "checkerboard_frames"
+    output_file_pkl : "GeometricCalibration"
+    output_file_csv_report : "Geometric_report"
+    also_save_image_as_bin : False
+    lamp_control: False
+
+
+LSDACSetting:
+    configuration_file : "./config/Crosby_5A_250us_duty45_97eac9b202e.cfg" #Crosby cfg file
+    input_file_csv : "./config/LSDACSettings_0x60.csv"
+    output_directory : "LSDACSetting"
+    output_file_pkl : "LSDACSetting"
+
+
+P0Calibration:
+    configuration_file : "./config/Crosby_FF_MP200_QMP150.cfg" #"./config/Crosby_5A_250us_duty45_97eac9b202e.cfg" #Crosby config file
+    # gainOffsetCorrection : "./_tempCalFiles/GO_cal_dict.csv"
+    perform_ICQ : False
+    P0_ICQ_file_pkl : "P0_ICQ"  # If perform_ICQ is True
+
+    calibration:
+        mode : [5, 7, 10]  # Mode 5 also includes mode 10
+        OVERRIDE_LSDACS : [True, True, True]
+        LSDAC_VALUE : [96, 96, 96]  # from 0->255 in decimal
+        NFrames : [24, 24, 24]
+        NFrames_warmup : [10, 10, 10]
+        distance : 319  # in mm
+        fps : 10
+        compress_P0Table : True
+
+    verification:
+        verify_calibration : True
+        verify_OVERRIDE_LSDACS : [True, True, True]
+        verify_LSDAC_VALUE : [96, 96, 96]  # from 0->255 in decimal
+        verify_NFrames : [5, 5, 5]
+        verify_NFrames_warmup : [10, 10, 10]
+
+    output_directory : "P0_output"
+    output_file_uncompressed_pkl : "P0Table_mode_"
+    output_file_compressed_pkl : "compressed_P0Table_mode_"
+    output_file_csv_report : "P0_report"
+    also_save_image_as_bin : False
+
+
+DepthCompute:
+    NFRAMES : 4
+    NFrames_warmup : 2
+    mode : [5, 7, 10]  # Mode 5 also includes mode 10
+    fps : 10
+    output_directory : "DepthCompute"
+
+
+CCB:
+    add_compressed_P0 : True
+    add_uncompressed_P0 : True
+
+
+Calibration_verification:
+    output_directory : "Calibration_verification"
+    output_file_pkl : "Verification"
+    output_file_csv_report : "Calibration verification_report"
+
+#Option to generate fewer P0 images to speed up report generation
+reducedP0Report: False

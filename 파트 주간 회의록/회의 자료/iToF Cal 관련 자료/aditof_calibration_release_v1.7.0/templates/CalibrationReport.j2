@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calibration Report</title>
+</head>
+<body>
+    <h1>Calibration Report</h1>
+
+    <table border="1" cellpadding="4" cellspacing="0">
+        <tr>
+            <th>Module class</th>
+            <th>{{module_class}} </th> 
+        </tr>
+        <tr>
+            <th>Module name</th>
+            <th>{{module_name}} </th> 
+        </tr>
+        <tr>
+            <th>Calibration date</th>
+            <th>{{date}} </th> 
+        </tr>
+        <tr>
+            <th>Calibration time</th>
+            <th>{{time}} </th> 
+        </tr>
+    </table>
+
+    <p> </p>
+
+    <table border="1" cellpadding="4" cellspacing="0">
+        <tr>
+            <th>Calibration </th>
+            <th>Status</th> 
+        </tr>
+
+        {% if ICQC_exists == 1 %}
+            {% if ICQC_pass %}
+                <tr>
+                    <td>Connectivity and ICQ</td>
+                    <td style="background:#00FF00">Pass</td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td>Connectivity and ICQ</td>
+                    <td style="background:#FF0000">Fail</td>
+                </tr>
+
+            {% endif %}
+        {% endif %}
+
+        {% if gain_offset_exists == 1 %}
+            {% if gain_offset_pass %}
+                <tr>
+                    <td>Gain and Offset Calibration</td>
+                    <td style="background:#00FF00">Pass</td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td>Gain and Offset Calibration</td>
+                    <td style="background:#FF0000">Fail</td>
+                </tr>
+
+            {% endif %}
+        {% endif %}
+
+        {% if AVRL_exists == 1 %}
+            {% if AVRL_pass %}
+                <tr>
+                    <td>Vlow Trim</td>
+                    <td style="background:#00FF00">Pass</td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td>Vlow Trim</td>
+                    <td style="background:#FF0000">Fail</td>
+                </tr>
+
+            {% endif %}
+        {% endif %}
+
+        {% if Geometric_exists == 1 %}
+            {% if Geometric_pass %}
+                <tr>
+                    <td>Geometric Calibration</td>
+                    <td style="background:#00FF00">Pass</td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td>Geometric Calibration</td>
+                    <td style="background:#FF0000">Fail</td>
+                </tr>
+
+            {% endif %}
+        {% endif %}
+
+        {% if Blemish_exists == 1 %}
+            {% if Blemish_pass %}
+                <tr>
+                    <td>Blemish Test</td>
+                    <td style="background:#00FF00">Pass</td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td>Blemish Test</td>
+                    <td style="background:#FF0000">Fail</td>
+                </tr>
+
+            {% endif %}
+        {% endif %}
+
+        {% if Focus_exists == 1 %}
+            {% if Focus_pass %}
+                <tr>
+                    <td>Focus Verification</td>
+                    <td style="background:#00FF00">Pass</td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td>Focus Verification</td>
+                    <td style="background:#FF0000">Fail</td>
+                </tr>
+
+            {% endif %}
+        {% endif %}
+
+        {% if LSDAC_exists == 1 %}
+            {% if LSDAC_pass %}
+                <tr>
+                    <td>LSDAC Setting</td>
+                    <td style="background:#00FF00">Pass</td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td>LSDAC Setting</td>
+                    <td style="background:#FF0000">Fail</td>
+                </tr>
+
+            {% endif %}
+        {% endif %}
+
+        {% if P0_exists == 1 %}
+            {% if P0_pass %}
+                <tr>
+                    <td>P0 Calibration</td>
+                    <td style="background:#00FF00">Pass</td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td>P0 Calibration</td>
+                    <td style="background:#FF0000">Fail</td>
+                </tr>
+
+            {% endif %}
+        {% endif %}
+
+        {% if Cal_verify_exists == 1 %}
+            {% if Cal_verify_pass %}
+                <tr>
+                    <td>Calibration Verification</td>
+                    <td style="background:#00FF00">Pass</td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td>Calibration Verification</td>
+                    <td style="background:#FF0000">Fail</td>
+                </tr>
+
+            {% endif %}
+        {% endif %}
+
+
+    </table>
+
+
+
+
+
+    {% if Header_exists == 1 %}
+        {% if Header_pass == 1 %}
+        
+        <h1>Header Info</h1>
+        <table border="1" cellpadding="4" cellspacing="0">
+                <tr>
+                    <th>Parameter</th> 
+                    <th>Value</th>
+                </tr>
+                {% for key,val in HeaderInfo.items() %}
+                    <tr>
+                        <td> {{key}} </td>
+                        <td> {{val}} </td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        {% endif %}
+    {% endif %}
+
+
+    {% if ICQC_exists == 1 %}
+
+        <h1>Connectivity and ICQ</h1>
+        <table border="1" cellpadding="4" cellspacing="0">
+                <tr>
+                    <th>  </th>
+                    <th>Value</th> 
+                    <th>Pass/Fail</th>
+                    <th>Minimum</th>
+                    <th>Maximum</th>
+                </tr>
+                {% for key,val in ICQC.items() %}
+                    <tr>
+                        <td> {{key}} </td>
+                        {% if val is iterable and (val is not string and val is not mapping) %}
+                            <td> {{val[0]}} </td>
+                            {% if val[1] == "PASSED" %}
+                                <td style="background:#00FF00"> {{val[1]}} </td>
+                            {% elif val[1] == "FAILED" %}
+                                <td style="background:#FF0000"> {{val[1]}} </td>
+                            {% else %}
+                                <td> {{val[1]}} </td>
+                            {% endif %}
+                            <td> {{val[2]}} </td>
+                            <td> {{val[3]}} </td>
+                        {% else %}
+                            <td> {{val}} </td>
+                            <td>  No Limit </td>
+                            <td>  </td>
+                            <td>  </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+
+    {% endif %}
+
+    {% if gain_offset_exists == 1 %}
+
+            <h1>Gain and Offset Calibration</h1>
+            <h2>Measured Gain Native</h2>
+            <img src="Results\MeasuredGainNative.png"  /> 
+            <h2>Measured Offset Native</h2>
+            <img src="{{ gain_offset.measuredOffsetNative}}"  /> 
+            <h2>Minimum and Maximum ADC per Column</h2>
+            <img src="{{ gain_offset.MinMaxADCValueperCol}}"  />
+
+            <h2>Stats</h2>
+            <table border="1" cellpadding="4" cellspacing="0">
+                <tr>
+                    <th>  </th>
+                    <th>Value</th> 
+                    <th>Pass/Fail</th>
+                    <th>Minimum</th>
+                    <th>Maximum</th>
+                </tr>
+                {% for key,val in gain_offset.items() %}
+                    <tr>
+                        <td> {{key}} </td>
+                        {% if val is iterable and (val is not string and val is not mapping) %}
+                            <td> {{val[0]}} </td>
+                            {% if val[1] == "PASSED" %}
+                                <td style="background:#00FF00"> {{val[1]}} </td>
+                            {% elif val[1] == "FAILED" %}
+                                <td style="background:#FF0000"> {{val[1]}} </td>
+                            {% else %}
+                                <td> {{val[1]}} </td>
+                            {% endif %}
+                            <td> {{val[2]}} </td>
+                            <td> {{val[3]}} </td>
+                        {% else %}
+                            <td> {{val}} </td>
+                            <td>  No Limit </td>
+                            <td>  </td>
+                            <td>  </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+
+    {% endif %}
+
+    {% if AVRL_exists == 1 %}
+        
+        <h1>Vlow Trim</h1>
+        <table border="1" cellpadding="4" cellspacing="0">
+                <tr>
+                    <th>  </th>
+                    <th>Value</th> 
+                    <th>Pass/Fail</th>
+                    <th>Minimum</th>
+                    <th>Maximum</th>
+                </tr>
+
+
+                {% for key,val in AVRL.items() %}
+                    <tr>
+                        <td> {{key}} </td>
+                        {% if val is iterable and (val is not string and val is not mapping) %}
+                            <td> {{val[0]}} </td>
+                            {% if val[1] == "PASSED" %}
+                                <td style="background:#00FF00"> {{val[1]}} </td>
+                            {% elif val[1] == "FAILED" %}
+                                <td style="background:#FF0000"> {{val[1]}} </td>
+                            {% else %}
+                                <td> {{val[1]}} </td>
+                            {% endif %}
+                            <td> {{val[2]}} </td>
+                            <td> {{val[3]}} </td>
+                        {% else %}
+                            <td> {{val}} </td>
+                            <td> No Limit </td>
+                            <td>  </td>
+                            <td>  </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+
+    {% endif %}
+
+    {% if Blemish_exists == 1 %}
+        
+        <h1>Blemish Test</h1>
+        <h2>Results</h2>
+        <table border="1" cellpadding="4" cellspacing="0">
+                <tr>
+                    <th>  </th>
+                    <th>Value</th> 
+                    <th>Pass/Fail</th>
+                    <th>Minimum</th>
+                    <th>Maximum</th>
+                </tr>
+
+                {% for key,val in Blemish.items() %}
+                    <tr>
+                        <td> {{key}} </td>
+                        {% if val is iterable and (val is not string and val is not mapping) %}
+                            <td> {{val[0]}} </td>
+                            {% if val[1] == "PASSED" %}
+                                <td style="background:#00FF00"> {{val[1]}} </td>
+                            {% elif val[1] == "FAILED" %}
+                                <td style="background:#FF0000"> {{val[1]}} </td>
+                            {% else %}
+                                <td> {{val[1]}} </td>
+                            {% endif %}
+                            <td> {{val[2]}} </td>
+                            <td> {{val[3]}} </td>
+                        {% else %}
+                            <td> {{val}} </td>
+                            <td> No Limit </td>
+                            <td>  </td>
+                            <td>  </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+
+            </table>
+
+        <h2>Blemish setup</h2>
+        <img src="{{ Blemish.Blemish_original_image}}"  />
+        <h2>Blemish count (Red)</h2>
+        <img src="{{ Blemish.Blemish_countR_image}}"  />
+    {% endif %}
+
+    {% if Focus_exists == 1 %}
+        
+        <h1>Focus Verification</h1>
+        <h2>Results</h2>
+        <table border="1" cellpadding="4" cellspacing="0">
+                <tr>
+                    <th>  </th>
+                    <th>Value</th> 
+                    <th>Pass/Fail</th>
+                    <th>Minimum</th>
+                    <th>Maximum</th>
+                </tr>
+
+                {% for key,val in Focus.items() %}
+                    <tr>
+                        <td> {{key}} </td>
+                        {% if val is iterable and (val is not string and val is not mapping) %}
+                            <td> {{val[0]}} </td>
+                            {% if val[1] == "PASSED" %}
+                                <td style="background:#00FF00"> {{val[1]}} </td>
+                            {% elif val[1] == "FAILED" %}
+                                <td style="background:#FF0000"> {{val[1]}} </td>
+                            {% else %}
+                                <td> {{val[1]}} </td>
+                            {% endif %}
+                            <td> {{val[2]}} </td>
+                            <td> {{val[3]}} </td>
+                        {% else %}
+                            <td> {{val}} </td>
+                            <td> No Limit </td>
+                            <td>  </td>
+                            <td>  </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+
+            </table>
+
+        <h2>Focus verification setup</h2>
+        <img src="{{ Focus.Focus_verification_image}}"  />
+        <h2>Focus Y multi cpp</h2>
+        <img src="{{ Focus.Y_multi_cpp_image}}"  />
+        <h2>Focus Y profiles</h2>
+        <img src="{{ Focus.Y_profiles_image}}"  />
+    {% endif %}
+
+    {% if Geometric_exists == 1 %}
+        
+        <h1>Geometric Calibration</h1>
+        <h2>Camera Instrinsics</h2>
+        <table border="1" cellpadding="4" cellspacing="0">
+                <tr>
+                    <th>  </th>
+                    <th>Value</th> 
+                    <th>Pass/Fail</th>
+                    <th>Minimum</th>
+                    <th>Maximum</th>
+                </tr>
+                {% for key,val in Geometric.items() %}
+                    <tr>
+                        <td> {{key}} </td>
+                        {% if val is iterable and (val is not string and val is not mapping) %}
+                            <td> {{val[0]}} </td>
+                            {% if val[1] == "PASSED" %}
+                                <td style="background:#00FF00"> {{val[1]}} </td>
+                            {% elif val[1] == "FAILED" %}
+                                <td style="background:#FF0000"> {{val[1]}} </td>
+                            {% else %}
+                                <td> {{val[1]}} </td>
+                            {% endif %}
+                            <td> {{val[2]}} </td>
+                            <td> {{val[3]}} </td>
+                        {% else %}
+                            <td> {{val}} </td>
+                            <td> No Limit </td>
+                            <td>  </td>
+                            <td>  </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+
+        <h2>Checkerboard pattern</h2>
+        <img src="{{ Geometric.checkerboard}}"  />
+    {% endif %}
+
+    {% if LSDAC_exists == 1 %}
+        
+        <h1>LSDAC Setting</h1>
+        <h2>LSDAC values in decimal</h2>
+        <table border="1" cellpadding="4" cellspacing="0">
+            <tr>
+                <th>Mode</th>
+                <th>Freq 1</th>
+                <th>Freq 2</th>
+                <th>Freq 3</th> 
+            </tr>
+            {% for i in LSDACSetting %}
+                <tr>
+                    <td> {{ loop.index -1 }}</td>
+                    {% for j in i %}
+                        <td> {{j}} </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% endif %}
+
+    {% if P0_exists == 1 %}
+
+        <h1>P0 Calibration</h1>
+            {% if P0.PreliminaryTestResults_exists == 1 %}
+                <h2>Results</h2>
+                <table border="1" cellpadding="4" cellspacing="0">
+                    <tr>
+                        <th>Parameter  </th>
+                        <th>Value</th> 
+                        <th>Minimum</th>
+                        <th>Maximum</th>
+                        <th>Pass/Fail</th>
+                    </tr>
+                    {% for key,val in P0.PreliminaryTestResults.items() %}
+                        <tr>
+                            <td> {{key}} </td>
+                            <td> {{val[0]}} </td>
+                            <td> {{val[1]}} </td>
+                            <td> {{val[2]}} </td>
+                            {% if val[3] == "PASS" %}
+                                <td style="background:#00FF00"> {{val[3]}} </td>
+                            {% elif val[3] == "FAIL" %}
+                                <td style="background:#FF0000"> {{val[3]}} </td>
+                            {% else %}
+                                <td> {{val[3]}} </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+
+            {% if P0.P0Table_uncompressed_mode_10_exists == 1 %}
+                <h2>Mode 10 (1 Megapixel)</h2>
+                <h3>P0 Table</h3>
+                <img src="{{ P0.P0Table_uncompressed_mode_10}}"  />
+            {% endif %}
+            {% if P0.P0Table_verify_mode_10_exists == 1 %}
+                <h3>Distance of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_mode_10}}"  />
+                <h3>Distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_mode_10}}"  />
+                <h3>Histogram of distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_hist_mode_10}}"  />
+                <h3>Active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_mode_10}}"  />
+                <h3>Histogram of active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_hist_mode_10}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_compressed_mode_10_exists == 1 %}
+                <h3>P0 Table (compressed) Row coefficients</h3>
+                <img src="{{ P0.P0_row_coeff_compressed_mode_10}}"  />
+                <h3>P0 Table (compressed) Column coefficients</h3>
+                <img src="{{ P0.P0_col_coeff_compressed_mode_10}}"  />
+                <h3>P0 Table - compressed and then uncompressed</h3>
+                <img src="{{ P0.P0_2D_compressed_mode_10}}"  />
+            {% endif %}
+            {% if P0.P0Table_comp_verify_mode_10_exists == 1 %}
+                <h3>Distance of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_mode_10}}"  />
+                <h3>Distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_mode_10}}"  />
+                <h3>Histogram of distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_hist_mode_10}}"  />
+                <h3>Active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_mode_10}}"  />
+                <h3>Histogram of active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_hist_mode_10}}"  />
+                <h3>Residue of compression (uncompressed - compressed P0Table)</h3>
+                <img src="{{ P0.P0Table_residue_rad_mode_10}}"  />
+                <img src="{{ P0.P0Table_residue_mm_mode_10}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_mean_frames_mode_10_exists == 1 %}
+                <h3>Correlated waveform</h3>
+                <img src="{{ P0.Correlated_waveform_mode_10}}"  />
+                <h3>FFT of correlated waveform</h3>
+                <img src="{{ P0.fft_Correlated_waveform_mode_10}}"  />
+                <h3>Estimated depth error</h3>
+                <img src="{{ P0.Estimated_depth_error_mode_10}}"  />
+                <table border="1" cellpadding="4" cellspacing="0">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th> 
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 198Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_10_198Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 189Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_10_189Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 54Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_10_54Mhz}} </td>
+                    </tr>
+                </table>
+            {% endif %}
+
+
+            {% if P0.P0Table_uncompressed_mode_5_exists == 1 %}
+                <h2>Mode 5 (1 Megapixel)</h2>
+                <h3>P0 Table</h3>
+                <img src="{{ P0.P0Table_uncompressed_mode_5}}"  />
+            {% endif %}
+            {% if P0.P0Table_verify_mode_5_exists == 1 %}
+                <h3>Distance of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_mode_5}}"  />
+                <h3>Distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_mode_5}}"  />
+                <h3>Histogram of distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_hist_mode_5}}"  />
+                <h3>Active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_mode_5}}"  />
+                <h3>Histogram of active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_hist_mode_5}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_compressed_mode_5_exists == 1 %}
+                <h3>P0 Table (compressed) Row coefficients</h3>
+                <img src="{{ P0.P0_row_coeff_compressed_mode_5}}"  />
+                <h3>P0 Table (compressed) Column coefficients</h3>
+                <img src="{{ P0.P0_col_coeff_compressed_mode_5}}"  />
+                <h3>P0 Table - compressed and then uncompressed</h3>
+                <img src="{{ P0.P0_2D_compressed_mode_5}}"  />
+            {% endif %}
+            {% if P0.P0Table_comp_verify_mode_5_exists == 1 %}
+                <h3>Distance of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_mode_5}}"  />
+                <h3>Distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_mode_5}}"  />
+                <h3>Histogram of distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_hist_mode_5}}"  />
+                <h3>Active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_mode_5}}"  />
+                <h3>Histogram of active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_hist_mode_5}}"  />
+                <h3>Residue of compression (uncompressed - compressed P0Table)</h3>
+                <img src="{{ P0.P0Table_residue_rad_mode_5}}"  />
+                <img src="{{ P0.P0Table_residue_mm_mode_5}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_mean_frames_mode_5_exists == 1 %}
+                <h3>Correlated waveform</h3>
+                <img src="{{ P0.Correlated_waveform_mode_5}}"  />
+                <h3>FFT of correlated waveform</h3>
+                <img src="{{ P0.fft_Correlated_waveform_mode_5}}"  />
+                <h3>Estimated depth error</h3>
+                <img src="{{ P0.Estimated_depth_error_mode_5}}"  />
+                <table border="1" cellpadding="4" cellspacing="0">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th> 
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 198Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_5_198Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 189Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_5_189Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 54Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_5_54Mhz}} </td>
+                    </tr>
+                </table>
+            {% endif %}
+
+            {% if P0.P0Table_uncompressed_mode_7_exists == 1 %}
+                <h2>Mode 7 (Quarter Megapixel)</h2>
+                <h3>P0 Table</h3>
+                <img src="{{ P0.P0Table_uncompressed_mode_7}}"  />
+            {% endif %}
+            {% if P0.P0Table_verify_mode_7_exists == 1 %}
+                <h3>Distance of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_mode_7}}"  />
+                <h3>Distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_mode_7}}"  />
+                <h3>Histogram of distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_hist_mode_7}}"  />
+                <h3>Active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_mode_7}}"  />
+                <h3>Histogram of active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_hist_mode_7}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_compressed_mode_7_exists == 1 %}
+                <h3>P0 Table (compressed) Row coefficients</h3>
+                <img src="{{ P0.P0_row_coeff_compressed_mode_7}}"  />
+                <h3>P0 Table (compressed) Column coefficients</h3>
+                <img src="{{ P0.P0_col_coeff_compressed_mode_7}}"  />
+                <h3>P0 Table - compressed and then uncompressed</h3>
+                <img src="{{ P0.P0_2D_compressed_mode_7}}"  />
+            {% endif %}
+            {% if P0.P0Table_comp_verify_mode_7_exists == 1 %}
+                <h3>Distance of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_mode_7}}"  />
+                <h3>Distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_mode_7}}"  />
+                <h3>Histogram of distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_hist_mode_7}}"  />
+                <h3>Active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_mode_7}}"  />
+                <h3>Histogram of active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_hist_mode_7}}"  />
+                <h3>Residue of compression (uncompressed - compressed P0Table)</h3>
+                <img src="{{ P0.P0Table_residue_rad_mode_7}}"  />
+                <img src="{{ P0.P0Table_residue_mm_mode_7}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_mean_frames_mode_7_exists == 1 %}
+                <h3>Correlated waveform</h3>
+                <img src="{{ P0.Correlated_waveform_mode_7}}"  />
+                <h3>FFT of correlated waveform</h3>
+                <img src="{{ P0.fft_Correlated_waveform_mode_7}}"  />
+                <h3>Estimated depth error</h3>
+                <img src="{{ P0.Estimated_depth_error_mode_7}}"  />
+                <table border="1" cellpadding="4" cellspacing="0">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th> 
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 198Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_7_198Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 189Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_7_189Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 54Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_7_54Mhz}} </td>
+                    </tr>
+                </table>
+            {% endif %}
+
+            {% if P0.P0Table_uncompressed_mode_4_exists == 1 %}
+                <h2>Mode 4 (LT Native)</h2>
+                <h3>P0 Table</h3>
+                <img src="{{ P0.P0Table_uncompressed_mode_4}}"  />
+            {% endif %}
+            {% if P0.P0Table_verify_mode_4_exists == 1 %}
+                <h3>Distance of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_mode_4}}"  />
+                <h3>Distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_mode_4}}"  />
+                <h3>Histogram of distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_hist_mode_4}}"  />
+                <h3>Active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_mode_4}}"  />
+                <h3>Histogram of active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_hist_mode_4}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_compressed_mode_4_exists == 1 %}
+                <h3>P0 Table (compressed) Row coefficients</h3>
+                <img src="{{ P0.P0_row_coeff_compressed_mode_4}}"  />
+                <h3>P0 Table (compressed) Column coefficients</h3>
+                <img src="{{ P0.P0_col_coeff_compressed_mode_4}}"  />
+                <h3>P0 Table - compressed and then uncompressed</h3>
+                <img src="{{ P0.P0_2D_compressed_mode_4}}"  />
+            {% endif %}
+            {% if P0.P0Table_comp_verify_mode_4_exists == 1 %}
+                <h3>Distance of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_mode_4}}"  />
+                <h3>Distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_mode_4}}"  />
+                <h3>Histogram of distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_hist_mode_4}}"  />
+                <h3>Active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_mode_4}}"  />
+                <h3>Histogram of active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_hist_mode_4}}"  />
+                <h3>Residue of compression (uncompressed - compressed P0Table)</h3>
+                <img src="{{ P0.P0Table_residue_rad_mode_4}}"  />
+                <img src="{{ P0.P0Table_residue_mm_mode_4}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_mean_frames_mode_4_exists == 1 %}
+                <h3>Correlated waveform</h3>
+                <img src="{{ P0.Correlated_waveform_mode_4}}"  />
+                <h3>FFT of correlated waveform</h3>
+                <img src="{{ P0.fft_Correlated_waveform_mode_4}}"  />
+                <h3>Estimated depth error</h3>
+                <img src="{{ P0.Estimated_depth_error_mode_4}}"  />
+                <table border="1" cellpadding="4" cellspacing="0">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th> 
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 198Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_4_198Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 189Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_4_189Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 54Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_4_54Mhz}} </td>
+                    </tr>
+                </table>
+            {% endif %}
+
+            {% if P0.P0Table_uncompressed_mode_1_exists == 1 %}
+                <h2>Mode 1 (LT Binned)</h2>
+                <h3>P0 Table</h3>
+                <img src="{{ P0.P0Table_uncompressed_mode_1}}"  />
+            {% endif %}
+            {% if P0.P0Table_verify_mode_1_exists == 1 %}
+                <h3>Distance of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_mode_1}}"  />
+                <h3>Distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_mode_1}}"  />
+                <h3>Histogram of distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_hist_mode_1}}"  />
+                <h3>Active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_mode_1}}"  />
+                <h3>Histogram of active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_hist_mode_1}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_compressed_mode_1_exists == 1 %}
+                <h3>P0 Table (compressed) Row coefficients</h3>
+                <img src="{{ P0.P0_row_coeff_compressed_mode_1}}"  />
+                <h3>P0 Table (compressed) Column coefficients</h3>
+                <img src="{{ P0.P0_col_coeff_compressed_mode_1}}"  />
+                <h3>P0 Table - compressed and then uncompressed</h3>
+                <img src="{{ P0.P0_2D_compressed_mode_1}}"  />
+            {% endif %}
+            {% if P0.P0Table_comp_verify_mode_1_exists == 1 %}
+                <h3>Distance of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_mode_1}}"  />
+                <h3>Distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_mode_1}}"  />
+                <h3>Histogram of distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_hist_mode_1}}"  />
+                <h3>Active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_mode_1}}"  />
+                <h3>Histogram of active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_hist_mode_1}}"  />
+                <h3>Residue of compression (uncompressed - compressed P0Table)</h3>
+                <img src="{{ P0.P0Table_residue_rad_mode_1}}"  />
+                <img src="{{ P0.P0Table_residue_mm_mode_1}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_mean_frames_mode_1_exists == 1 %}
+                <h3>Correlated waveform</h3>
+                <img src="{{ P0.Correlated_waveform_mode_1}}"  />
+                <h3>FFT of correlated waveform</h3>
+                <img src="{{ P0.fft_Correlated_waveform_mode_1}}"  />
+                <h3>Estimated depth error</h3>
+                <img src="{{ P0.Estimated_depth_error_mode_1}}"  />
+                <table border="1" cellpadding="4" cellspacing="0">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th> 
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 198Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_1_198Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 189Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_1_189Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 54Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_1_54Mhz}} </td>
+                    </tr>
+                </table>
+            {% endif %}
+
+            {% if P0.P0Table_uncompressed_mode_0_exists == 1 %}
+                <h2>Mode 0 (Short Throw)</h2>
+                <h3>P0 Table</h3>
+                <img src="{{ P0.P0Table_uncompressed_mode_0}}"  />
+            {% endif %}
+            {% if P0.P0Table_verify_mode_0_exists == 1 %}
+                <h3>Distance of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_mode_0}}"  />
+                <h3>Distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_mode_0}}"  />
+                <h3>Histogram of distance Error of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_dist_error_hist_mode_0}}"  />
+                <h3>Active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_mode_0}}"  />
+                <h3>Histogram of active brightness of P0 Setup</h3>
+                <img src="{{ P0.P0Table_verify_AB_hist_mode_0}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_compressed_mode_0_exists == 1 %}
+                <h3>P0 Table (compressed) Row coefficients</h3>
+                <img src="{{ P0.P0_row_coeff_compressed_mode_0}}"  />
+                <h3>P0 Table (compressed) Column coefficients</h3>
+                <img src="{{ P0.P0_col_coeff_compressed_mode_0}}"  />
+                <h3>P0 Table - compressed and then uncompressed</h3>
+                <img src="{{ P0.P0_2D_compressed_mode_0}}"  />
+            {% endif %}
+            {% if P0.P0Table_comp_verify_mode_0_exists == 1 %}
+                <h3>Distance of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_mode_0}}"  />
+                <h3>Distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_mode_0}}"  />
+                <h3>Histogram of distance Error of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_dist_error_hist_mode_0}}"  />
+                <h3>Active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_mode_0}}"  />
+                <h3>Histogram of active brightness of P0 Setup(compressed)</h3>
+                <img src="{{ P0.P0Table_comp_verify_AB_hist_mode_0}}"  />
+                <h3>Residue of compression (uncompressed - compressed P0Table)</h3>
+                <img src="{{ P0.P0Table_residue_rad_mode_0}}"  />
+                <img src="{{ P0.P0Table_residue_mm_mode_0}}"  />
+            {% endif %}
+
+            {% if P0.P0Table_mean_frames_mode_0_exists == 1 %}
+                <h3>Correlated waveform</h3>
+                <img src="{{ P0.Correlated_waveform_mode_0}}"  />
+                <h3>FFT of correlated waveform</h3>
+                <img src="{{ P0.fft_Correlated_waveform_mode_0}}"  />
+                <h3>Estimated depth error</h3>
+                <img src="{{ P0.Estimated_depth_error_mode_0}}"  />
+                <table border="1" cellpadding="4" cellspacing="0">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th> 
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 142Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_0_142Mhz}} </td>
+                    </tr>
+                    <tr>
+                        <td> Modulation efficiency of 177.5Mhz </td>
+                        <td> {{P0.Modulation_efficiency_mode_0_177Mhz}} </td>
+                    </tr>
+                </table>
+            {% endif %}
+
+
+    {% endif %}
+
+    {% if Cal_verify_exists == 1 %}
+        
+        <h1>Calibration Verification</h1>
+
+        <h2>Flat wall checks</h2>
+        <table border="1" cellpadding="4" cellspacing="0">
+            <tr>
+                <th>  </th>
+                <th>Value</th> 
+                <th>Pass/Fail</th>
+                <th>Minimum</th>
+                <th>Maximum</th>
+            </tr>
+            {% for key,val in Verify.items() %}
+                <tr>
+                    <td> {{key}} </td>
+                    {% if val is iterable and (val is not string and val is not mapping) %}
+                        <td> {{val[0]}} </td>
+                        {% if val[1] == "PASSED" %}
+                            <td style="background:#00FF00"> {{val[1]}} </td>
+                        {% elif val[1] == "FAILED" %}
+                            <td style="background:#FF0000"> {{val[1]}} </td>
+                        {% else %}
+                            <td> {{val[1]}} </td>
+                        {% endif %}
+                        <td> {{val[2]}} </td>
+                        <td> {{val[3]}} </td>
+                    {% else %}
+                        <td> {{val}} </td>
+                        <td> No Limit </td>
+                        <td>  </td>
+                        <td>  </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+
+        <h2>FOI_AB Images</h2>
+        <img src="{{ Verify.AB_stats}}"  />
+        <img src="{{ Verify.AB_profiles}}"  />
+        <img src="{{ Verify.AB_hist}}"  />
+        
+        <h2>XYZ Plane fitting</h2>
+        <img src="{{ Verify.XYZ}}"  />
+
+        <h2>Depth Compute Images</h2>
+        <img src="{{ Verify.Rad_depth}}"  />
+        <img src="{{ Verify.Z_depth}}"  />
+        <img src="{{ Verify.AB}}"  />
+    {% endif %}
+
+    
+</body>
+</html>

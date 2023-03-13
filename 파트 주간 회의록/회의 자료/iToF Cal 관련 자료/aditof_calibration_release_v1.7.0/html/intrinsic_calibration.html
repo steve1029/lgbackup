@@ -1,0 +1,1519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>intrinsic_calibration API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>intrinsic_calibration</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+#
+# Copyright (c) 2020 Analog Devices, Inc. All Rights Reserved.   
+# This software is proprietary to Analog Devices, Inc. and its licensors.  
+#
+
+import numpy as np
+import pandas as pd
+import os
+import time
+from datetime import datetime
+from matplotlib import pyplot as plt
+from scipy.optimize import curve_fit
+from shutil import copyfile
+import re
+import re
+import itertools as it
+import seaborn as sns
+import logging
+import cv2
+import json
+import logging
+import random
+
+class intrinsic_calibration:
+
+    # Coordinates list
+    rect_list = []
+    
+    # Click and crop variables
+    refPt2 = []
+    cropping = False
+    imgNum = 0
+    height = 480
+    width = 640
+    irClone = []
+    irCrop = []
+    cb_width = 9
+    cb_height = 6
+    
+    # Calib output params
+    ret = 0
+    mtx = []
+    dist = []
+    rvecs = []
+    tvecs = []
+    
+    # Data output options
+    roi_storage = []
+    
+    def __init__(self, height=480, width=640, cb_width = 9, cb_height = 6):
+        self.height = height
+        self.width = width
+        self.cb_width = cb_width
+        self.cb_height = cb_height
+        self.irClone = np.zeros((self.height, self.width), np.uint8)
+        self.irCrop = np.zeros((self.height, self.width), np.uint8)
+        roi_storage = []
+        self.rect_list = []
+        self.refPt2 = []
+        self.objpoints = []
+        self.imgpoints = []
+        self.subpix_criteria = (cv2.TERM_CRITERIA_EPS, 30, 0.001)
+        self.c_size = []
+
+    def clear(self):
+        &#34;&#34;&#34;
+        clears variables 
+        Inputs: 
+            none 
+ 
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        self.rect_list = []
+        self.c_size = []
+        self.objpoints = []
+        self.imgpoints = []
+        
+    def click_and_crop(self, event, x, y, flags, param):
+        &#34;&#34;&#34;
+        function to click and crop to find corners 
+        Inputs: 
+            event: click event 
+            x: x coordinate 
+            y: y coordinate 
+            flags: opencv flags 
+            param: imput parameters 
+ 
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        if event == cv2.EVENT_LBUTTONDOWN:
+            self.refPt2.append((x, y))
+            cropping = True
+            
+        if event == cv2.EVENT_RBUTTONDOWN:
+            self.refPt2.append((x, y))
+            cropping = True        
+        
+        elif event == cv2.EVENT_LBUTTONUP:
+            print(&#39;Capture &#39; + str(self.cb_width) + &#39; by &#39; + str(self.cb_height) + &#39; checkerboard.&#39;) 
+            refPt = self.refPt2
+            refPt.append((x, y))
+            print(refPt)
+            cropping = False
+            
+            # prepare object points, like (0,0,0), (1,0,0), (2,0,0) ....,(6,5,0)
+            objp = np.zeros((self.cb_width*self.cb_height,3), np.float32)
+            objp[:,:2] = np.mgrid[0:self.cb_width,0:self.cb_height].T.reshape(-1,2)
+                
+            temp = np.zeros((self.height, self.width), np.uint8)
+            temp[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]] = self.irClone[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]]
+            ret, centers = cv2.findChessboardCorners(temp, (self.cb_width,self.cb_height), flags=cv2.CALIB_CB_ADAPTIVE_THRESH)
+            if ret == True:
+                print(&#34;Grid Found&#34;)
+                #Append roi coordinates
+                self.rect_list.append((refPt[0], refPt[1]))
+                self.c_size.append((self.cb_width,self.cb_height))
+
+                # Add corner points to obj and img points list 
+                self.objpoints.append(objp)
+                corners = cv2.cornerSubPix(temp,centers,(self.cb_width,self.cb_height),(-1,-1),self.subpix_criteria)
+                self.imgpoints.append(corners)
+                
+                # draw a rectangles around the region of interests
+                self.irCrop = np.ascontiguousarray(self.irCrop, dtype=np.uint8)
+                cv2.rectangle(self.irCrop, refPt[0], refPt[1], (255, 255, 255), 2)
+                #cv2.rectangle(self.irCrop, refPt[0], refPt[1], (0, 255, 0), 2)
+                cv2.imshow(&#34;cropIR&#34;, self.irCrop)
+                self.imgNum = self.imgNum + 1
+                
+            self.refPt2 = []
+        
+        #Switch checkerboard width and height
+        elif event == cv2.EVENT_RBUTTONUP:
+            refPt = self.refPt2
+            refPt.append((x, y))
+            #print(refPt)
+            cropping = False
+            
+            temp = np.zeros((self.height, self.width), np.uint8)
+            temp[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]] = self.irClone[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]]
+            ret, centers = cv2.findChessboardCorners(temp, (self.cb_width,self.cb_height), flags=cv2.CALIB_CB_ADAPTIVE_THRESH)
+            if ret == True:
+                print(&#34;Grid Found&#34;)
+                self.rect_list.append((refPt[0], refPt[1]))
+                self.c_size.append((self.cb_width,self.cb_height))
+                # draw a rectangles around the region of interests
+                self.irCrop = np.ascontiguousarray(self.irCrop, dtype=np.uint8)
+                cv2.rectangle(self.irCrop, refPt[0], refPt[1], (255, 255, 255), 2)
+                #cv2.rectangle(self.irCrop, refPt[0], refPt[1], (0, 255, 0), 2)
+                cv2.imshow(&#34;cropIR&#34;, self.irCrop)
+                self.imgNum = self.imgNum + 1
+                
+            self.refPt2 = []
+
+    def get_coordinates(self, irImage):
+        &#34;&#34;&#34;
+        Get coordinates list 
+        Inputs: 
+            irImage: PCM frames 
+
+        Outputs:  
+            rect_list: list of coordinates 
+ 
+        &#34;&#34;&#34;
+        self.irClone = irImage.copy()
+        self.irCrop = irImage.copy()
+        
+        cv2.namedWindow(&#34;cropIR&#34;)
+        cv2.setMouseCallback(&#34;cropIR&#34;, self.click_and_crop)
+        while True:
+            # display the image and wait for a keypress
+            cv2.imshow(&#34;cropIR&#34;, self.irCrop)
+            key = cv2.waitKey(1) &amp; 0xFF
+
+            # if the &#39;r&#39; key is pressed, reset the cropping region
+            if key == ord(&#34;r&#34;):
+                self.irCrop = self.irClone.copy()
+                self.rect_list = []
+
+            # if the &#39;c&#39; key is pressed, break from the loop
+            elif key == ord(&#34;c&#34;):
+                cv2.destroyAllWindows()
+                break
+                
+        return self.rect_list
+                
+    def output_coordinates(self, path):
+        &#34;&#34;&#34;
+        Outputs coordinates to a json file 
+        Inputs: 
+            path: filename 
+
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        dict = {}
+        dict[&#39;coordinates&#39;] = self.rect_list
+        dict[&#39;checkerboard_size&#39;] = self.c_size
+        
+        with open(os.path.join(path, &#39;intrinsic_coordinates.json&#39;), &#39;w&#39;) as fp:
+            json.dump(dict, fp)
+            
+    def load_coordinates(self, fname):
+        &#34;&#34;&#34;
+        Loads coordinates from a json file 
+        Inputs: 
+            fname: json file name 
+
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        with open(fname, &#39;r&#39;) as fp:
+            dict = json.loads(fp.read())
+            self.rect_list = dict[&#39;coordinates&#39;]
+            self.c_size = dict[&#39;checkerboard_size&#39;]
+        return self.rect_list, self.c_size
+
+    def jiggle(self, coor, x, y):
+        &#34;&#34;&#34;
+        add a small jiggle to coordinates 
+        Inputs: 
+            coor: coordinate list 
+            x: jiggle in x 
+            y: jiggle in y 
+
+        Outputs: 
+            coor: updated coordinate list 
+
+        &#34;&#34;&#34;
+        xj = random.randrange(-x,x+1,1)
+        yj = random.randrange(-y,y+1,1)
+        coor[0][0] = coor[0][0] + xj 
+        coor[1][0] = coor[1][0] + xj
+        coor[0][1] = coor[0][1] + yj
+        coor[1][1] = coor[1][1] + yj
+        
+        if coor[0][0] &lt; 0:
+            coor[0][0] = 0
+        if coor[0][1] &lt; 0:
+            coor[0][1] = 0
+        if coor[1][0] &gt; self.width:
+            coor[1][0] = self.width-1
+        if coor[1][1] &gt; self.height:
+            coor[1][1] = self.height
+
+        return coor
+
+    def get_corners(self, irImage, attempts = 5):
+        &#34;&#34;&#34;
+        Find corners in PCM frames. 
+        Inputs: 
+            irImage: PCM image 
+            attempts: attempt count 
+
+        Outputs: 
+            cb_found: Whether checkerboard pattern is found 
+
+        &#34;&#34;&#34;
+        self.irClone = irImage.copy()
+        cb_found = 0
+
+        # prepare object points, like (0,0,0), (1,0,0), (2,0,0) ....,(6,5,0)
+        for i, j in zip(self.c_size, self.rect_list):
+            self.cb_width = i[0]
+            self.cb_height = i[1]
+
+            coor = j
+
+            objp = np.zeros((self.cb_width*self.cb_height,3), np.float32)
+            objp[:,:2] = np.mgrid[0:self.cb_width,0:self.cb_height].T.reshape(-1,2)
+            
+            tries = 0
+            while(tries &lt; attempts):
+                temp = np.zeros((self.height, self.width), np.uint8)
+                temp[coor[0][1]:coor[1][1], coor[0][0]:coor[1][0]] = self.irClone[coor[0][1]:coor[1][1], coor[0][0]:coor[1][0]]
+                ret, centers = cv2.findChessboardCorners(temp, (self.cb_width,self.cb_height), flags=cv2.CALIB_CB_ADAPTIVE_THRESH)
+                if ret == True:
+                    cb_found = cb_found + 1
+                    # Add corner points to obj and img points list 
+                    self.objpoints.append(objp)
+                    corners = cv2.cornerSubPix(temp,centers,(self.cb_width,self.cb_height),(-1,-1),self.subpix_criteria)
+                    self.imgpoints.append(corners)
+                    print(&#39;Chessboard Found : Tries - &#39; + str(tries))
+                    tries = attempts
+                else:
+                    plt.figure(figsize=(12,12))
+                    plt.imshow(temp)
+                    print(&#39;Jiggling&#39;)
+                    print(coor)                    
+                    coor = self.jiggle(j, 20, 20)
+                    tries = tries + 1      
+
+        print(&#39;Checkerboards Found: &#39; + str(cb_found))
+
+        return cb_found
+
+    def get_roi_images(self, irImage):
+        &#34;&#34;&#34;
+        Get ROI images 
+        Inputs: 
+            irImage: PCM image 
+
+        Outputs: 
+            roi_storage: store ROI  
+
+        &#34;&#34;&#34;
+        #logger = logging.getLogger(__name__)
+        self.irClone = irImage.copy()
+        
+        # Store rois and cornerpoints
+        self.roi_storage = np.zeros((self.height, self.width, len(self.rect_list)))
+        self.center_points = []
+        for idx, i in enumerate(self.rect_list): 
+            roi = np.zeros((self.height, self.width), np.uint8)
+            roi[i[0][1]:i[1][1], i[0][0]:i[1][0]] = self.irClone[i[0][1]:i[1][1], i[0][0]:i[1][0]]
+            self.roi_storage[:,:,idx] = roi
+        
+        return self.roi_storage
+        
+    
+    def calibrate_intrinsic(self, iterate=0, mtx_guess = None, rational_model=True, imgpoints =None, objpoints=None, shape=None):
+        &#34;&#34;&#34;
+        run instrinsic calibration/ geometric calibration using PCM frames. 
+        Inputs: 
+            iterate: number of iterations 
+            mtx_guess: initial mtx value 
+            rational_model: opencv model 
+            imgpoints: imagepoints 
+            objpoins: objectpoints 
+            shape: shape of image 
+
+        Outputs: 
+            0 
+            roi_storage: roi values 
+            center_points: coordinates of center of checkerboard 
+
+        &#34;&#34;&#34;
+        if imgpoints is None:
+            imgpoints = self.imgpoints
+        if objpoints is None:
+            objpoints = self.objpoints
+        if shape is None:
+            shape = self.irClone.shape[::-1]
+        # Calibrate Camera
+        criteria2 = (cv2.TERM_CRITERIA_EPS, 1000, 0.001)
+        flags = 0
+        if rational_model:
+            flags = flags + cv2.CALIB_RATIONAL_MODEL
+        if mtx_guess is None:
+            mtx_guess = np.array([[0.,0.,0.],[0.,0.,0.],[0.,0.,0.]])
+        else:
+            flags = flags + cv2.CALIB_USE_INTRINSIC_GUESS
+        if True:
+            self.ret, self.mtx, self.dist, self.rvecs, self.tvecs = cv2.calibrateCamera(objpoints, imgpoints, shape, mtx_guess, None, None, None, flags, criteria=criteria2)
+            
+            # Run calibration again if iterate is specified
+            flags = (cv2.CALIB_RATIONAL_MODEL+cv2.CALIB_USE_INTRINSIC_GUESS)
+            for i in range(iterate):
+                self.ret, self.mtx, self.dist, self.rvecs, self.tvecs = cv2.calibrateCamera(objpoints, imgpoints, shape, mtx_guess, None, None, None, flags, criteria=criteria2)
+            
+            return len(objpoints), [self.ret, self.mtx, self.dist, self.rvecs, self.tvecs], [objpoints, imgpoints]
+        
+        
+        return 0, [], self.roi_storage, self.center_points
+        
+    def output_intrinsic(self, path, sn):
+        &#34;&#34;&#34;
+        Outputs instricsics to a json file 
+        Inputs: 
+            path: filename 
+            sn: calibration station name 
+
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        dict = {}
+        mtx = np.append(self.mtx[0], np.append(self.mtx[1], self.mtx[2])).tolist()
+        print(mtx)
+        
+        dict[&#34;Calibration_SN&#34;] = {&#34;2&#34; : sn}
+        dict[&#34;Calibration_Date_stamp&#34;] = {&#34;3&#34; : datetime.now().strftime(&#39;%m%d%Y&#39;)}
+        dict[&#34;Intrinsic&#34;] = {&#34;5&#34;: mtx}
+        dict[&#34;Distortion_Coeff&#34;] = {&#34;6&#34;: self.dist[0].tolist()}
+        
+
+        os.makedirs(path, exist_ok=True)
+
+        with open(os.path.join(path, &#39;Camera_Intrinsic.json&#39;), &#39;w&#39;) as fp:
+            json.dump(dict, fp)
+    
+    # Must be called right after calibrate_intrinsic for accurate info
+    def output_intrinsic_data(self, output_path):
+        &#34;&#34;&#34;
+        Outputs instinsic data 
+        Inputs: 
+            output_path: path of filename 
+
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        
+        folder_name = datetime.now().strftime(&#39;%Y-%m-%d_%H-%M-%S&#39;)
+        path = os.path.join(output_path, &#39;intrinsic_data&#39;, folder_name)
+        
+        irImage_path = os.path.join(path, &#39;irImage.png&#39;) 
+        cv2.imwrite(irImage_path, self.irClone)
+        
+        for idx, data in enumerate(range(self.roi_storage[-1])):
+            roi_path = os.path.join(path, &#39;roi&#39; + str(idx) + &#39;.png&#39;) 
+            cv2.imwrite(roi_path, data)
+            
+        self.output_intrinsic(path)
+        self.output_coordinates(path)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="intrinsic_calibration.intrinsic_calibration"><code class="flex name class">
+<span>class <span class="ident">intrinsic_calibration</span></span>
+<span>(</span><span>height=480, width=640, cb_width=9, cb_height=6)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class intrinsic_calibration:
+
+    # Coordinates list
+    rect_list = []
+    
+    # Click and crop variables
+    refPt2 = []
+    cropping = False
+    imgNum = 0
+    height = 480
+    width = 640
+    irClone = []
+    irCrop = []
+    cb_width = 9
+    cb_height = 6
+    
+    # Calib output params
+    ret = 0
+    mtx = []
+    dist = []
+    rvecs = []
+    tvecs = []
+    
+    # Data output options
+    roi_storage = []
+    
+    def __init__(self, height=480, width=640, cb_width = 9, cb_height = 6):
+        self.height = height
+        self.width = width
+        self.cb_width = cb_width
+        self.cb_height = cb_height
+        self.irClone = np.zeros((self.height, self.width), np.uint8)
+        self.irCrop = np.zeros((self.height, self.width), np.uint8)
+        roi_storage = []
+        self.rect_list = []
+        self.refPt2 = []
+        self.objpoints = []
+        self.imgpoints = []
+        self.subpix_criteria = (cv2.TERM_CRITERIA_EPS, 30, 0.001)
+        self.c_size = []
+
+    def clear(self):
+        &#34;&#34;&#34;
+        clears variables 
+        Inputs: 
+            none 
+ 
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        self.rect_list = []
+        self.c_size = []
+        self.objpoints = []
+        self.imgpoints = []
+        
+    def click_and_crop(self, event, x, y, flags, param):
+        &#34;&#34;&#34;
+        function to click and crop to find corners 
+        Inputs: 
+            event: click event 
+            x: x coordinate 
+            y: y coordinate 
+            flags: opencv flags 
+            param: imput parameters 
+ 
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        if event == cv2.EVENT_LBUTTONDOWN:
+            self.refPt2.append((x, y))
+            cropping = True
+            
+        if event == cv2.EVENT_RBUTTONDOWN:
+            self.refPt2.append((x, y))
+            cropping = True        
+        
+        elif event == cv2.EVENT_LBUTTONUP:
+            print(&#39;Capture &#39; + str(self.cb_width) + &#39; by &#39; + str(self.cb_height) + &#39; checkerboard.&#39;) 
+            refPt = self.refPt2
+            refPt.append((x, y))
+            print(refPt)
+            cropping = False
+            
+            # prepare object points, like (0,0,0), (1,0,0), (2,0,0) ....,(6,5,0)
+            objp = np.zeros((self.cb_width*self.cb_height,3), np.float32)
+            objp[:,:2] = np.mgrid[0:self.cb_width,0:self.cb_height].T.reshape(-1,2)
+                
+            temp = np.zeros((self.height, self.width), np.uint8)
+            temp[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]] = self.irClone[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]]
+            ret, centers = cv2.findChessboardCorners(temp, (self.cb_width,self.cb_height), flags=cv2.CALIB_CB_ADAPTIVE_THRESH)
+            if ret == True:
+                print(&#34;Grid Found&#34;)
+                #Append roi coordinates
+                self.rect_list.append((refPt[0], refPt[1]))
+                self.c_size.append((self.cb_width,self.cb_height))
+
+                # Add corner points to obj and img points list 
+                self.objpoints.append(objp)
+                corners = cv2.cornerSubPix(temp,centers,(self.cb_width,self.cb_height),(-1,-1),self.subpix_criteria)
+                self.imgpoints.append(corners)
+                
+                # draw a rectangles around the region of interests
+                self.irCrop = np.ascontiguousarray(self.irCrop, dtype=np.uint8)
+                cv2.rectangle(self.irCrop, refPt[0], refPt[1], (255, 255, 255), 2)
+                #cv2.rectangle(self.irCrop, refPt[0], refPt[1], (0, 255, 0), 2)
+                cv2.imshow(&#34;cropIR&#34;, self.irCrop)
+                self.imgNum = self.imgNum + 1
+                
+            self.refPt2 = []
+        
+        #Switch checkerboard width and height
+        elif event == cv2.EVENT_RBUTTONUP:
+            refPt = self.refPt2
+            refPt.append((x, y))
+            #print(refPt)
+            cropping = False
+            
+            temp = np.zeros((self.height, self.width), np.uint8)
+            temp[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]] = self.irClone[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]]
+            ret, centers = cv2.findChessboardCorners(temp, (self.cb_width,self.cb_height), flags=cv2.CALIB_CB_ADAPTIVE_THRESH)
+            if ret == True:
+                print(&#34;Grid Found&#34;)
+                self.rect_list.append((refPt[0], refPt[1]))
+                self.c_size.append((self.cb_width,self.cb_height))
+                # draw a rectangles around the region of interests
+                self.irCrop = np.ascontiguousarray(self.irCrop, dtype=np.uint8)
+                cv2.rectangle(self.irCrop, refPt[0], refPt[1], (255, 255, 255), 2)
+                #cv2.rectangle(self.irCrop, refPt[0], refPt[1], (0, 255, 0), 2)
+                cv2.imshow(&#34;cropIR&#34;, self.irCrop)
+                self.imgNum = self.imgNum + 1
+                
+            self.refPt2 = []
+
+    def get_coordinates(self, irImage):
+        &#34;&#34;&#34;
+        Get coordinates list 
+        Inputs: 
+            irImage: PCM frames 
+
+        Outputs:  
+            rect_list: list of coordinates 
+ 
+        &#34;&#34;&#34;
+        self.irClone = irImage.copy()
+        self.irCrop = irImage.copy()
+        
+        cv2.namedWindow(&#34;cropIR&#34;)
+        cv2.setMouseCallback(&#34;cropIR&#34;, self.click_and_crop)
+        while True:
+            # display the image and wait for a keypress
+            cv2.imshow(&#34;cropIR&#34;, self.irCrop)
+            key = cv2.waitKey(1) &amp; 0xFF
+
+            # if the &#39;r&#39; key is pressed, reset the cropping region
+            if key == ord(&#34;r&#34;):
+                self.irCrop = self.irClone.copy()
+                self.rect_list = []
+
+            # if the &#39;c&#39; key is pressed, break from the loop
+            elif key == ord(&#34;c&#34;):
+                cv2.destroyAllWindows()
+                break
+                
+        return self.rect_list
+                
+    def output_coordinates(self, path):
+        &#34;&#34;&#34;
+        Outputs coordinates to a json file 
+        Inputs: 
+            path: filename 
+
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        dict = {}
+        dict[&#39;coordinates&#39;] = self.rect_list
+        dict[&#39;checkerboard_size&#39;] = self.c_size
+        
+        with open(os.path.join(path, &#39;intrinsic_coordinates.json&#39;), &#39;w&#39;) as fp:
+            json.dump(dict, fp)
+            
+    def load_coordinates(self, fname):
+        &#34;&#34;&#34;
+        Loads coordinates from a json file 
+        Inputs: 
+            fname: json file name 
+
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        with open(fname, &#39;r&#39;) as fp:
+            dict = json.loads(fp.read())
+            self.rect_list = dict[&#39;coordinates&#39;]
+            self.c_size = dict[&#39;checkerboard_size&#39;]
+        return self.rect_list, self.c_size
+
+    def jiggle(self, coor, x, y):
+        &#34;&#34;&#34;
+        add a small jiggle to coordinates 
+        Inputs: 
+            coor: coordinate list 
+            x: jiggle in x 
+            y: jiggle in y 
+
+        Outputs: 
+            coor: updated coordinate list 
+
+        &#34;&#34;&#34;
+        xj = random.randrange(-x,x+1,1)
+        yj = random.randrange(-y,y+1,1)
+        coor[0][0] = coor[0][0] + xj 
+        coor[1][0] = coor[1][0] + xj
+        coor[0][1] = coor[0][1] + yj
+        coor[1][1] = coor[1][1] + yj
+        
+        if coor[0][0] &lt; 0:
+            coor[0][0] = 0
+        if coor[0][1] &lt; 0:
+            coor[0][1] = 0
+        if coor[1][0] &gt; self.width:
+            coor[1][0] = self.width-1
+        if coor[1][1] &gt; self.height:
+            coor[1][1] = self.height
+
+        return coor
+
+    def get_corners(self, irImage, attempts = 5):
+        &#34;&#34;&#34;
+        Find corners in PCM frames. 
+        Inputs: 
+            irImage: PCM image 
+            attempts: attempt count 
+
+        Outputs: 
+            cb_found: Whether checkerboard pattern is found 
+
+        &#34;&#34;&#34;
+        self.irClone = irImage.copy()
+        cb_found = 0
+
+        # prepare object points, like (0,0,0), (1,0,0), (2,0,0) ....,(6,5,0)
+        for i, j in zip(self.c_size, self.rect_list):
+            self.cb_width = i[0]
+            self.cb_height = i[1]
+
+            coor = j
+
+            objp = np.zeros((self.cb_width*self.cb_height,3), np.float32)
+            objp[:,:2] = np.mgrid[0:self.cb_width,0:self.cb_height].T.reshape(-1,2)
+            
+            tries = 0
+            while(tries &lt; attempts):
+                temp = np.zeros((self.height, self.width), np.uint8)
+                temp[coor[0][1]:coor[1][1], coor[0][0]:coor[1][0]] = self.irClone[coor[0][1]:coor[1][1], coor[0][0]:coor[1][0]]
+                ret, centers = cv2.findChessboardCorners(temp, (self.cb_width,self.cb_height), flags=cv2.CALIB_CB_ADAPTIVE_THRESH)
+                if ret == True:
+                    cb_found = cb_found + 1
+                    # Add corner points to obj and img points list 
+                    self.objpoints.append(objp)
+                    corners = cv2.cornerSubPix(temp,centers,(self.cb_width,self.cb_height),(-1,-1),self.subpix_criteria)
+                    self.imgpoints.append(corners)
+                    print(&#39;Chessboard Found : Tries - &#39; + str(tries))
+                    tries = attempts
+                else:
+                    plt.figure(figsize=(12,12))
+                    plt.imshow(temp)
+                    print(&#39;Jiggling&#39;)
+                    print(coor)                    
+                    coor = self.jiggle(j, 20, 20)
+                    tries = tries + 1      
+
+        print(&#39;Checkerboards Found: &#39; + str(cb_found))
+
+        return cb_found
+
+    def get_roi_images(self, irImage):
+        &#34;&#34;&#34;
+        Get ROI images 
+        Inputs: 
+            irImage: PCM image 
+
+        Outputs: 
+            roi_storage: store ROI  
+
+        &#34;&#34;&#34;
+        #logger = logging.getLogger(__name__)
+        self.irClone = irImage.copy()
+        
+        # Store rois and cornerpoints
+        self.roi_storage = np.zeros((self.height, self.width, len(self.rect_list)))
+        self.center_points = []
+        for idx, i in enumerate(self.rect_list): 
+            roi = np.zeros((self.height, self.width), np.uint8)
+            roi[i[0][1]:i[1][1], i[0][0]:i[1][0]] = self.irClone[i[0][1]:i[1][1], i[0][0]:i[1][0]]
+            self.roi_storage[:,:,idx] = roi
+        
+        return self.roi_storage
+        
+    
+    def calibrate_intrinsic(self, iterate=0, mtx_guess = None, rational_model=True, imgpoints =None, objpoints=None, shape=None):
+        &#34;&#34;&#34;
+        run instrinsic calibration/ geometric calibration using PCM frames. 
+        Inputs: 
+            iterate: number of iterations 
+            mtx_guess: initial mtx value 
+            rational_model: opencv model 
+            imgpoints: imagepoints 
+            objpoins: objectpoints 
+            shape: shape of image 
+
+        Outputs: 
+            0 
+            roi_storage: roi values 
+            center_points: coordinates of center of checkerboard 
+
+        &#34;&#34;&#34;
+        if imgpoints is None:
+            imgpoints = self.imgpoints
+        if objpoints is None:
+            objpoints = self.objpoints
+        if shape is None:
+            shape = self.irClone.shape[::-1]
+        # Calibrate Camera
+        criteria2 = (cv2.TERM_CRITERIA_EPS, 1000, 0.001)
+        flags = 0
+        if rational_model:
+            flags = flags + cv2.CALIB_RATIONAL_MODEL
+        if mtx_guess is None:
+            mtx_guess = np.array([[0.,0.,0.],[0.,0.,0.],[0.,0.,0.]])
+        else:
+            flags = flags + cv2.CALIB_USE_INTRINSIC_GUESS
+        if True:
+            self.ret, self.mtx, self.dist, self.rvecs, self.tvecs = cv2.calibrateCamera(objpoints, imgpoints, shape, mtx_guess, None, None, None, flags, criteria=criteria2)
+            
+            # Run calibration again if iterate is specified
+            flags = (cv2.CALIB_RATIONAL_MODEL+cv2.CALIB_USE_INTRINSIC_GUESS)
+            for i in range(iterate):
+                self.ret, self.mtx, self.dist, self.rvecs, self.tvecs = cv2.calibrateCamera(objpoints, imgpoints, shape, mtx_guess, None, None, None, flags, criteria=criteria2)
+            
+            return len(objpoints), [self.ret, self.mtx, self.dist, self.rvecs, self.tvecs], [objpoints, imgpoints]
+        
+        
+        return 0, [], self.roi_storage, self.center_points
+        
+    def output_intrinsic(self, path, sn):
+        &#34;&#34;&#34;
+        Outputs instricsics to a json file 
+        Inputs: 
+            path: filename 
+            sn: calibration station name 
+
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        dict = {}
+        mtx = np.append(self.mtx[0], np.append(self.mtx[1], self.mtx[2])).tolist()
+        print(mtx)
+        
+        dict[&#34;Calibration_SN&#34;] = {&#34;2&#34; : sn}
+        dict[&#34;Calibration_Date_stamp&#34;] = {&#34;3&#34; : datetime.now().strftime(&#39;%m%d%Y&#39;)}
+        dict[&#34;Intrinsic&#34;] = {&#34;5&#34;: mtx}
+        dict[&#34;Distortion_Coeff&#34;] = {&#34;6&#34;: self.dist[0].tolist()}
+        
+
+        os.makedirs(path, exist_ok=True)
+
+        with open(os.path.join(path, &#39;Camera_Intrinsic.json&#39;), &#39;w&#39;) as fp:
+            json.dump(dict, fp)
+    
+    # Must be called right after calibrate_intrinsic for accurate info
+    def output_intrinsic_data(self, output_path):
+        &#34;&#34;&#34;
+        Outputs instinsic data 
+        Inputs: 
+            output_path: path of filename 
+
+        Outputs: 
+            none 
+
+        &#34;&#34;&#34;
+        
+        folder_name = datetime.now().strftime(&#39;%Y-%m-%d_%H-%M-%S&#39;)
+        path = os.path.join(output_path, &#39;intrinsic_data&#39;, folder_name)
+        
+        irImage_path = os.path.join(path, &#39;irImage.png&#39;) 
+        cv2.imwrite(irImage_path, self.irClone)
+        
+        for idx, data in enumerate(range(self.roi_storage[-1])):
+            roi_path = os.path.join(path, &#39;roi&#39; + str(idx) + &#39;.png&#39;) 
+            cv2.imwrite(roi_path, data)
+            
+        self.output_intrinsic(path)
+        self.output_coordinates(path)</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="intrinsic_calibration.intrinsic_calibration.cb_height"><code class="name">var <span class="ident">cb_height</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.cb_width"><code class="name">var <span class="ident">cb_width</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.cropping"><code class="name">var <span class="ident">cropping</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.dist"><code class="name">var <span class="ident">dist</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.height"><code class="name">var <span class="ident">height</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.imgNum"><code class="name">var <span class="ident">imgNum</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.irClone"><code class="name">var <span class="ident">irClone</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.irCrop"><code class="name">var <span class="ident">irCrop</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.mtx"><code class="name">var <span class="ident">mtx</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.rect_list"><code class="name">var <span class="ident">rect_list</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.refPt2"><code class="name">var <span class="ident">refPt2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.ret"><code class="name">var <span class="ident">ret</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.roi_storage"><code class="name">var <span class="ident">roi_storage</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.rvecs"><code class="name">var <span class="ident">rvecs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.tvecs"><code class="name">var <span class="ident">tvecs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.width"><code class="name">var <span class="ident">width</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="intrinsic_calibration.intrinsic_calibration.calibrate_intrinsic"><code class="name flex">
+<span>def <span class="ident">calibrate_intrinsic</span></span>(<span>self, iterate=0, mtx_guess=None, rational_model=True, imgpoints=None, objpoints=None, shape=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>run instrinsic calibration/ geometric calibration using PCM frames.
+Inputs:
+iterate: number of iterations
+mtx_guess: initial mtx value
+rational_model: opencv model
+imgpoints: imagepoints
+objpoins: objectpoints
+shape: shape of image </p>
+<p>Outputs:
+0
+roi_storage: roi values
+center_points: coordinates of center of checkerboard</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calibrate_intrinsic(self, iterate=0, mtx_guess = None, rational_model=True, imgpoints =None, objpoints=None, shape=None):
+    &#34;&#34;&#34;
+    run instrinsic calibration/ geometric calibration using PCM frames. 
+    Inputs: 
+        iterate: number of iterations 
+        mtx_guess: initial mtx value 
+        rational_model: opencv model 
+        imgpoints: imagepoints 
+        objpoins: objectpoints 
+        shape: shape of image 
+
+    Outputs: 
+        0 
+        roi_storage: roi values 
+        center_points: coordinates of center of checkerboard 
+
+    &#34;&#34;&#34;
+    if imgpoints is None:
+        imgpoints = self.imgpoints
+    if objpoints is None:
+        objpoints = self.objpoints
+    if shape is None:
+        shape = self.irClone.shape[::-1]
+    # Calibrate Camera
+    criteria2 = (cv2.TERM_CRITERIA_EPS, 1000, 0.001)
+    flags = 0
+    if rational_model:
+        flags = flags + cv2.CALIB_RATIONAL_MODEL
+    if mtx_guess is None:
+        mtx_guess = np.array([[0.,0.,0.],[0.,0.,0.],[0.,0.,0.]])
+    else:
+        flags = flags + cv2.CALIB_USE_INTRINSIC_GUESS
+    if True:
+        self.ret, self.mtx, self.dist, self.rvecs, self.tvecs = cv2.calibrateCamera(objpoints, imgpoints, shape, mtx_guess, None, None, None, flags, criteria=criteria2)
+        
+        # Run calibration again if iterate is specified
+        flags = (cv2.CALIB_RATIONAL_MODEL+cv2.CALIB_USE_INTRINSIC_GUESS)
+        for i in range(iterate):
+            self.ret, self.mtx, self.dist, self.rvecs, self.tvecs = cv2.calibrateCamera(objpoints, imgpoints, shape, mtx_guess, None, None, None, flags, criteria=criteria2)
+        
+        return len(objpoints), [self.ret, self.mtx, self.dist, self.rvecs, self.tvecs], [objpoints, imgpoints]
+    
+    
+    return 0, [], self.roi_storage, self.center_points</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.clear"><code class="name flex">
+<span>def <span class="ident">clear</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>clears variables
+Inputs:
+none </p>
+<p>Outputs:
+none</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clear(self):
+    &#34;&#34;&#34;
+    clears variables 
+    Inputs: 
+        none 
+
+    Outputs: 
+        none 
+
+    &#34;&#34;&#34;
+    self.rect_list = []
+    self.c_size = []
+    self.objpoints = []
+    self.imgpoints = []</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.click_and_crop"><code class="name flex">
+<span>def <span class="ident">click_and_crop</span></span>(<span>self, event, x, y, flags, param)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>function to click and crop to find corners
+Inputs:
+event: click event
+x: x coordinate
+y: y coordinate
+flags: opencv flags
+param: imput parameters </p>
+<p>Outputs:
+none</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def click_and_crop(self, event, x, y, flags, param):
+    &#34;&#34;&#34;
+    function to click and crop to find corners 
+    Inputs: 
+        event: click event 
+        x: x coordinate 
+        y: y coordinate 
+        flags: opencv flags 
+        param: imput parameters 
+
+    Outputs: 
+        none 
+
+    &#34;&#34;&#34;
+    if event == cv2.EVENT_LBUTTONDOWN:
+        self.refPt2.append((x, y))
+        cropping = True
+        
+    if event == cv2.EVENT_RBUTTONDOWN:
+        self.refPt2.append((x, y))
+        cropping = True        
+    
+    elif event == cv2.EVENT_LBUTTONUP:
+        print(&#39;Capture &#39; + str(self.cb_width) + &#39; by &#39; + str(self.cb_height) + &#39; checkerboard.&#39;) 
+        refPt = self.refPt2
+        refPt.append((x, y))
+        print(refPt)
+        cropping = False
+        
+        # prepare object points, like (0,0,0), (1,0,0), (2,0,0) ....,(6,5,0)
+        objp = np.zeros((self.cb_width*self.cb_height,3), np.float32)
+        objp[:,:2] = np.mgrid[0:self.cb_width,0:self.cb_height].T.reshape(-1,2)
+            
+        temp = np.zeros((self.height, self.width), np.uint8)
+        temp[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]] = self.irClone[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]]
+        ret, centers = cv2.findChessboardCorners(temp, (self.cb_width,self.cb_height), flags=cv2.CALIB_CB_ADAPTIVE_THRESH)
+        if ret == True:
+            print(&#34;Grid Found&#34;)
+            #Append roi coordinates
+            self.rect_list.append((refPt[0], refPt[1]))
+            self.c_size.append((self.cb_width,self.cb_height))
+
+            # Add corner points to obj and img points list 
+            self.objpoints.append(objp)
+            corners = cv2.cornerSubPix(temp,centers,(self.cb_width,self.cb_height),(-1,-1),self.subpix_criteria)
+            self.imgpoints.append(corners)
+            
+            # draw a rectangles around the region of interests
+            self.irCrop = np.ascontiguousarray(self.irCrop, dtype=np.uint8)
+            cv2.rectangle(self.irCrop, refPt[0], refPt[1], (255, 255, 255), 2)
+            #cv2.rectangle(self.irCrop, refPt[0], refPt[1], (0, 255, 0), 2)
+            cv2.imshow(&#34;cropIR&#34;, self.irCrop)
+            self.imgNum = self.imgNum + 1
+            
+        self.refPt2 = []
+    
+    #Switch checkerboard width and height
+    elif event == cv2.EVENT_RBUTTONUP:
+        refPt = self.refPt2
+        refPt.append((x, y))
+        #print(refPt)
+        cropping = False
+        
+        temp = np.zeros((self.height, self.width), np.uint8)
+        temp[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]] = self.irClone[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]]
+        ret, centers = cv2.findChessboardCorners(temp, (self.cb_width,self.cb_height), flags=cv2.CALIB_CB_ADAPTIVE_THRESH)
+        if ret == True:
+            print(&#34;Grid Found&#34;)
+            self.rect_list.append((refPt[0], refPt[1]))
+            self.c_size.append((self.cb_width,self.cb_height))
+            # draw a rectangles around the region of interests
+            self.irCrop = np.ascontiguousarray(self.irCrop, dtype=np.uint8)
+            cv2.rectangle(self.irCrop, refPt[0], refPt[1], (255, 255, 255), 2)
+            #cv2.rectangle(self.irCrop, refPt[0], refPt[1], (0, 255, 0), 2)
+            cv2.imshow(&#34;cropIR&#34;, self.irCrop)
+            self.imgNum = self.imgNum + 1
+            
+        self.refPt2 = []</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.get_coordinates"><code class="name flex">
+<span>def <span class="ident">get_coordinates</span></span>(<span>self, irImage)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get coordinates list
+Inputs:
+irImage: PCM frames </p>
+<p>Outputs:<br>
+rect_list: list of coordinates</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_coordinates(self, irImage):
+    &#34;&#34;&#34;
+    Get coordinates list 
+    Inputs: 
+        irImage: PCM frames 
+
+    Outputs:  
+        rect_list: list of coordinates 
+
+    &#34;&#34;&#34;
+    self.irClone = irImage.copy()
+    self.irCrop = irImage.copy()
+    
+    cv2.namedWindow(&#34;cropIR&#34;)
+    cv2.setMouseCallback(&#34;cropIR&#34;, self.click_and_crop)
+    while True:
+        # display the image and wait for a keypress
+        cv2.imshow(&#34;cropIR&#34;, self.irCrop)
+        key = cv2.waitKey(1) &amp; 0xFF
+
+        # if the &#39;r&#39; key is pressed, reset the cropping region
+        if key == ord(&#34;r&#34;):
+            self.irCrop = self.irClone.copy()
+            self.rect_list = []
+
+        # if the &#39;c&#39; key is pressed, break from the loop
+        elif key == ord(&#34;c&#34;):
+            cv2.destroyAllWindows()
+            break
+            
+    return self.rect_list</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.get_corners"><code class="name flex">
+<span>def <span class="ident">get_corners</span></span>(<span>self, irImage, attempts=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Find corners in PCM frames.
+Inputs:
+irImage: PCM image
+attempts: attempt count </p>
+<p>Outputs:
+cb_found: Whether checkerboard pattern is found</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_corners(self, irImage, attempts = 5):
+    &#34;&#34;&#34;
+    Find corners in PCM frames. 
+    Inputs: 
+        irImage: PCM image 
+        attempts: attempt count 
+
+    Outputs: 
+        cb_found: Whether checkerboard pattern is found 
+
+    &#34;&#34;&#34;
+    self.irClone = irImage.copy()
+    cb_found = 0
+
+    # prepare object points, like (0,0,0), (1,0,0), (2,0,0) ....,(6,5,0)
+    for i, j in zip(self.c_size, self.rect_list):
+        self.cb_width = i[0]
+        self.cb_height = i[1]
+
+        coor = j
+
+        objp = np.zeros((self.cb_width*self.cb_height,3), np.float32)
+        objp[:,:2] = np.mgrid[0:self.cb_width,0:self.cb_height].T.reshape(-1,2)
+        
+        tries = 0
+        while(tries &lt; attempts):
+            temp = np.zeros((self.height, self.width), np.uint8)
+            temp[coor[0][1]:coor[1][1], coor[0][0]:coor[1][0]] = self.irClone[coor[0][1]:coor[1][1], coor[0][0]:coor[1][0]]
+            ret, centers = cv2.findChessboardCorners(temp, (self.cb_width,self.cb_height), flags=cv2.CALIB_CB_ADAPTIVE_THRESH)
+            if ret == True:
+                cb_found = cb_found + 1
+                # Add corner points to obj and img points list 
+                self.objpoints.append(objp)
+                corners = cv2.cornerSubPix(temp,centers,(self.cb_width,self.cb_height),(-1,-1),self.subpix_criteria)
+                self.imgpoints.append(corners)
+                print(&#39;Chessboard Found : Tries - &#39; + str(tries))
+                tries = attempts
+            else:
+                plt.figure(figsize=(12,12))
+                plt.imshow(temp)
+                print(&#39;Jiggling&#39;)
+                print(coor)                    
+                coor = self.jiggle(j, 20, 20)
+                tries = tries + 1      
+
+    print(&#39;Checkerboards Found: &#39; + str(cb_found))
+
+    return cb_found</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.get_roi_images"><code class="name flex">
+<span>def <span class="ident">get_roi_images</span></span>(<span>self, irImage)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get ROI images
+Inputs:
+irImage: PCM image </p>
+<p>Outputs:
+roi_storage: store ROI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_roi_images(self, irImage):
+    &#34;&#34;&#34;
+    Get ROI images 
+    Inputs: 
+        irImage: PCM image 
+
+    Outputs: 
+        roi_storage: store ROI  
+
+    &#34;&#34;&#34;
+    #logger = logging.getLogger(__name__)
+    self.irClone = irImage.copy()
+    
+    # Store rois and cornerpoints
+    self.roi_storage = np.zeros((self.height, self.width, len(self.rect_list)))
+    self.center_points = []
+    for idx, i in enumerate(self.rect_list): 
+        roi = np.zeros((self.height, self.width), np.uint8)
+        roi[i[0][1]:i[1][1], i[0][0]:i[1][0]] = self.irClone[i[0][1]:i[1][1], i[0][0]:i[1][0]]
+        self.roi_storage[:,:,idx] = roi
+    
+    return self.roi_storage</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.jiggle"><code class="name flex">
+<span>def <span class="ident">jiggle</span></span>(<span>self, coor, x, y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>add a small jiggle to coordinates
+Inputs:
+coor: coordinate list
+x: jiggle in x
+y: jiggle in y </p>
+<p>Outputs:
+coor: updated coordinate list</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def jiggle(self, coor, x, y):
+    &#34;&#34;&#34;
+    add a small jiggle to coordinates 
+    Inputs: 
+        coor: coordinate list 
+        x: jiggle in x 
+        y: jiggle in y 
+
+    Outputs: 
+        coor: updated coordinate list 
+
+    &#34;&#34;&#34;
+    xj = random.randrange(-x,x+1,1)
+    yj = random.randrange(-y,y+1,1)
+    coor[0][0] = coor[0][0] + xj 
+    coor[1][0] = coor[1][0] + xj
+    coor[0][1] = coor[0][1] + yj
+    coor[1][1] = coor[1][1] + yj
+    
+    if coor[0][0] &lt; 0:
+        coor[0][0] = 0
+    if coor[0][1] &lt; 0:
+        coor[0][1] = 0
+    if coor[1][0] &gt; self.width:
+        coor[1][0] = self.width-1
+    if coor[1][1] &gt; self.height:
+        coor[1][1] = self.height
+
+    return coor</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.load_coordinates"><code class="name flex">
+<span>def <span class="ident">load_coordinates</span></span>(<span>self, fname)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads coordinates from a json file
+Inputs:
+fname: json file name </p>
+<p>Outputs:
+none</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_coordinates(self, fname):
+    &#34;&#34;&#34;
+    Loads coordinates from a json file 
+    Inputs: 
+        fname: json file name 
+
+    Outputs: 
+        none 
+
+    &#34;&#34;&#34;
+    with open(fname, &#39;r&#39;) as fp:
+        dict = json.loads(fp.read())
+        self.rect_list = dict[&#39;coordinates&#39;]
+        self.c_size = dict[&#39;checkerboard_size&#39;]
+    return self.rect_list, self.c_size</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.output_coordinates"><code class="name flex">
+<span>def <span class="ident">output_coordinates</span></span>(<span>self, path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Outputs coordinates to a json file
+Inputs:
+path: filename </p>
+<p>Outputs:
+none</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def output_coordinates(self, path):
+    &#34;&#34;&#34;
+    Outputs coordinates to a json file 
+    Inputs: 
+        path: filename 
+
+    Outputs: 
+        none 
+
+    &#34;&#34;&#34;
+    dict = {}
+    dict[&#39;coordinates&#39;] = self.rect_list
+    dict[&#39;checkerboard_size&#39;] = self.c_size
+    
+    with open(os.path.join(path, &#39;intrinsic_coordinates.json&#39;), &#39;w&#39;) as fp:
+        json.dump(dict, fp)</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.output_intrinsic"><code class="name flex">
+<span>def <span class="ident">output_intrinsic</span></span>(<span>self, path, sn)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Outputs instricsics to a json file
+Inputs:
+path: filename
+sn: calibration station name </p>
+<p>Outputs:
+none</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def output_intrinsic(self, path, sn):
+    &#34;&#34;&#34;
+    Outputs instricsics to a json file 
+    Inputs: 
+        path: filename 
+        sn: calibration station name 
+
+    Outputs: 
+        none 
+
+    &#34;&#34;&#34;
+    dict = {}
+    mtx = np.append(self.mtx[0], np.append(self.mtx[1], self.mtx[2])).tolist()
+    print(mtx)
+    
+    dict[&#34;Calibration_SN&#34;] = {&#34;2&#34; : sn}
+    dict[&#34;Calibration_Date_stamp&#34;] = {&#34;3&#34; : datetime.now().strftime(&#39;%m%d%Y&#39;)}
+    dict[&#34;Intrinsic&#34;] = {&#34;5&#34;: mtx}
+    dict[&#34;Distortion_Coeff&#34;] = {&#34;6&#34;: self.dist[0].tolist()}
+    
+
+    os.makedirs(path, exist_ok=True)
+
+    with open(os.path.join(path, &#39;Camera_Intrinsic.json&#39;), &#39;w&#39;) as fp:
+        json.dump(dict, fp)</code></pre>
+</details>
+</dd>
+<dt id="intrinsic_calibration.intrinsic_calibration.output_intrinsic_data"><code class="name flex">
+<span>def <span class="ident">output_intrinsic_data</span></span>(<span>self, output_path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Outputs instinsic data
+Inputs:
+output_path: path of filename </p>
+<p>Outputs:
+none</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def output_intrinsic_data(self, output_path):
+    &#34;&#34;&#34;
+    Outputs instinsic data 
+    Inputs: 
+        output_path: path of filename 
+
+    Outputs: 
+        none 
+
+    &#34;&#34;&#34;
+    
+    folder_name = datetime.now().strftime(&#39;%Y-%m-%d_%H-%M-%S&#39;)
+    path = os.path.join(output_path, &#39;intrinsic_data&#39;, folder_name)
+    
+    irImage_path = os.path.join(path, &#39;irImage.png&#39;) 
+    cv2.imwrite(irImage_path, self.irClone)
+    
+    for idx, data in enumerate(range(self.roi_storage[-1])):
+        roi_path = os.path.join(path, &#39;roi&#39; + str(idx) + &#39;.png&#39;) 
+        cv2.imwrite(roi_path, data)
+        
+    self.output_intrinsic(path)
+    self.output_coordinates(path)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="intrinsic_calibration.intrinsic_calibration" href="#intrinsic_calibration.intrinsic_calibration">intrinsic_calibration</a></code></h4>
+<ul class="">
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.calibrate_intrinsic" href="#intrinsic_calibration.intrinsic_calibration.calibrate_intrinsic">calibrate_intrinsic</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.cb_height" href="#intrinsic_calibration.intrinsic_calibration.cb_height">cb_height</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.cb_width" href="#intrinsic_calibration.intrinsic_calibration.cb_width">cb_width</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.clear" href="#intrinsic_calibration.intrinsic_calibration.clear">clear</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.click_and_crop" href="#intrinsic_calibration.intrinsic_calibration.click_and_crop">click_and_crop</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.cropping" href="#intrinsic_calibration.intrinsic_calibration.cropping">cropping</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.dist" href="#intrinsic_calibration.intrinsic_calibration.dist">dist</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.get_coordinates" href="#intrinsic_calibration.intrinsic_calibration.get_coordinates">get_coordinates</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.get_corners" href="#intrinsic_calibration.intrinsic_calibration.get_corners">get_corners</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.get_roi_images" href="#intrinsic_calibration.intrinsic_calibration.get_roi_images">get_roi_images</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.height" href="#intrinsic_calibration.intrinsic_calibration.height">height</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.imgNum" href="#intrinsic_calibration.intrinsic_calibration.imgNum">imgNum</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.irClone" href="#intrinsic_calibration.intrinsic_calibration.irClone">irClone</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.irCrop" href="#intrinsic_calibration.intrinsic_calibration.irCrop">irCrop</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.jiggle" href="#intrinsic_calibration.intrinsic_calibration.jiggle">jiggle</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.load_coordinates" href="#intrinsic_calibration.intrinsic_calibration.load_coordinates">load_coordinates</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.mtx" href="#intrinsic_calibration.intrinsic_calibration.mtx">mtx</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.output_coordinates" href="#intrinsic_calibration.intrinsic_calibration.output_coordinates">output_coordinates</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.output_intrinsic" href="#intrinsic_calibration.intrinsic_calibration.output_intrinsic">output_intrinsic</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.output_intrinsic_data" href="#intrinsic_calibration.intrinsic_calibration.output_intrinsic_data">output_intrinsic_data</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.rect_list" href="#intrinsic_calibration.intrinsic_calibration.rect_list">rect_list</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.refPt2" href="#intrinsic_calibration.intrinsic_calibration.refPt2">refPt2</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.ret" href="#intrinsic_calibration.intrinsic_calibration.ret">ret</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.roi_storage" href="#intrinsic_calibration.intrinsic_calibration.roi_storage">roi_storage</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.rvecs" href="#intrinsic_calibration.intrinsic_calibration.rvecs">rvecs</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.tvecs" href="#intrinsic_calibration.intrinsic_calibration.tvecs">tvecs</a></code></li>
+<li><code><a title="intrinsic_calibration.intrinsic_calibration.width" href="#intrinsic_calibration.intrinsic_calibration.width">width</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

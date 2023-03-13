@@ -1,0 +1,87 @@
+//=========================================================
+// (1) Boot up
+//=========================================================
+system.def_multi_send(".\BootUp\bootUp_1.def")
+wait_ms(100)
+system.def_multi_send(".\BootUp\bootUp_2.def")
+wait_ms(1200)
+
+//=========================================================
+// (2) Control Box Initialize
+//=========================================================
+system.def_multi_send(".\ControlBox\controlBoxInitialize_1.def")
+system.def_multi_send(".\ControlBox\controlBoxInitialize_2.def")
+system.def_multi_send(".\ControlBox\controlBoxInitialize_3.def")
+system.def_multi_send(".\ControlBox\controlBoxInitialize_4.def")
+wait_ms(200)
+
+//=========================================================
+// (3) Sensor Head Boot
+//=========================================================
+system.def_multi_send(".\SensorHead\sensorHeadInitialize_1.def")
+wait_ms(200)
+system.def_multi_send(".\SensorHead\sensorHeadInitialize_2.def")
+system.def_multi_send(".\SensorHead\sensorHeadInitialize_3.def")
+wait_ms(200)
+system.def_multi_send(".\SensorHead\sensorHeadIMX459BrdPowerOn.def")
+wait_ms(200)
+system.def_multi_send(".\SensorHead\sensorHeadIMX459CkEn.def")
+system.def_multi_send(".\SensorHead\sensorHeadIMX459SPADPowerOn.def")
+wait_ms(1400)
+system.def_multi_send(".\SensorHead\sensorHeadIMX459XclrOff.def")
+wait_ms(200)
+system.def_multi_send(".\SensorHead\sensorHeadIMX459VRLDPowerOn.def")
+wait_ms(1200)
+system.def_multi_send(".\BootUp\bootUp_3.def")
+wait_ms(100)
+system.def_multi_send(".\SensorHead\sensorHeadInitialize_3.def")
+wait_ms(200)
+
+//=========================================================
+// (4) Control Box Receiver Initialize
+//=========================================================
+system.def_multi_send(".\Controlbox\controlBoxReceiverInitialize_1.def")
+wait_ms(100)
+system.def_multi_send(".\Controlbox\controlBoxReceiverInitialize_2.def")
+wait_ms(200)
+system.def_multi_send(".\Controlbox\controlBoxReceiverInitialize_3.def")
+system.def_multi_send(".\Controlbox\controlBoxMemSize.def")
+system.def_multi_send(".\Controlbox\slotMergeNum.def")
+system.def_multi_send(".\Controlbox\controlBoxReceiverInitialize_4.def")
+wait_ms(200)
+system.def_multi_send(".\BootUp\bootUp_5.def")
+wait_ms(200)
+
+//=========================================================
+// (5) IMX459 Operation Setting
+//=========================================================
+system.def_multi_send(".\IMX459\IMX459NonOTP_1.def")
+wait_ms(200)
+system.def_multi_send(".\IMX459\IMX459Initialize_1.def")
+wait_ms(200)
+system.def_multi_send(".\IMX459\IMX459Initialize_2.def")
+wait_ms(200)
+system.def_multi_send(".\IMX459\CAS000.def")
+wait_ms(200)
+system.def_multi_send(".\IMX459\IMX459NonOTP_2.def")
+wait_ms(100)
+system.def_multi_send(".\IMX459\IMX459Initialize_3.def")
+wait_ms(200)
+system.def_multi_send(".\IMX459\IMX459MovetoActivemode.def")
+wait_ms(200)
+
+//=========================================================
+// (6) Sensor Head Timing Generator
+//=========================================================
+system.def_multi_send(".\SensorHead\SensorHeadTGInitialize.def")
+wait_ms(200)
+system.def_multi_send(".\SensorHead\CAS000EVBTG.def")
+wait_ms(200)
+
+//=========================================================
+// (7) IMX459 Operation Start
+//=========================================================
+system.def_multi_send(".\SensorHead\sensorOperationStart.def")
+system.def_multi_send(".\IMX459\IMX459SMRelease.def")
+system.def_multi_send(".\BootUp\bootUp_4.def")
+

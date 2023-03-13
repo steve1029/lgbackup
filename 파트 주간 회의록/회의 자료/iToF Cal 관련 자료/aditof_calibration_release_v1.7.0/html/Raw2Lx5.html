@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>Raw2Lx5 API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Raw2Lx5</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+#
+# Copyright (c) 2020 Analog Devices, Inc. All Rights Reserved.   
+# This software is proprietary to Analog Devices, Inc. and its licensors.  
+#
+
+import numpy as np 
+import pickle
+
+def GainRaw2Lx5(targetGain, nominalGain):
+        &#34;&#34;&#34;
+        Converts Gain raw format to LX5 format 
+        Inputs:  
+                - targetGain : Per column, per 2 rows, per gain (1024x2x4) inverse gain setting 
+                - nominalGain : Per gain nominal inverse gain value (4 values). 
+
+        Outputs: 
+        - inv_adc_gain : 13b values to write to registers inv_adc_gain_0,...,inv_adc_gain_3 (1x4) 
+        - perColGainAdj : 8b data to write to per-column gain memory (1024x2x4). 
+        - perColClamped : Logical flag indicating that the target gain is outside 
+        the per-column inverse gain adjustment range, resulting in poor gain correction (1024x2x4) 
+        &#34;&#34;&#34;
+
+
+        if np.shape(targetGain)[2] != np.size(nominalGain):
+                raise Exception(&#39;Number of target gains doesn&#39;&#39;t match number of nominal gains&#39;)
+
+        perColGainAdj = np.zeros(np.shape(targetGain))
+        inv_adc_gain = np.zeros(np.size(nominalGain))
+
+        for gainCnt in range(np.size(nominalGain)-1,-1,-1):
+                # step 1: solve for global gain shift
+                globalGainShift = np.log2(nominalGain[gainCnt] / 1.2)
+                # divide by 1.2 adds some margin to ensure we are setting the nominal gain in a good range: ~0.8x to 1.7x
+                globalGainShift_value = np.round(globalGainShift)
+                if globalGainShift_value &lt; -1 or globalGainShift_value &gt; 6:
+                        raise Exception(&#39;Nominal gain is out of range&#39;)
+                globalGainShift_equiv = 2**(-globalGainShift_value)
+
+                # step 2: solve for global gain scale
+                globalGainScale = nominalGain[gainCnt] * globalGainShift_equiv
+                globalGainScale_value = np.round(512 * globalGainScale) # normalize to use full u10 field
+                if globalGainScale_value &gt;= 2**10:
+                        raise Exception(&#39;globalGainShift set incorrectly&#39;)
+                # globalGainScale_equiv = globalGainScale_value / 512
+                
+                # step 3: solve for per-column gain scale
+                pcGainTarget = targetGain[:,:,gainCnt] * globalGainShift_equiv
+                perColGainAdj[:,:,gainCnt] = np.round(512 * pcGainTarget) - globalGainScale_value # normalize to DN of global gain
+
+                # step 4: profit!
+                globalOutputShift = np.mod(6-globalGainShift_value,8) # shift to match range defined in ADSD3100
+                # globalOutputShift_equiv = 2**(-(3-globalGainShift_value))
+
+                inv_adc_gain[gainCnt] = globalOutputShift* (2**10) + globalGainScale_value
+
+
+        inv_adc_gain = inv_adc_gain.astype(np.int16)
+        nonClampedPerColGainAdj = np.round(perColGainAdj)
+        perColGainAdj = perColGainAdj.astype(np.int8)
+        clampedGain = (perColGainAdj != nonClampedPerColGainAdj)
+ 
+        return inv_adc_gain, perColGainAdj, clampedGain
+
+
+def OffsetRaw2Lx5(offset_data, bitsPerPixel=&#39;bpp_10&#39;):
+        &#34;&#34;&#34;
+        Converts Offset raw format to LX% format 
+        Inputs:  
+                - offset_data : Per column, per 2 rows, per gain (1024x2x4) offset data 
+                - bitsPerPixel (optional) : Flag set to &#39;bpp_9&#39; or &#39;bpp_10&#39;, or 9 or 10 for 9
+                or 10 bits per pixel. If bpp_9 is selected, offset_data will be 
+                multiplied by 2 to match LX5 format. Default is &#39;bpp_10&#39;
+
+        Outputs: 
+                - perColOffsetAdj. 8b data to write to per-column gain memory (1024x2x4). 
+                - perColClamped. Logical flag indicating that the target gain is outside 
+                the per-column inverse gain adjustment range, resulting in poor gain correction (1024x2x4) 
+        &#34;&#34;&#34;
+
+        if bitsPerPixel == &#39;bpp_9&#39;:
+                offset_data = offset_data * 2 # 9bpp, scale by 2
+        else:
+                pass # no scaling required
+
+        perColOffsetAdj = np.round(offset_data).astype(np.int8) # convert to int8. Note MATLAB clamps data &gt; 127 or &lt;-128
+        # Added round because 39.9 must become 40 not 39
+        clampedOffset = (perColOffsetAdj != np.round(offset_data)) # check if any values were clamped
+
+        return perColOffsetAdj, clampedOffset
+
+
+def GeneratePerColRam(data):
+        &#34;&#34;&#34;
+        Pack 8bit per-column gain or offset data into ADSD3100 RAM format 
+
+        Inputs:  
+                data - 8 bit array of size (1024,2,4) (columns, rows, gains) 
+
+        Outputs:  
+                success -  Flag indicating the data was correctly processed 
+                ram_data - All subsampled modes packed into a single RAM blob, ready
+                to write to adsd3100. 
+                ram_struct (optional) - Structure containing RAM entries for individual 
+                subsampling modes. 
+        &#34;&#34;&#34;
+
+        success = True
+        ram_data = np.array([])
+
+        nativePerColRes = [1024, 2, 4] # [col, row, gain]
+
+        ColRowGainScale = np.array([[1,    1,   1], # A1D1 # per-column dimension scaling factors relative to native resolution
+                                                                [0.5,  0.5, 1], # A1D2
+                                                                [0.25, 0.5, 1], # A1D4
+                                                                [0.5,  2,   1], # A2D1
+                                                                [0.25, 1,   1], # A2D2
+                                                                [0.25, 2,   1]],dtype=np.float) # A4D1
+        perColDims = nativePerColRes * ColRowGainScale
+
+        RAM = dict(
+                                A1D1 = np.zeros([int(np.prod(perColDims[0,:])/2)],dtype=np.uint16),
+                                A1D2 = np.zeros([int(np.prod(perColDims[1,:])/2)],dtype=np.uint16),
+                                A1D4 = np.zeros([int(np.prod(perColDims[2,:])/2)],dtype=np.uint16),
+                                A2D1 = np.zeros([int(np.prod(perColDims[3,:])/2)],dtype=np.uint16),
+                                A2D2 = np.zeros([int(np.prod(perColDims[4,:])/2)],dtype=np.uint16),
+                                A4D1 = np.zeros([int(np.prod(perColDims[5,:])/2)],dtype=np.uint16),
+                                )
+
+        data = data.astype(np.int8)
+        pixData_tmp = np.transpose(data,[1,0,2]).flatten()
+        pixData = np.transpose(np.reshape(pixData_tmp.view(np.uint32),[np.shape(data)[1],np.shape(data)[0]]))
+        RAM[&#39;A1D1&#39;] = np.transpose(pixData).flatten().view(np.uint16) # 8192b native (all cols even row, all cols odd row)
+        RAM[&#39;A1D2&#39;] = np.transpose(pixData[::2,0]).flatten().view(np.uint16) # 2048b (even cols even row)
+        RAM[&#39;A1D4&#39;] = np.transpose(pixData[::4,0]).flatten().view(np.uint16) # 1024b (0,4,8...cols even row)
+        # (below) 8192b binned (even cols even row, odd cols even row, odd cols odd row, odd cols odd row)
+        RAM[&#39;A2D1&#39;] = (np.transpose(np.reshape(np.transpose(pixData),[2,512,2]),[0,2,1]).flatten()).view(np.uint16)
+        RAM[&#39;A2D2&#39;] = np.transpose(pixData[::4,:]).flatten().view(np.uint16) # 2048b (0,4,8...cols even row, 0,4,8...cols even row)
+
+        # 4096b (0,4,8...cols even row, 1,5,9...cols even row, 0,4,8...cols odd row, 1,5,9...cols odd row)
+        cols = np.transpose(np.vstack([np.array(range(0,1024,4)),np.array(range(1,1024,4))])).flatten()
+        RAM[&#39;A4D1&#39;] = (np.transpose(np.reshape(np.transpose(pixData[cols,:]),[2,256,2]),[0,2,1]).flatten()).view(np.uint16)
+
+        ram_data = np.hstack([RAM[&#39;A1D1&#39;], RAM[&#39;A1D2&#39;], RAM[&#39;A1D4&#39;], RAM[&#39;A2D1&#39;], RAM[&#39;A2D2&#39;], RAM[&#39;A4D1&#39;]])
+
+        return success, ram_data, RAM</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="Raw2Lx5.GainRaw2Lx5"><code class="name flex">
+<span>def <span class="ident">GainRaw2Lx5</span></span>(<span>targetGain, nominalGain)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts Gain raw format to LX5 format
+Inputs:<br>
+- targetGain : Per column, per 2 rows, per gain (1024x2x4) inverse gain setting
+- nominalGain : Per gain nominal inverse gain value (4 values). </p>
+<p>Outputs:
+- inv_adc_gain : 13b values to write to registers inv_adc_gain_0,&hellip;,inv_adc_gain_3 (1x4)
+- perColGainAdj : 8b data to write to per-column gain memory (1024x2x4).
+- perColClamped : Logical flag indicating that the target gain is outside
+the per-column inverse gain adjustment range, resulting in poor gain correction (1024x2x4)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GainRaw2Lx5(targetGain, nominalGain):
+        &#34;&#34;&#34;
+        Converts Gain raw format to LX5 format 
+        Inputs:  
+                - targetGain : Per column, per 2 rows, per gain (1024x2x4) inverse gain setting 
+                - nominalGain : Per gain nominal inverse gain value (4 values). 
+
+        Outputs: 
+        - inv_adc_gain : 13b values to write to registers inv_adc_gain_0,...,inv_adc_gain_3 (1x4) 
+        - perColGainAdj : 8b data to write to per-column gain memory (1024x2x4). 
+        - perColClamped : Logical flag indicating that the target gain is outside 
+        the per-column inverse gain adjustment range, resulting in poor gain correction (1024x2x4) 
+        &#34;&#34;&#34;
+
+
+        if np.shape(targetGain)[2] != np.size(nominalGain):
+                raise Exception(&#39;Number of target gains doesn&#39;&#39;t match number of nominal gains&#39;)
+
+        perColGainAdj = np.zeros(np.shape(targetGain))
+        inv_adc_gain = np.zeros(np.size(nominalGain))
+
+        for gainCnt in range(np.size(nominalGain)-1,-1,-1):
+                # step 1: solve for global gain shift
+                globalGainShift = np.log2(nominalGain[gainCnt] / 1.2)
+                # divide by 1.2 adds some margin to ensure we are setting the nominal gain in a good range: ~0.8x to 1.7x
+                globalGainShift_value = np.round(globalGainShift)
+                if globalGainShift_value &lt; -1 or globalGainShift_value &gt; 6:
+                        raise Exception(&#39;Nominal gain is out of range&#39;)
+                globalGainShift_equiv = 2**(-globalGainShift_value)
+
+                # step 2: solve for global gain scale
+                globalGainScale = nominalGain[gainCnt] * globalGainShift_equiv
+                globalGainScale_value = np.round(512 * globalGainScale) # normalize to use full u10 field
+                if globalGainScale_value &gt;= 2**10:
+                        raise Exception(&#39;globalGainShift set incorrectly&#39;)
+                # globalGainScale_equiv = globalGainScale_value / 512
+                
+                # step 3: solve for per-column gain scale
+                pcGainTarget = targetGain[:,:,gainCnt] * globalGainShift_equiv
+                perColGainAdj[:,:,gainCnt] = np.round(512 * pcGainTarget) - globalGainScale_value # normalize to DN of global gain
+
+                # step 4: profit!
+                globalOutputShift = np.mod(6-globalGainShift_value,8) # shift to match range defined in ADSD3100
+                # globalOutputShift_equiv = 2**(-(3-globalGainShift_value))
+
+                inv_adc_gain[gainCnt] = globalOutputShift* (2**10) + globalGainScale_value
+
+
+        inv_adc_gain = inv_adc_gain.astype(np.int16)
+        nonClampedPerColGainAdj = np.round(perColGainAdj)
+        perColGainAdj = perColGainAdj.astype(np.int8)
+        clampedGain = (perColGainAdj != nonClampedPerColGainAdj)
+ 
+        return inv_adc_gain, perColGainAdj, clampedGain</code></pre>
+</details>
+</dd>
+<dt id="Raw2Lx5.GeneratePerColRam"><code class="name flex">
+<span>def <span class="ident">GeneratePerColRam</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Pack 8bit per-column gain or offset data into ADSD3100 RAM format </p>
+<p>Inputs:<br>
+data - 8 bit array of size (1024,2,4) (columns, rows, gains) </p>
+<p>Outputs:<br>
+success -
+Flag indicating the data was correctly processed
+ram_data - All subsampled modes packed into a single RAM blob, ready
+to write to adsd3100.
+ram_struct (optional) - Structure containing RAM entries for individual
+subsampling modes.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GeneratePerColRam(data):
+        &#34;&#34;&#34;
+        Pack 8bit per-column gain or offset data into ADSD3100 RAM format 
+
+        Inputs:  
+                data - 8 bit array of size (1024,2,4) (columns, rows, gains) 
+
+        Outputs:  
+                success -  Flag indicating the data was correctly processed 
+                ram_data - All subsampled modes packed into a single RAM blob, ready
+                to write to adsd3100. 
+                ram_struct (optional) - Structure containing RAM entries for individual 
+                subsampling modes. 
+        &#34;&#34;&#34;
+
+        success = True
+        ram_data = np.array([])
+
+        nativePerColRes = [1024, 2, 4] # [col, row, gain]
+
+        ColRowGainScale = np.array([[1,    1,   1], # A1D1 # per-column dimension scaling factors relative to native resolution
+                                                                [0.5,  0.5, 1], # A1D2
+                                                                [0.25, 0.5, 1], # A1D4
+                                                                [0.5,  2,   1], # A2D1
+                                                                [0.25, 1,   1], # A2D2
+                                                                [0.25, 2,   1]],dtype=np.float) # A4D1
+        perColDims = nativePerColRes * ColRowGainScale
+
+        RAM = dict(
+                                A1D1 = np.zeros([int(np.prod(perColDims[0,:])/2)],dtype=np.uint16),
+                                A1D2 = np.zeros([int(np.prod(perColDims[1,:])/2)],dtype=np.uint16),
+                                A1D4 = np.zeros([int(np.prod(perColDims[2,:])/2)],dtype=np.uint16),
+                                A2D1 = np.zeros([int(np.prod(perColDims[3,:])/2)],dtype=np.uint16),
+                                A2D2 = np.zeros([int(np.prod(perColDims[4,:])/2)],dtype=np.uint16),
+                                A4D1 = np.zeros([int(np.prod(perColDims[5,:])/2)],dtype=np.uint16),
+                                )
+
+        data = data.astype(np.int8)
+        pixData_tmp = np.transpose(data,[1,0,2]).flatten()
+        pixData = np.transpose(np.reshape(pixData_tmp.view(np.uint32),[np.shape(data)[1],np.shape(data)[0]]))
+        RAM[&#39;A1D1&#39;] = np.transpose(pixData).flatten().view(np.uint16) # 8192b native (all cols even row, all cols odd row)
+        RAM[&#39;A1D2&#39;] = np.transpose(pixData[::2,0]).flatten().view(np.uint16) # 2048b (even cols even row)
+        RAM[&#39;A1D4&#39;] = np.transpose(pixData[::4,0]).flatten().view(np.uint16) # 1024b (0,4,8...cols even row)
+        # (below) 8192b binned (even cols even row, odd cols even row, odd cols odd row, odd cols odd row)
+        RAM[&#39;A2D1&#39;] = (np.transpose(np.reshape(np.transpose(pixData),[2,512,2]),[0,2,1]).flatten()).view(np.uint16)
+        RAM[&#39;A2D2&#39;] = np.transpose(pixData[::4,:]).flatten().view(np.uint16) # 2048b (0,4,8...cols even row, 0,4,8...cols even row)
+
+        # 4096b (0,4,8...cols even row, 1,5,9...cols even row, 0,4,8...cols odd row, 1,5,9...cols odd row)
+        cols = np.transpose(np.vstack([np.array(range(0,1024,4)),np.array(range(1,1024,4))])).flatten()
+        RAM[&#39;A4D1&#39;] = (np.transpose(np.reshape(np.transpose(pixData[cols,:]),[2,256,2]),[0,2,1]).flatten()).view(np.uint16)
+
+        ram_data = np.hstack([RAM[&#39;A1D1&#39;], RAM[&#39;A1D2&#39;], RAM[&#39;A1D4&#39;], RAM[&#39;A2D1&#39;], RAM[&#39;A2D2&#39;], RAM[&#39;A4D1&#39;]])
+
+        return success, ram_data, RAM</code></pre>
+</details>
+</dd>
+<dt id="Raw2Lx5.OffsetRaw2Lx5"><code class="name flex">
+<span>def <span class="ident">OffsetRaw2Lx5</span></span>(<span>offset_data, bitsPerPixel='bpp_10')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts Offset raw format to LX% format
+Inputs:<br>
+- offset_data : Per column, per 2 rows, per gain (1024x2x4) offset data
+- bitsPerPixel (optional) : Flag set to 'bpp_9' or 'bpp_10', or 9 or 10 for 9
+or 10 bits per pixel. If bpp_9 is selected, offset_data will be
+multiplied by 2 to match LX5 format. Default is 'bpp_10'</p>
+<p>Outputs:
+- perColOffsetAdj. 8b data to write to per-column gain memory (1024x2x4).
+- perColClamped. Logical flag indicating that the target gain is outside
+the per-column inverse gain adjustment range, resulting in poor gain correction (1024x2x4)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def OffsetRaw2Lx5(offset_data, bitsPerPixel=&#39;bpp_10&#39;):
+        &#34;&#34;&#34;
+        Converts Offset raw format to LX% format 
+        Inputs:  
+                - offset_data : Per column, per 2 rows, per gain (1024x2x4) offset data 
+                - bitsPerPixel (optional) : Flag set to &#39;bpp_9&#39; or &#39;bpp_10&#39;, or 9 or 10 for 9
+                or 10 bits per pixel. If bpp_9 is selected, offset_data will be 
+                multiplied by 2 to match LX5 format. Default is &#39;bpp_10&#39;
+
+        Outputs: 
+                - perColOffsetAdj. 8b data to write to per-column gain memory (1024x2x4). 
+                - perColClamped. Logical flag indicating that the target gain is outside 
+                the per-column inverse gain adjustment range, resulting in poor gain correction (1024x2x4) 
+        &#34;&#34;&#34;
+
+        if bitsPerPixel == &#39;bpp_9&#39;:
+                offset_data = offset_data * 2 # 9bpp, scale by 2
+        else:
+                pass # no scaling required
+
+        perColOffsetAdj = np.round(offset_data).astype(np.int8) # convert to int8. Note MATLAB clamps data &gt; 127 or &lt;-128
+        # Added round because 39.9 must become 40 not 39
+        clampedOffset = (perColOffsetAdj != np.round(offset_data)) # check if any values were clamped
+
+        return perColOffsetAdj, clampedOffset</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="Raw2Lx5.GainRaw2Lx5" href="#Raw2Lx5.GainRaw2Lx5">GainRaw2Lx5</a></code></li>
+<li><code><a title="Raw2Lx5.GeneratePerColRam" href="#Raw2Lx5.GeneratePerColRam">GeneratePerColRam</a></code></li>
+<li><code><a title="Raw2Lx5.OffsetRaw2Lx5" href="#Raw2Lx5.OffsetRaw2Lx5">OffsetRaw2Lx5</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

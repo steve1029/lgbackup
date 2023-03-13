@@ -1,0 +1,14 @@
+camera_intrinsics->fx = geometrics->Fc1;
+camera_intrinsics->fy = geometrics->Fc2;
+camera_intrinsics->cx = geometrics->cc1;
+camera_intrinsics->cy = geometrics->cc2;
+camera_intrinsics->k1 = geometrics->Kc1;
+camera_intrinsics->k2 = geometrics->Kc2;
+camera_intrinsics->k3 = geometrics->Kc3;
+camera_intrinsics->k4 = geometrics->Kc4;
+camera_intrinsics->k5 = geometrics->Kc5;
+camera_intrinsics->k6 = geometrics->Kc6;
+camera_intrinsics->p2 = geometrics->Tx;
+camera_intrinsics->p1 = geometrics->Ty;
+camera_intrinsics->codx = geometrics->Cx;
+camera_intrinsics->cody = geometrics->Cy;

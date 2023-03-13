@@ -1,0 +1,49 @@
+DE_Addr,Name,Enabled,Default Value,Lock Scale,Description
+0,row_cdn,0,1,1,"0: Deselect all rows in shift chain, 1: Inactive"
+1,row_in,0,0,2,Shift value to select the row
+2,row_clk,1,0,2,Clock to shift row_in through the shift register chain
+3,row_en,1,0,2,0 -> 1 to latch shifted row value 
+5,row_binEn,1,0,2,"0: Only RowN is selected. Binning disabled, 1: Bins RowN and RowN+1 (if top to bottom addressing) or RowN and RowN-1 (if bottom to top addressing)"
+26,AMP_CFG[0],1,0,1,"0: amp_mux_sel_EE, 1: amp_mux_sel_OE, 2: amp_mux_sel_EO, 3: amp_mux_sel_OO, 4: amp_mux_sel_SELB"
+27,AMP_CFG[1],1,0,1,"0: amp_mux_sel_EE, 1: amp_mux_sel_OE, 2: amp_mux_sel_EO, 3: amp_mux_sel_OO, 4: amp_mux_sel_SELB"
+28,AMP_CFG[2],1,0,1,"0: amp_mux_sel_EE, 1: amp_mux_sel_OE, 2: amp_mux_sel_EO, 3: amp_mux_sel_OO, 4: amp_mux_sel_SELB"
+8,pixel_bias_in,0,0,2,Shift value for pixel column vbias shift register
+16,pixel_bias_clk,0,0,1,Clock to shift pixel bias in value
+17,pixel_bias_en,0,0,1,0 -> 1 transition to latch shifted pixel bias values.
+9,pixel_bias_pd,0,0,2,Pull down of bias voltage for selected columns.  1: Pulls down selected columns to 0V
+18,dll_col_sreg_data,0,0,1,Column Enable Vector
+19,dll_col_sreg_clk,0,0,1,Shift Register Clock
+20,dll_col_en_latch,0,0,1,Column Enable Sync Load (this is synchronized with dll_clkin hence the pixel modulation clocks have to be actively running for this to synchronize)
+4,sfpullup,1,1,2,1 = drives voa/b high. Use for readout and reset to VDD.
+22,ref_reset,1,0,2,ana_spare_i0<2> 1=DAC reference pixel reset; 0= VDD pixel reset
+10,row_tx,0,0,1,"TX pattern from dump engine. 0: Select TX1 DAC voltage, 1: Select TX2 DAC voltage"
+11,row_tx_pd,0,0,1,"TX pulldown pattern from dump engine. 0: Inactive, 1: Pull down TX voltage for selected row to 0V"
+12,row_read,1,1,2,"READ pattern from dump engine. 0: Read inactive, 1: Read active"
+13,row_reset,1,0,2,"RESET pattern from dump engine. 0: Reset inactive, 1: Reset active"
+14,row_capeven,1,1,2,"CAPeven pattern from dump engine for even columns. 0: Transfer the charge, 1: Hold the charge"
+15,row_capodd,1,1,2,"CAPodd pattern from dump engine for odd columns. 0: Transfer the charge, 1: Hold the charge"
+23,bitline_pulldne,1,0,1,ana_spare_i0<3>
+47,bitline_pulldno,1,0,1,(bitline_pulldnb in schematic) High activates pulldowns on all of the bitlines.
+30,bitline_pullupbe,0,1,1,ana_spare_i0<5>
+34,bitline_pullupbo,0,1,1,Low activates a bitline pullup on all of the bitlines.
+31,bitline12e,1,0,1,ana_spare_i0<6>
+41,bitline12o,1,0,1,High shorts all of the bitlines to the 1.2V power supply.
+21,cmfb_clk,1,0,2,
+24,amp_clk0,1,0,2,
+25,amp_clk1,1,0,2,
+6,comp_clk0,1,0,2,ana_spare_i0<0>
+7,comp_clk1,1,0,2,ana_spare_i0<1>
+32,gaintag_latchb,1,1,2,0= gaintag comparator decision latched; 1= gaintag comparator precharge.  Decision is made on the falling edge.
+38,adc_in0,1,0,2,ADC Input Enable Even. High connects the amplifier outputs to the even ADCs.
+39,adc_in1,1,0,2,ADC Input Enable Odd. High connects the amplifier outputs to the odd ADCs.
+29,adc_capsel,1,0,1,(ana_spare_i0<4> in schematic) ADC capacitor select. Toggles sampling and ramping capacitors in the ADC. Program adc_capsel to match adc_rampdir.
+35,adc_rampdir,1,0,1,Controls the ramp direction of the ADC ramp generator. High is ramp up.
+36,adc_ramppause,1,1,2,High pauses the ADC ramp generator.
+33,sat_latch,1,0,2,High latches the saturation detect comparators.
+40,adc_data_valid,1,0,2,Per row signal to the pixel packer that the ADC data is valid
+37,amp_testselp[0],0,0,1,adc_odd_pd
+42,amp_testselp[1],0,0,1,pix_refselp[0]
+43,amp_testselp[2],0,0,1,pix_refselp[1]
+44,amp_testseln[0],0,0,1,ana_spare_i0<7>
+45,amp_testseln[1],0,0,1,ana_spare_i0<8>
+46,amp_testseln[2],0,0,1,ana_spare_i0<9>

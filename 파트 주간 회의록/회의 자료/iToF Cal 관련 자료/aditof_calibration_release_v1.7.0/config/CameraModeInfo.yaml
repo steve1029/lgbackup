@@ -1,0 +1,90 @@
+---
+mode:
+    0:
+        freqsMhz: [142, 177.5]
+        width: 512
+        height: 512
+        nCaptures: 6
+        nPhases: 3
+        maxPhaseSteps: 36
+        freqPerPhase: [142, 142, 142, 177.5, 177.5, 177.5]
+    1:
+        freqsMhz: [198, 189, 54]
+        width: 320
+        height: 288
+        nCaptures: 9
+        nPhases: 3
+        maxPhaseSteps: 24
+        freqPerPhase: [198, 198, 198, 189, 189, 189, 54, 54, 54]
+    2:
+        freqsMhz: [142]
+        width: 512
+        height: 512
+        nCaptures: 3
+        nPhases: 3
+        maxPhaseSteps: 24
+        freqPerPhase: [142, 142, 142]
+    3:
+        freqsMhz: [134]
+        width: 1024
+        height: 1024
+        nCaptures: 1
+        nPhases: 1
+        maxPhaseSteps: 1
+        freqPerPhase: [134]
+    4:
+        freqsMhz: [198, 189, 54]
+        width: 640
+        height: 576
+        nCaptures: 10
+        nPhases: 3
+        maxPhaseSteps: 24
+        freqPerPhase: [198, 198, 198, 189, 189, 189, 54, 54, 54, 134]
+    5:
+        freqsMhz: [198, 189, 54]
+        width: 1024
+        height: 1024
+        nCaptures: 10
+        nPhases: 3
+        maxPhaseSteps: 24
+        freqPerPhase: [198, 198, 198, 189, 189, 189, 54, 54, 54, 134]
+    6:
+        freqsMhz: [50, 200, 320]
+        width: 1024
+        height: 256
+        nCaptures: 10
+        nPhases: 3
+        maxPhaseSteps: 24
+        freqPerPhase: [50, 50, 50, 200, 200, 200, 320, 320, 320, 134]
+    7:
+        freqsMhz: [198, 189, 54]
+        width: 512
+        height: 512
+        nCaptures: 10
+        nPhases: 3
+        maxPhaseSteps: 24
+        freqPerPhase: [198, 198, 198, 189, 189, 189, 54, 54, 54, 134]
+    8:
+        freqsMhz: [134]
+        width: 1024
+        height: 1024
+        nCaptures: 1
+        nPhases: 1
+        maxPhaseSteps: 1
+        freqPerPhase: [134]
+    9:
+        freqsMhz: [177.5]
+        width: 512
+        height: 512
+        nCaptures: 3
+        nPhases: 3
+        maxPhaseSteps: 24
+        freqPerPhase: [177.5, 177.5, 177.5]
+    10:
+        freqsMhz: [198, 189, 54]
+        width: 1024
+        height: 1024
+        nCaptures: 9
+        nPhases: 3
+        maxPhaseSteps: 24
+        freqPerPhase: [198, 198, 198, 189, 189, 189, 54, 54, 54]

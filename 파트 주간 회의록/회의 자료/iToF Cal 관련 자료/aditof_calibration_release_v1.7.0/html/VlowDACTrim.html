@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>VlowDACTrim API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>VlowDACTrim</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+#
+# Copyright (c) 2020 Analog Devices, Inc. All Rights Reserved.   
+# This software is proprietary to Analog Devices, Inc. and its licensors.  
+#
+
+import numpy as np
+import numpy.matlib
+import csv
+import os
+import time
+import pickle
+import yaml
+import logging
+import sys
+try:
+        from . import CalibAPI as tof
+except:
+        import CalibAPI as tof
+from datetime import datetime
+
+def VlowDACTrim(config_file=None, CalibfolderName = &#34;&#34;):
+        &#39;&#39;&#39;
+                Performs VLOW trim and Pixel DAC trim (setting values) 
+                
+                Inputs: 
+                  config_file           - name of configuration (.yaml) file 
+                  CalibfolderName       - name of calbration folder 
+                  
+                Outputs: 
+                  None 
+                
+                &#39;&#39;&#39;
+
+        with open(config_file) as y:
+                yaml_file = yaml.load(y, Loader=yaml.SafeLoader)
+
+        config = yaml_file[&#39;AddressValueRegisterList&#39;][&#39;configuration_file&#39;]
+        y.close()
+
+        AVRL_dict = dict()
+
+        folderName = os.path.join(CalibfolderName, yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_directory&#39;])
+
+        if not os.path.exists(folderName):
+                os.mkdir(folderName)
+        else:
+                now = datetime.now()
+                print(&#39;\nALERT: &#39; + folderName + &#39; already exists&#39;)
+                old_folderName = folderName + str(now.strftime(&#39;_old_%Y%m%d_%H%M%S&#39;))
+                os.rename(folderName, old_folderName)
+                print(&#39;ALERT: RENAMING OLD FOLDER: &#39; + folderName + &#39; as &#39;+ old_folderName +&#39;\n&#39;)
+                os.mkdir(folderName)
+
+        logging.basicConfig(filename=os.path.join(folderName, &#39;AddressValueRegisterList.log&#39;), 
+                                                        filemode=&#39;w&#39;, format=&#39;%(asctime)s - %(levelname)s - %(message)s&#39;,
+                                                        level=logging.INFO)
+
+        now = datetime.now()
+        AddressValueRegisterList_dict = dict()
+        AddressValueRegisterList_dict[&#39;info&#39;] = dict()
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;CheckSum&#39;] = 0
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;configuration_file&#39;] = config
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Pass&#39;] = 0
+
+        ## VLOW TRIM (LINEAR AND SWITCHER)
+
+        logging.info(&#39;CALIBRATING VLOW TRIM (LINEAR AND SWITCHER) \n\n&#39;)
+
+        vlowThresh = 0.05 # tolerance of 50mV
+        targetVoltage = 1.00
+        estimatedSlopeLinear = 0.009 # 9.00mV/LSB
+        estimatedSlopeSwitcher = 0.0079 # 7.9mV/LSB
+
+        module_class = yaml_file[&#39;module_class&#39;]
+
+        API = tof.CalibAPI(module_class = module_class)
+        API.ConnectSensor(Mode=3, cfg = config)
+
+        API.testBoardADC()
+
+
+        orig_vlow_val = API.regread(0x0172)
+        orig_vlow_lin_vadj = (orig_vlow_val &amp; 0x5F00) &gt;&gt; 8
+        orig_vlow_sw_vadj = orig_vlow_val &amp; 0x005F
+        logging.info(&#39;ORIGINAL VLOW VALUE: &#39; + str(orig_vlow_val))
+        logging.info(&#39;ORIGINAL VLOW LINEAR ADJ: &#39; + str(orig_vlow_lin_vadj))
+        logging.info(&#39;ORIGINAL VLOW SWITCHER ADJ: &#39; + str(orig_vlow_sw_vadj))
+
+        # Vlow Linear calibration
+        logging.info(&#39;\nCALIBRATING VLOW LINEAR\n&#39;)
+
+        orig_Vlow_ctrl = API.regread(0x0170)
+        orig_Vlow_en = API.regread(0x0168)
+
+        s = API.regwrite(0x0170, 0x0000)
+        s = API.regwrite(0x0168, 0x0006)
+        time.sleep(0.1)
+
+        measured_vlow_lin = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+        logging.info(&#39;measured_vlow_lin (AnaTestMux_12): &#39; + str(measured_vlow_lin))
+
+        vlow_lin_vadj = orig_vlow_lin_vadj + np.ceil((targetVoltage - measured_vlow_lin)/estimatedSlopeLinear)
+        s = API.regrmw(0x0172, int(vlow_lin_vadj) &lt;&lt; 8, 0x5F00)
+        logging.info(&#39;Writing vlow_lin_vadj value &#39; + str(vlow_lin_vadj) + &#39; to register 0x0172&#39;)
+
+        measured_vlow_lin = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+        logging.info(&#39;measured_vlow_lin (AnaTestMux_12): &#39; + str(measured_vlow_lin))
+        retries = 10
+        while((measured_vlow_lin &gt; 1 + vlowThresh) or (measured_vlow_lin &lt; 1 - vlowThresh)) and retries &lt; 1:
+                print(&#39;Retry:&#39;, retries)
+                vlow_lin_vadj = orig_vlow_lin_vadj + np.ceil((targetVoltage - measured_vlow_lin)/estimatedSlopeLinear)
+                measured_vlow_lin = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+                logging.info(&#39;measured_vlow_lin (AnaTestMux_12): &#39; + str(measured_vlow_lin))
+
+        # Vlow Switcher calibration
+        logging.info(&#39;\nCALIBRATING VLOW SWITCHER\n&#39;)
+
+        s = API.regwrite(0x0168, 0x8000)
+        time.sleep(0.1)
+
+        measured_vlow_sw = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+        logging.info(&#39;measured_vlow_sw (AnaTestMux_12): &#39;+ str(measured_vlow_sw))
+
+        vlow_sw_vadj = orig_vlow_sw_vadj + np.round((targetVoltage - measured_vlow_sw)/estimatedSlopeSwitcher)
+        s = API.regrmw(0x0172, int(vlow_sw_vadj), 0x005F)
+        logging.info(&#39;vlow_sw_vadj: &#39;+ str(int(vlow_sw_vadj)))
+        logging.info(&#39;writing vlow_sw_vadj to register 0x0172&#39;)
+
+        measured_vlow_sw = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+        logging.info(&#39;measured_vlow_sw (AnaTestMux_12): &#39; + str(measured_vlow_sw))
+        retries = 10
+        while((measured_vlow_sw &gt; 1 + vlowThresh) or (measured_vlow_sw &lt; 1 - vlowThresh)) and retries &lt; 1:
+                print(&#39;Retry:&#39;, retries)
+                vlow_sw_vadj = orig_vlow_sw_vadj + np.round((targetVoltage - measured_vlow_sw)/estimatedSlopeSwitcher)
+                measured_vlow_sw = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+                logging.info(&#39;measured_vlow_sw (AnaTestMux_12): &#39; + str(measured_vlow_sw))
+
+        Vlow_Vadj = (int(vlow_lin_vadj) &lt;&lt; 8) + int(vlow_sw_vadj)
+        print(&#39;Vlow_Vadj val:&#39;, hex(Vlow_Vadj))
+        logging.info(&#39;Vlow_Vadj val:&#39;+ str(hex(Vlow_Vadj)))
+        AVRL_dict[&#39;vlow_vadj&#39;] = Vlow_Vadj
+
+        # Restore original settings
+        s = API.regwrite(0x0168, orig_Vlow_en)
+        s = API.regwrite(0x0170, orig_Vlow_ctrl)
+        logging.info(&#39;Restoring original settings&#39;)
+
+        limits_file = yaml_file[&#39;limits_file&#39;]
+        try:
+                with open(limits_file) as ly:
+                        limits = yaml.load(ly, Loader=yaml.SafeLoader)[&#39;AddressValueRegisterList&#39;]
+        except:
+                raise Exception(&#34;\n\nWARNING: Incorrect/non-existing limits file\n\n&#34;)
+
+        AVRL_dict[&#39;AVRL_pass&#39;] = True #Initialize to True
+        if limits[&#39;Vlow_lin_V&#39;][0] &lt; measured_vlow_lin &lt; limits[&#39;Vlow_lin_V&#39;][1]:
+                vlow_lin_status = &#34;PASSED&#34;
+        else:
+                vlow_lin_status = &#34;FAILED&#34;
+                print(&#39;\nVLOW Linear Regulator Trim FAIL\n&#39;)
+                AVRL_dict[&#39;AVRL_pass&#39;] = False
+        AVRL_dict[&#39;vlow_lin&#39;] = [measured_vlow_lin, vlow_lin_status, limits[&#39;Vlow_lin_V&#39;][0], limits[&#39;Vlow_lin_V&#39;][1]]
+
+        if limits[&#39;Vlow_sw_V&#39;][0] &lt; measured_vlow_sw &lt; limits[&#39;Vlow_sw_V&#39;][1]:
+                vlow_sw_status = &#34;PASSED&#34;
+        else:
+                vlow_sw_status = &#34;FAILED&#34;
+                print(&#39;\nVLOW Switching Regulator Trim FAIL\n&#39;)
+                AVRL_dict[&#39;AVRL_pass&#39;] = False
+        AVRL_dict[&#39;vlow_sw&#39;] = [measured_vlow_sw, vlow_sw_status, limits[&#39;Vlow_sw_V&#39;][0], limits[&#39;Vlow_sw_V&#39;][1]]
+
+
+        ## PIXEL DAC TRIM
+        logging.info(&#39;\n\nPIXEL DAC TRIM \n\n&#39;)
+
+        target_DAC_SatRef = 0.750
+        target_DAC_TX1 = 1.1
+        target_DAC_Bias1 = 0.250
+        target_DAC_Bias2 = 1.1
+        target_DAC_Vrest = 0.500
+        logging.info(&#39;target_DAC_SatRef = &#39; + str(target_DAC_SatRef))
+        logging.info(&#39;target_DAC_Bias1 = &#39; + str(target_DAC_Bias1))
+        logging.info(&#39;target_DAC_Bias1 = &#39; + str(target_DAC_Bias1))
+        logging.info(&#39;target_DAC_Bias2 = &#39; + str(target_DAC_Bias2))
+        logging.info(&#39;target_DAC_Vrest = &#39; + str(target_DAC_Vrest))
+
+        # DAC_SatRef
+        DAC_SatRef_x = np.array([0x0040, 0x0048, 0x0050, 0x0058])
+        DAC_SatRef_y = np.zeros(len(DAC_SatRef_x))
+        logging.info(&#39;DAC_SatRef&#39;)
+
+        for i in range(len(DAC_SatRef_x)):
+                s = API.regwrite(0x0132, DAC_SatRef_x[i])
+                s = API.regwrite(0x0126, 0x0020)
+                logging.info(&#39;Writing value &#39; + str(DAC_SatRef_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0020 to register 0x0126&#39;)
+                DAC_SatRef_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_SATREF&#39;)
+                logging.info(&#39;DAC_SatRef_y (DAC_SATREF): &#39; + str(DAC_SatRef_y[i]))
+
+        p_SatRef = np.polyfit(DAC_SatRef_y, DAC_SatRef_x, 1)
+
+        DAC_SatRef_val = int(np.round(np.polyval(p_SatRef, target_DAC_SatRef)))
+        logging.info(&#39;\n Calculated DAC_SatRef_val: &#39; + str(DAC_SatRef_val))
+
+        # Verify DAC_SatRef
+        s = API.regwrite(0x0132, DAC_SatRef_val)
+        s = API.regwrite(0x0126, 0x0020)
+        DAC_SatRef = API.CamMeasureAnaTestVoltage(&#39;DAC_SATREF&#39;)
+        logging.info(&#39;\n Verifying DAC_SatRef: &#39; + str(DAC_SatRef))
+        AVRL_dict[&#39;DAC_SatRef&#39;] = DAC_SatRef
+
+
+        # DAC_TX1
+        logging.info(&#39;DAC_TX1&#39;)
+        DAC_TX1_x = np.array([0x0080, 0x0088, 0x0090, 0x0098])
+        DAC_TX1_y = np.zeros(len(DAC_TX1_x))
+
+        for i in range(len(DAC_TX1_x)):
+                s = API.regwrite(0x0132, DAC_TX1_x[i])
+                s = API.regwrite(0x0126, 0x0001)
+                logging.info(&#39;Writing value &#39; + str(DAC_TX1_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0001 to register 0x0126&#39;)
+                DAC_TX1_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_TX1&#39;)
+                logging.info(&#39;DAC_TX1_y (DAC_TX1): &#39; + str(DAC_TX1_y[i]))
+
+        p_TX1 = np.polyfit(DAC_TX1_y, DAC_TX1_x, 1)
+
+        DAC_TX1_val = int(np.round(np.polyval(p_TX1, target_DAC_TX1)))
+        logging.info(&#39;\n Calculated DAC_TX1_val: &#39; + str(DAC_TX1_val))
+
+        # Verify DAC_TX1
+        s = API.regwrite(0x0132, DAC_TX1_val)
+        s = API.regwrite(0x0126, 0x0001)
+        DAC_TX1 = API.CamMeasureAnaTestVoltage(&#39;DAC_TX1&#39;)
+        logging.info(&#39;\n Verifying DAC_TX1: &#39; + str(DAC_TX1))
+        AVRL_dict[&#39;DAC_TX1&#39;] = DAC_TX1
+
+
+        # DAC_Bias1
+        logging.info(&#39;DAC_Bias1&#39;)
+        DAC_Bias1_x = np.array([0x0010, 0x0018, 0x0020, 0x0028])
+        DAC_Bias1_y = np.zeros(len(DAC_Bias1_x))
+
+        for i in range(len(DAC_Bias1_x)):
+                s = API.regwrite(0x0132, DAC_Bias1_x[i])
+                s = API.regwrite(0x0126, 0x0008)
+                logging.info(&#39;Writing value &#39; + str(DAC_Bias1_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0008 to register 0x0126&#39;)
+                DAC_Bias1_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_BIAS1&#39;)
+                logging.info(&#39;DAC_Bias1_y (DAC_BIAS1): &#39; + str(DAC_Bias1_y[i]))
+
+        p_Bias1 = np.polyfit(DAC_Bias1_y, DAC_Bias1_x, 1)
+
+        DAC_Bias1_val = int(np.round(np.polyval(p_Bias1, target_DAC_Bias1)))
+        logging.info(&#39;\n Calculated DAC_Bias1_val: &#39; + str(DAC_Bias1_val))
+
+        # Verify DAC_Bias1
+        s = API.regwrite(0x0132, DAC_Bias1_val)
+        s = API.regwrite(0x0126, 0x0008)
+        DAC_Bias1 = API.CamMeasureAnaTestVoltage(&#39;DAC_BIAS1&#39;)
+        logging.info(&#39;\n Verifying DAC_TX1: &#39; + str(DAC_Bias1))
+        AVRL_dict[&#39;DAC_Bias1&#39;] = DAC_Bias1
+
+
+        # DAC_Bias2
+        logging.info(&#39;DAC_Bias2&#39;)
+        DAC_Bias2_x = np.array([0x0080, 0x0088, 0x0090, 0x0098])
+        DAC_Bias2_y = np.zeros(len(DAC_Bias2_x))
+
+        for i in range(len(DAC_Bias2_x)):
+                s = API.regwrite(0x0132, DAC_Bias2_x[i])
+                s = API.regwrite(0x0126, 0x0010)
+                logging.info(&#39;Writing value &#39; + str(DAC_Bias2_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0010 to register 0x0126&#39;)
+                DAC_Bias2_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_BIAS2&#39;)
+                logging.info(&#39;DAC_Bias2_y (DAC_BIAS2): &#39; + str(DAC_Bias2_y[i]))
+
+        p_Bias2 = np.polyfit(DAC_Bias2_y, DAC_Bias2_x, 1)
+
+        DAC_Bias2_val = int(np.round(np.polyval(p_Bias2, target_DAC_Bias2)))
+        logging.info(&#39;\n Calculated DAC_Bias2_val: &#39; + str(DAC_Bias2_val))
+
+        # Verify DAC_Bias2
+        s = API.regwrite(0x0132, DAC_Bias2_val)
+        s = API.regwrite(0x0126, 0x0010)
+        DAC_Bias2 = API.CamMeasureAnaTestVoltage(&#39;DAC_BIAS2&#39;)
+        logging.info(&#39;\n Verifying DAC_Bias2: &#39; + str(DAC_Bias2))
+        AVRL_dict[&#39;DAC_Bias2&#39;] = DAC_Bias2
+
+
+        # DAC_Vrest
+        logging.info(&#39;DAC_Vrest&#39;)
+        DAC_Vrest_x = np.array([0x0070, 0x0078, 0x0080, 0x0088])
+        DAC_Vrest_y = np.zeros(len(DAC_Vrest_x))
+
+        for i in range(len(DAC_Vrest_x)):
+                s = API.regwrite(0x0132, DAC_Vrest_x[i])
+                s = API.regwrite(0x0126, 0x0040)
+                logging.info(&#39;Writing value &#39; + str(DAC_Vrest_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0040 to register 0x0126&#39;)
+                DAC_Vrest_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_VREST&#39;)
+                logging.info(&#39;DAC_Vrest_y (DAC_VREST): &#39; + str(DAC_Vrest_y[i]))
+
+        p_Vrest = np.polyfit(DAC_Vrest_y, DAC_Vrest_x, 1)
+
+        DAC_Vrest_val = int(np.round(np.polyval(p_Vrest, target_DAC_Vrest)))
+        logging.info(&#39;\n Calculated DAC_Vrest_val: &#39; + str(DAC_Vrest_val))
+
+        # Verify DAC_Vrest
+        s = API.regwrite(0x0132, DAC_Vrest_val)
+        s = API.regwrite(0x0126, 0x0040)
+        DAC_Vrest = API.CamMeasureAnaTestVoltage(&#39;DAC_VREST&#39;)
+        logging.info(&#39;\n Verifying DAC_Vrest: &#39; + str(DAC_Vrest))
+        AVRL_dict[&#39;DAC_Vrest&#39;] = DAC_Vrest
+
+        AddressValueRegisterList = np.array([[0x0172, Vlow_Vadj, 0xFFFF, 0],
+                                                                                [0x0132, DAC_SatRef_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0020, 0xFFFF, 0],
+                                                                                [0x0132, DAC_TX1_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0001, 0xFFFF, 0],
+                                                                                [0x0132, DAC_Bias1_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0008, 0xFFFF, 0],
+                                                                                [0x0132, DAC_Bias2_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0010, 0xFFFF, 0],
+                                                                                [0x0132, DAC_Vrest_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0040, 0xFFFF, 0],
+                                                                                [0x0246, 0xC1F5, 0x01FF, 0]])
+
+        AVRL_dict[&#39;DAC_SatRef_val&#39;] = DAC_SatRef_val
+        AVRL_dict[&#39;DAC_TX1_val&#39;] = DAC_TX1_val
+        AVRL_dict[&#39;DAC_Bias1_val&#39;] = DAC_Bias1_val
+        AVRL_dict[&#39;DAC_Bias2_val&#39;] = DAC_Bias2_val
+        AVRL_dict[&#39;DAC_Vrest_val&#39;] = DAC_Vrest_val
+
+
+        AddressValueRegisterList_dict[&#39;AddressValueRegisterList&#39;] = AddressValueRegisterList
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Pass&#39;] = AVRL_dict[&#39;AVRL_pass&#39;]
+
+
+        file = os.path.join(folderName, yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_file_pkl&#39;])
+        f = open(file + &#34;.pkl&#34;, &#39;wb&#39;)
+        pickle.dump(AddressValueRegisterList_dict, f)
+        f.close()
+
+        f = open(os.path.join(folderName, &#39;AVRL_dict.pkl&#39;), &#39;wb&#39;)
+        pickle.dump(AVRL_dict, f)
+        f.close()
+
+        file = os.path.join(folderName, yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_file_csv&#39;])
+        c = csv.writer(open(file + &#39;.csv&#39;, &#39;w&#39;, newline=&#39;&#39;))
+        for i in range(len(AddressValueRegisterList)):
+                c.writerow(AddressValueRegisterList[i])
+
+if __name__ == &#34;__main__&#34;:
+    VlowDACTrim(&#34;./config/VLowDACTrim.yaml&#34;, CalibfolderName = &#34;&#34;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="VlowDACTrim.VlowDACTrim"><code class="name flex">
+<span>def <span class="ident">VlowDACTrim</span></span>(<span>config_file=None, CalibfolderName='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Performs VLOW trim and Pixel DAC trim (setting values) </p>
+<p>Inputs:
+config_file
+- name of configuration (.yaml) file
+CalibfolderName
+- name of calbration folder </p>
+<p>Outputs:
+None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def VlowDACTrim(config_file=None, CalibfolderName = &#34;&#34;):
+        &#39;&#39;&#39;
+                Performs VLOW trim and Pixel DAC trim (setting values) 
+                
+                Inputs: 
+                  config_file           - name of configuration (.yaml) file 
+                  CalibfolderName       - name of calbration folder 
+                  
+                Outputs: 
+                  None 
+                
+                &#39;&#39;&#39;
+
+        with open(config_file) as y:
+                yaml_file = yaml.load(y, Loader=yaml.SafeLoader)
+
+        config = yaml_file[&#39;AddressValueRegisterList&#39;][&#39;configuration_file&#39;]
+        y.close()
+
+        AVRL_dict = dict()
+
+        folderName = os.path.join(CalibfolderName, yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_directory&#39;])
+
+        if not os.path.exists(folderName):
+                os.mkdir(folderName)
+        else:
+                now = datetime.now()
+                print(&#39;\nALERT: &#39; + folderName + &#39; already exists&#39;)
+                old_folderName = folderName + str(now.strftime(&#39;_old_%Y%m%d_%H%M%S&#39;))
+                os.rename(folderName, old_folderName)
+                print(&#39;ALERT: RENAMING OLD FOLDER: &#39; + folderName + &#39; as &#39;+ old_folderName +&#39;\n&#39;)
+                os.mkdir(folderName)
+
+        logging.basicConfig(filename=os.path.join(folderName, &#39;AddressValueRegisterList.log&#39;), 
+                                                        filemode=&#39;w&#39;, format=&#39;%(asctime)s - %(levelname)s - %(message)s&#39;,
+                                                        level=logging.INFO)
+
+        now = datetime.now()
+        AddressValueRegisterList_dict = dict()
+        AddressValueRegisterList_dict[&#39;info&#39;] = dict()
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;CheckSum&#39;] = 0
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;configuration_file&#39;] = config
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Pass&#39;] = 0
+
+        ## VLOW TRIM (LINEAR AND SWITCHER)
+
+        logging.info(&#39;CALIBRATING VLOW TRIM (LINEAR AND SWITCHER) \n\n&#39;)
+
+        vlowThresh = 0.05 # tolerance of 50mV
+        targetVoltage = 1.00
+        estimatedSlopeLinear = 0.009 # 9.00mV/LSB
+        estimatedSlopeSwitcher = 0.0079 # 7.9mV/LSB
+
+        module_class = yaml_file[&#39;module_class&#39;]
+
+        API = tof.CalibAPI(module_class = module_class)
+        API.ConnectSensor(Mode=3, cfg = config)
+
+        API.testBoardADC()
+
+
+        orig_vlow_val = API.regread(0x0172)
+        orig_vlow_lin_vadj = (orig_vlow_val &amp; 0x5F00) &gt;&gt; 8
+        orig_vlow_sw_vadj = orig_vlow_val &amp; 0x005F
+        logging.info(&#39;ORIGINAL VLOW VALUE: &#39; + str(orig_vlow_val))
+        logging.info(&#39;ORIGINAL VLOW LINEAR ADJ: &#39; + str(orig_vlow_lin_vadj))
+        logging.info(&#39;ORIGINAL VLOW SWITCHER ADJ: &#39; + str(orig_vlow_sw_vadj))
+
+        # Vlow Linear calibration
+        logging.info(&#39;\nCALIBRATING VLOW LINEAR\n&#39;)
+
+        orig_Vlow_ctrl = API.regread(0x0170)
+        orig_Vlow_en = API.regread(0x0168)
+
+        s = API.regwrite(0x0170, 0x0000)
+        s = API.regwrite(0x0168, 0x0006)
+        time.sleep(0.1)
+
+        measured_vlow_lin = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+        logging.info(&#39;measured_vlow_lin (AnaTestMux_12): &#39; + str(measured_vlow_lin))
+
+        vlow_lin_vadj = orig_vlow_lin_vadj + np.ceil((targetVoltage - measured_vlow_lin)/estimatedSlopeLinear)
+        s = API.regrmw(0x0172, int(vlow_lin_vadj) &lt;&lt; 8, 0x5F00)
+        logging.info(&#39;Writing vlow_lin_vadj value &#39; + str(vlow_lin_vadj) + &#39; to register 0x0172&#39;)
+
+        measured_vlow_lin = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+        logging.info(&#39;measured_vlow_lin (AnaTestMux_12): &#39; + str(measured_vlow_lin))
+        retries = 10
+        while((measured_vlow_lin &gt; 1 + vlowThresh) or (measured_vlow_lin &lt; 1 - vlowThresh)) and retries &lt; 1:
+                print(&#39;Retry:&#39;, retries)
+                vlow_lin_vadj = orig_vlow_lin_vadj + np.ceil((targetVoltage - measured_vlow_lin)/estimatedSlopeLinear)
+                measured_vlow_lin = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+                logging.info(&#39;measured_vlow_lin (AnaTestMux_12): &#39; + str(measured_vlow_lin))
+
+        # Vlow Switcher calibration
+        logging.info(&#39;\nCALIBRATING VLOW SWITCHER\n&#39;)
+
+        s = API.regwrite(0x0168, 0x8000)
+        time.sleep(0.1)
+
+        measured_vlow_sw = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+        logging.info(&#39;measured_vlow_sw (AnaTestMux_12): &#39;+ str(measured_vlow_sw))
+
+        vlow_sw_vadj = orig_vlow_sw_vadj + np.round((targetVoltage - measured_vlow_sw)/estimatedSlopeSwitcher)
+        s = API.regrmw(0x0172, int(vlow_sw_vadj), 0x005F)
+        logging.info(&#39;vlow_sw_vadj: &#39;+ str(int(vlow_sw_vadj)))
+        logging.info(&#39;writing vlow_sw_vadj to register 0x0172&#39;)
+
+        measured_vlow_sw = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+        logging.info(&#39;measured_vlow_sw (AnaTestMux_12): &#39; + str(measured_vlow_sw))
+        retries = 10
+        while((measured_vlow_sw &gt; 1 + vlowThresh) or (measured_vlow_sw &lt; 1 - vlowThresh)) and retries &lt; 1:
+                print(&#39;Retry:&#39;, retries)
+                vlow_sw_vadj = orig_vlow_sw_vadj + np.round((targetVoltage - measured_vlow_sw)/estimatedSlopeSwitcher)
+                measured_vlow_sw = API.CamMeasureAnaTestVoltage(&#39;AnaTestMux_12&#39;)
+                logging.info(&#39;measured_vlow_sw (AnaTestMux_12): &#39; + str(measured_vlow_sw))
+
+        Vlow_Vadj = (int(vlow_lin_vadj) &lt;&lt; 8) + int(vlow_sw_vadj)
+        print(&#39;Vlow_Vadj val:&#39;, hex(Vlow_Vadj))
+        logging.info(&#39;Vlow_Vadj val:&#39;+ str(hex(Vlow_Vadj)))
+        AVRL_dict[&#39;vlow_vadj&#39;] = Vlow_Vadj
+
+        # Restore original settings
+        s = API.regwrite(0x0168, orig_Vlow_en)
+        s = API.regwrite(0x0170, orig_Vlow_ctrl)
+        logging.info(&#39;Restoring original settings&#39;)
+
+        limits_file = yaml_file[&#39;limits_file&#39;]
+        try:
+                with open(limits_file) as ly:
+                        limits = yaml.load(ly, Loader=yaml.SafeLoader)[&#39;AddressValueRegisterList&#39;]
+        except:
+                raise Exception(&#34;\n\nWARNING: Incorrect/non-existing limits file\n\n&#34;)
+
+        AVRL_dict[&#39;AVRL_pass&#39;] = True #Initialize to True
+        if limits[&#39;Vlow_lin_V&#39;][0] &lt; measured_vlow_lin &lt; limits[&#39;Vlow_lin_V&#39;][1]:
+                vlow_lin_status = &#34;PASSED&#34;
+        else:
+                vlow_lin_status = &#34;FAILED&#34;
+                print(&#39;\nVLOW Linear Regulator Trim FAIL\n&#39;)
+                AVRL_dict[&#39;AVRL_pass&#39;] = False
+        AVRL_dict[&#39;vlow_lin&#39;] = [measured_vlow_lin, vlow_lin_status, limits[&#39;Vlow_lin_V&#39;][0], limits[&#39;Vlow_lin_V&#39;][1]]
+
+        if limits[&#39;Vlow_sw_V&#39;][0] &lt; measured_vlow_sw &lt; limits[&#39;Vlow_sw_V&#39;][1]:
+                vlow_sw_status = &#34;PASSED&#34;
+        else:
+                vlow_sw_status = &#34;FAILED&#34;
+                print(&#39;\nVLOW Switching Regulator Trim FAIL\n&#39;)
+                AVRL_dict[&#39;AVRL_pass&#39;] = False
+        AVRL_dict[&#39;vlow_sw&#39;] = [measured_vlow_sw, vlow_sw_status, limits[&#39;Vlow_sw_V&#39;][0], limits[&#39;Vlow_sw_V&#39;][1]]
+
+
+        ## PIXEL DAC TRIM
+        logging.info(&#39;\n\nPIXEL DAC TRIM \n\n&#39;)
+
+        target_DAC_SatRef = 0.750
+        target_DAC_TX1 = 1.1
+        target_DAC_Bias1 = 0.250
+        target_DAC_Bias2 = 1.1
+        target_DAC_Vrest = 0.500
+        logging.info(&#39;target_DAC_SatRef = &#39; + str(target_DAC_SatRef))
+        logging.info(&#39;target_DAC_Bias1 = &#39; + str(target_DAC_Bias1))
+        logging.info(&#39;target_DAC_Bias1 = &#39; + str(target_DAC_Bias1))
+        logging.info(&#39;target_DAC_Bias2 = &#39; + str(target_DAC_Bias2))
+        logging.info(&#39;target_DAC_Vrest = &#39; + str(target_DAC_Vrest))
+
+        # DAC_SatRef
+        DAC_SatRef_x = np.array([0x0040, 0x0048, 0x0050, 0x0058])
+        DAC_SatRef_y = np.zeros(len(DAC_SatRef_x))
+        logging.info(&#39;DAC_SatRef&#39;)
+
+        for i in range(len(DAC_SatRef_x)):
+                s = API.regwrite(0x0132, DAC_SatRef_x[i])
+                s = API.regwrite(0x0126, 0x0020)
+                logging.info(&#39;Writing value &#39; + str(DAC_SatRef_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0020 to register 0x0126&#39;)
+                DAC_SatRef_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_SATREF&#39;)
+                logging.info(&#39;DAC_SatRef_y (DAC_SATREF): &#39; + str(DAC_SatRef_y[i]))
+
+        p_SatRef = np.polyfit(DAC_SatRef_y, DAC_SatRef_x, 1)
+
+        DAC_SatRef_val = int(np.round(np.polyval(p_SatRef, target_DAC_SatRef)))
+        logging.info(&#39;\n Calculated DAC_SatRef_val: &#39; + str(DAC_SatRef_val))
+
+        # Verify DAC_SatRef
+        s = API.regwrite(0x0132, DAC_SatRef_val)
+        s = API.regwrite(0x0126, 0x0020)
+        DAC_SatRef = API.CamMeasureAnaTestVoltage(&#39;DAC_SATREF&#39;)
+        logging.info(&#39;\n Verifying DAC_SatRef: &#39; + str(DAC_SatRef))
+        AVRL_dict[&#39;DAC_SatRef&#39;] = DAC_SatRef
+
+
+        # DAC_TX1
+        logging.info(&#39;DAC_TX1&#39;)
+        DAC_TX1_x = np.array([0x0080, 0x0088, 0x0090, 0x0098])
+        DAC_TX1_y = np.zeros(len(DAC_TX1_x))
+
+        for i in range(len(DAC_TX1_x)):
+                s = API.regwrite(0x0132, DAC_TX1_x[i])
+                s = API.regwrite(0x0126, 0x0001)
+                logging.info(&#39;Writing value &#39; + str(DAC_TX1_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0001 to register 0x0126&#39;)
+                DAC_TX1_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_TX1&#39;)
+                logging.info(&#39;DAC_TX1_y (DAC_TX1): &#39; + str(DAC_TX1_y[i]))
+
+        p_TX1 = np.polyfit(DAC_TX1_y, DAC_TX1_x, 1)
+
+        DAC_TX1_val = int(np.round(np.polyval(p_TX1, target_DAC_TX1)))
+        logging.info(&#39;\n Calculated DAC_TX1_val: &#39; + str(DAC_TX1_val))
+
+        # Verify DAC_TX1
+        s = API.regwrite(0x0132, DAC_TX1_val)
+        s = API.regwrite(0x0126, 0x0001)
+        DAC_TX1 = API.CamMeasureAnaTestVoltage(&#39;DAC_TX1&#39;)
+        logging.info(&#39;\n Verifying DAC_TX1: &#39; + str(DAC_TX1))
+        AVRL_dict[&#39;DAC_TX1&#39;] = DAC_TX1
+
+
+        # DAC_Bias1
+        logging.info(&#39;DAC_Bias1&#39;)
+        DAC_Bias1_x = np.array([0x0010, 0x0018, 0x0020, 0x0028])
+        DAC_Bias1_y = np.zeros(len(DAC_Bias1_x))
+
+        for i in range(len(DAC_Bias1_x)):
+                s = API.regwrite(0x0132, DAC_Bias1_x[i])
+                s = API.regwrite(0x0126, 0x0008)
+                logging.info(&#39;Writing value &#39; + str(DAC_Bias1_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0008 to register 0x0126&#39;)
+                DAC_Bias1_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_BIAS1&#39;)
+                logging.info(&#39;DAC_Bias1_y (DAC_BIAS1): &#39; + str(DAC_Bias1_y[i]))
+
+        p_Bias1 = np.polyfit(DAC_Bias1_y, DAC_Bias1_x, 1)
+
+        DAC_Bias1_val = int(np.round(np.polyval(p_Bias1, target_DAC_Bias1)))
+        logging.info(&#39;\n Calculated DAC_Bias1_val: &#39; + str(DAC_Bias1_val))
+
+        # Verify DAC_Bias1
+        s = API.regwrite(0x0132, DAC_Bias1_val)
+        s = API.regwrite(0x0126, 0x0008)
+        DAC_Bias1 = API.CamMeasureAnaTestVoltage(&#39;DAC_BIAS1&#39;)
+        logging.info(&#39;\n Verifying DAC_TX1: &#39; + str(DAC_Bias1))
+        AVRL_dict[&#39;DAC_Bias1&#39;] = DAC_Bias1
+
+
+        # DAC_Bias2
+        logging.info(&#39;DAC_Bias2&#39;)
+        DAC_Bias2_x = np.array([0x0080, 0x0088, 0x0090, 0x0098])
+        DAC_Bias2_y = np.zeros(len(DAC_Bias2_x))
+
+        for i in range(len(DAC_Bias2_x)):
+                s = API.regwrite(0x0132, DAC_Bias2_x[i])
+                s = API.regwrite(0x0126, 0x0010)
+                logging.info(&#39;Writing value &#39; + str(DAC_Bias2_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0010 to register 0x0126&#39;)
+                DAC_Bias2_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_BIAS2&#39;)
+                logging.info(&#39;DAC_Bias2_y (DAC_BIAS2): &#39; + str(DAC_Bias2_y[i]))
+
+        p_Bias2 = np.polyfit(DAC_Bias2_y, DAC_Bias2_x, 1)
+
+        DAC_Bias2_val = int(np.round(np.polyval(p_Bias2, target_DAC_Bias2)))
+        logging.info(&#39;\n Calculated DAC_Bias2_val: &#39; + str(DAC_Bias2_val))
+
+        # Verify DAC_Bias2
+        s = API.regwrite(0x0132, DAC_Bias2_val)
+        s = API.regwrite(0x0126, 0x0010)
+        DAC_Bias2 = API.CamMeasureAnaTestVoltage(&#39;DAC_BIAS2&#39;)
+        logging.info(&#39;\n Verifying DAC_Bias2: &#39; + str(DAC_Bias2))
+        AVRL_dict[&#39;DAC_Bias2&#39;] = DAC_Bias2
+
+
+        # DAC_Vrest
+        logging.info(&#39;DAC_Vrest&#39;)
+        DAC_Vrest_x = np.array([0x0070, 0x0078, 0x0080, 0x0088])
+        DAC_Vrest_y = np.zeros(len(DAC_Vrest_x))
+
+        for i in range(len(DAC_Vrest_x)):
+                s = API.regwrite(0x0132, DAC_Vrest_x[i])
+                s = API.regwrite(0x0126, 0x0040)
+                logging.info(&#39;Writing value &#39; + str(DAC_Vrest_x[i]) + &#39; to register 0x0132&#39;)
+                logging.info(&#39;Writing value 0x0040 to register 0x0126&#39;)
+                DAC_Vrest_y[i] = API.CamMeasureAnaTestVoltage(&#39;DAC_VREST&#39;)
+                logging.info(&#39;DAC_Vrest_y (DAC_VREST): &#39; + str(DAC_Vrest_y[i]))
+
+        p_Vrest = np.polyfit(DAC_Vrest_y, DAC_Vrest_x, 1)
+
+        DAC_Vrest_val = int(np.round(np.polyval(p_Vrest, target_DAC_Vrest)))
+        logging.info(&#39;\n Calculated DAC_Vrest_val: &#39; + str(DAC_Vrest_val))
+
+        # Verify DAC_Vrest
+        s = API.regwrite(0x0132, DAC_Vrest_val)
+        s = API.regwrite(0x0126, 0x0040)
+        DAC_Vrest = API.CamMeasureAnaTestVoltage(&#39;DAC_VREST&#39;)
+        logging.info(&#39;\n Verifying DAC_Vrest: &#39; + str(DAC_Vrest))
+        AVRL_dict[&#39;DAC_Vrest&#39;] = DAC_Vrest
+
+        AddressValueRegisterList = np.array([[0x0172, Vlow_Vadj, 0xFFFF, 0],
+                                                                                [0x0132, DAC_SatRef_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0020, 0xFFFF, 0],
+                                                                                [0x0132, DAC_TX1_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0001, 0xFFFF, 0],
+                                                                                [0x0132, DAC_Bias1_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0008, 0xFFFF, 0],
+                                                                                [0x0132, DAC_Bias2_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0010, 0xFFFF, 0],
+                                                                                [0x0132, DAC_Vrest_val, 0xFFFF, 0],
+                                                                                [0x0126, 0x0040, 0xFFFF, 0],
+                                                                                [0x0246, 0xC1F5, 0x01FF, 0]])
+
+        AVRL_dict[&#39;DAC_SatRef_val&#39;] = DAC_SatRef_val
+        AVRL_dict[&#39;DAC_TX1_val&#39;] = DAC_TX1_val
+        AVRL_dict[&#39;DAC_Bias1_val&#39;] = DAC_Bias1_val
+        AVRL_dict[&#39;DAC_Bias2_val&#39;] = DAC_Bias2_val
+        AVRL_dict[&#39;DAC_Vrest_val&#39;] = DAC_Vrest_val
+
+
+        AddressValueRegisterList_dict[&#39;AddressValueRegisterList&#39;] = AddressValueRegisterList
+        AddressValueRegisterList_dict[&#39;info&#39;][&#39;Pass&#39;] = AVRL_dict[&#39;AVRL_pass&#39;]
+
+
+        file = os.path.join(folderName, yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_file_pkl&#39;])
+        f = open(file + &#34;.pkl&#34;, &#39;wb&#39;)
+        pickle.dump(AddressValueRegisterList_dict, f)
+        f.close()
+
+        f = open(os.path.join(folderName, &#39;AVRL_dict.pkl&#39;), &#39;wb&#39;)
+        pickle.dump(AVRL_dict, f)
+        f.close()
+
+        file = os.path.join(folderName, yaml_file[&#39;AddressValueRegisterList&#39;][&#39;output_file_csv&#39;])
+        c = csv.writer(open(file + &#39;.csv&#39;, &#39;w&#39;, newline=&#39;&#39;))
+        for i in range(len(AddressValueRegisterList)):
+                c.writerow(AddressValueRegisterList[i])</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="VlowDACTrim.VlowDACTrim" href="#VlowDACTrim.VlowDACTrim">VlowDACTrim</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

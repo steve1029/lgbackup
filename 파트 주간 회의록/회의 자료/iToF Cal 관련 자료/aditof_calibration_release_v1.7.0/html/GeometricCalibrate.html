@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>GeometricCalibrate API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>GeometricCalibrate</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+#
+# Copyright (c) 2020 Analog Devices, Inc. All Rights Reserved.   
+# This software is proprietary to Analog Devices, Inc. and its licensors.  
+# #
+
+# import numpy as np
+# import sys
+# from . import GenerateGeometricIntrinsicsfromcsv as GeoCSV
+# from . import Geometric_functions as GeoFN
+# from . import CalibAPI as tof
+# import time
+# import matplotlib.pyplot as plt
+# import pickle
+# import os
+# from datetime import datetime
+# import logging
+# import yaml
+# import cv2
+
+# import ftd2xx as ftd
+# import lamp_control.IR_Lamp_Control as ir_lamp_control
+
+def Geometric_calibrate(config_file=None, CalibfolderName = &#34;&#34;):
+        &#39;&#39;&#39;
+                Top function for Geometric calibration 
+                
+                Inputs: 
+                  config_file           - name of configuration (.yaml) file 
+                  CalibfolderName       - name of calbration folder 
+                  
+                Outputs: 
+                  None 
+                
+        &#39;&#39;&#39;
+
+        with open(config_file) as y:
+                file = yaml.load(y, Loader=yaml.SafeLoader)
+
+        calibration_mode = file[&#39;GeometricCalibration&#39;][&#39;calibration_mode&#39;]
+        limits_filename = file[&#39;limits_file&#39;]
+        try:
+                with open(limits_filename) as ly:
+                        limits = yaml.load(ly, Loader=yaml.SafeLoader)[&#39;GeometricCalibration&#39;]
+        except:
+                raise Exception(&#34;\n\nWARNING: Incorrect/non-existing limits file\n\n&#34;)
+
+        # with open(limits_filename) as l:
+        #       limits_file = yaml.load(l, Loader=yaml.SafeLoader)
+
+        # reprojection_error_limit = limits_file[&#39;GeometricCalibration&#39;][&#39;reprojection_error&#39;]
+
+
+        if CalibfolderName == &#34;&#34;:
+                now = datetime.now()
+                folderName = file[&#39;GeometricCalibration&#39;][&#39;output_directory&#39;] + &#39;_&#39; + str(now.strftime(&#39;%Y%m%d_%H%M%S&#39;))
+        else:
+                folderName = os.path.join(CalibfolderName, file[&#39;GeometricCalibration&#39;][&#39;output_directory&#39;])
+        
+        if not os.path.exists(folderName):
+                os.mkdir(folderName)
+        else:
+                now = datetime.now()
+                print(&#39;\nALERT: &#39; + folderName + &#39; already exists&#39;)
+                old_folderName = folderName + str(now.strftime(&#39;_old_%Y%m%d_%H%M%S&#39;))
+                os.rename(folderName, old_folderName)
+                print(&#39;ALERT: RENAMING OLD FOLDER: &#39; + folderName + &#39; as &#39;+ old_folderName +&#39;\n&#39;)
+                os.mkdir(folderName)
+
+        if calibration_mode == &#39;csv&#39;:
+                GeoCSV.GenerateGeometricIntrinsicsfromcsv(config_file=config_file, CalibfolderName=CalibfolderName)
+
+        elif calibration_mode == &#39;image&#39;:
+                input_file = file[&#39;GeometricCalibration&#39;][&#39;input_file_png&#39;]
+                now = datetime.now()
+                geo_dict = dict()
+                geo_dict[&#39;info&#39;] = dict()
+                geo_dict[&#39;info&#39;][&#39;CheckSum&#39;] = 0
+                geo_dict[&#39;info&#39;][&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                geo_dict[&#39;info&#39;][&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                geo_dict[&#39;info&#39;][&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                geo_dict[&#39;info&#39;][&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                geo_dict[&#39;info&#39;][&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                geo_dict[&#39;info&#39;][&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                geo_dict[&#39;info&#39;][&#39;configuration_file&#39;] = file[&#39;GeometricCalibration&#39;][&#39;configuration_file&#39;]
+
+                img = plt.imread(input_file)
+                geo_dict = GeoFN.GeometricCal(img, file, folderName, geo_dict)
+
+        elif calibration_mode == &#39;capture&#39;:
+                #ADI IR lamp setup
+                if file[&#39;GeometricCalibration&#39;][&#39;lamp_control&#39;] == True:
+                        irl, id_check = ir_lamp_control.lamp_setup()
+
+                print(&#34;\nTurning on camera...\n&#34;)
+                module_class = file[&#39;module_class&#39;] # MZ: Type of Imager Module (Walden_R1, Toro, Ofilm)
+                now = datetime.now()
+                geo_dict = dict()
+                geo_dict[&#39;info&#39;] = dict()
+                geo_dict[&#39;info&#39;][&#39;CheckSum&#39;] = 0
+                geo_dict[&#39;info&#39;][&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                geo_dict[&#39;info&#39;][&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                geo_dict[&#39;info&#39;][&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                geo_dict[&#39;info&#39;][&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                geo_dict[&#39;info&#39;][&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                geo_dict[&#39;info&#39;][&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                geo_dict[&#39;info&#39;][&#39;configuration_file&#39;] = file[&#39;GeometricCalibration&#39;][&#39;configuration_file&#39;]
+                geo_dict[&#39;info&#39;][&#39;Pass&#39;] = 0
+
+                cam = tof.CalibAPI(module_class = module_class)
+                cam.ConnectSensor(Mode=3, fps=10, cfg = file[&#39;GeometricCalibration&#39;][&#39;configuration_file&#39;])
+
+                # cam.LoadGainOffsetCalib(file[&#39;GeometricCalibration&#39;][&#39;gainOffsetCorrection&#39;])
+                # Check if gain and offset calibration file is found
+                gainOffsetFileName = str(os.path.join(CalibfolderName, 
+                                                                                          file[&#39;GainOffsetCalibration&#39;][&#39;output_directory&#39;],
+                                                                                          file[&#39;GainOffsetCalibration&#39;][&#39;output_file_csv&#39;])) + &#39;.csv&#39;
+                if os.path.exists(gainOffsetFileName):
+                        print(&#34;\nGain and Offset file found\n&#34;)
+                        cam.LoadGainOffsetCalib(gainOffsetFileName)
+                else:
+                        raise Exception(&#39;Gain and Offset calibration must be done before P0 Calibration&#39;)
+                        
+
+                cb_file = os.path.join(folderName, file[&#39;GeometricCalibration&#39;][&#39;output_file_frames_pkl&#39;])
+
+                also_save_image_as_bin = file[&#39;GeometricCalibration&#39;][&#39;also_save_image_as_bin&#39;]
+                hdrTemp = dict(
+                                                nFrames = int(file[&#39;GeometricCalibration&#39;][&#39;Nframes&#39;]),
+                                                outputFormat = &#39;pkl&#39;,
+                                                also_save_image_as_bin = also_save_image_as_bin,
+                                                fileName = cb_file + &#39;.pkl&#39;
+                                                )
+
+                #Img, Hdr = cam.StreamAndCapturePCM(hdrTemp)
+                _, frames = cam.StreamAndCapturePCM(hdrTemp)
+                Img = frames[&#39;Image&#39;]
+                Hdr = frames[&#39;Header&#39;]
+                print(&#39;Frames Captured&#39;)
+                cam.DisconnectSensor()
+                avg_frame = np.mean(Img, axis = 3)
+                avg_frame = np.float32(np.squeeze(avg_frame))
+                # print(np.max(avg_frame),np.min(avg_frame))
+                avg_frame = (avg_frame - np.min(avg_frame))
+                avg_frame = avg_frame / np.max(avg_frame)
+                avg_frame2 = np.uint8(avg_frame * 255)
+                cv2.imwrite(os.path.join(folderName, &#39;checkerboard.png&#39;), avg_frame2)
+
+                # rgh = plt.imread(os.path.join(folderName, &#39;checkerboard.png&#39;))
+                # print(np.max(rgh),np.min(rgh))
+                # plt.figure()
+                # plt.imshow(rgh*255)
+                # plt.show()
+
+                geo_dict = GeoFN.GeometricCal(avg_frame, file, folderName, geo_dict)
+
+                #ADI IR lamp setup
+                if file[&#39;GeometricCalibration&#39;][&#39;lamp_control&#39;] == True:
+                        ir_lamp_control.lamp_shutdown(irl, id_check)
+                
+        else:
+                print(&#34;Invalid options. Valid options for calibration_mode are:&#34;)
+                print(&#39;&#34;capture&#34;&#39;)
+                print(&#39;&#34;image&#34;&#39;)
+                print(&#39;&#34;csv&#34;&#39;)
+
+        
+        if calibration_mode == &#39;image&#39; or &#39;capture&#39;:
+                geo_dict[&#39;Geometric_pass&#39;] = True #Initialize to True
+
+                if geo_dict[&#39;Rerr&#39;]  &lt; limits[&#39;reprojection_error&#39;][1]:
+                        Rerr_status = &#34;PASSED&#34;
+                else:
+                        Rerr_status = &#34;FAILED&#34;
+                        print(&#39;\nReprojection Error FAIL(&#39; +str( geo_dict[&#39;Rerr&#39;])+&#39;), please redo calibration.\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;Rerr&#39;] = [geo_dict[&#39;Rerr&#39;], Rerr_status, limits[&#39;reprojection_error&#39;][0], limits[&#39;reprojection_error&#39;][1]]
+
+                if limits[&#39;Fc1&#39;][0] &lt; geo_dict[&#39;Fc1&#39;]  &lt; limits[&#39;Fc1&#39;][1]:
+                        Fc1_status = &#34;PASSED&#34;
+                else:
+                        Fc1_status = &#34;FAILED&#34;
+                        print(&#39;\nFc1 Error FAIL\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;Fc1&#39;] = [geo_dict[&#39;Fc1&#39;], Fc1_status, limits[&#39;Fc1&#39;][0], limits[&#39;Fc1&#39;][1]]
+
+                if limits[&#39;Fc2&#39;][0] &lt; geo_dict[&#39;Fc2&#39;]  &lt; limits[&#39;Fc2&#39;][1]:
+                        Fc2_status = &#34;PASSED&#34;
+                else:
+                        Fc2_status = &#34;FAILED&#34;
+                        print(&#39;\nFc2 Error FAIL\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;Fc2&#39;] = [geo_dict[&#39;Fc2&#39;], Fc2_status, limits[&#39;Fc2&#39;][0], limits[&#39;Fc2&#39;][1]]
+
+                if limits[&#39;cc1&#39;][0] &lt; geo_dict[&#39;cc1&#39;]  &lt; limits[&#39;cc1&#39;][1]:
+                        cc1_status = &#34;PASSED&#34;
+                else:
+                        cc1_status = &#34;FAILED&#34;
+                        print(&#39;\ncc1 Error FAIL\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;cc1&#39;] = [geo_dict[&#39;cc1&#39;], cc1_status, limits[&#39;cc1&#39;][0], limits[&#39;cc1&#39;][1]]
+
+                if limits[&#39;cc2&#39;][0] &lt; geo_dict[&#39;cc2&#39;]  &lt; limits[&#39;cc2&#39;][1]:
+                        cc2_status = &#34;PASSED&#34;
+                else:
+                        cc2_status = &#34;FAILED&#34;
+                        print(&#39;\ncc2 Error FAIL\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;cc2&#39;] = [geo_dict[&#39;cc2&#39;], cc2_status, limits[&#39;cc2&#39;][0], limits[&#39;cc2&#39;][1]]
+
+                geo_dict[&#39;info&#39;][&#39;Pass&#39;] = geo_dict[&#39;Geometric_pass&#39;]
+
+                f = open(os.path.join(folderName, file[&#39;GeometricCalibration&#39;][&#39;output_file_pkl&#39;]+&#39;.pkl&#39;), &#39;wb&#39;)
+                pickle.dump(geo_dict, f)
+                f.close()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="GeometricCalibrate.Geometric_calibrate"><code class="name flex">
+<span>def <span class="ident">Geometric_calibrate</span></span>(<span>config_file=None, CalibfolderName='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Top function for Geometric calibration </p>
+<p>Inputs:
+config_file
+- name of configuration (.yaml) file
+CalibfolderName
+- name of calbration folder </p>
+<p>Outputs:
+None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Geometric_calibrate(config_file=None, CalibfolderName = &#34;&#34;):
+        &#39;&#39;&#39;
+                Top function for Geometric calibration 
+                
+                Inputs: 
+                  config_file           - name of configuration (.yaml) file 
+                  CalibfolderName       - name of calbration folder 
+                  
+                Outputs: 
+                  None 
+                
+        &#39;&#39;&#39;
+
+        with open(config_file) as y:
+                file = yaml.load(y, Loader=yaml.SafeLoader)
+
+        calibration_mode = file[&#39;GeometricCalibration&#39;][&#39;calibration_mode&#39;]
+        limits_filename = file[&#39;limits_file&#39;]
+        try:
+                with open(limits_filename) as ly:
+                        limits = yaml.load(ly, Loader=yaml.SafeLoader)[&#39;GeometricCalibration&#39;]
+        except:
+                raise Exception(&#34;\n\nWARNING: Incorrect/non-existing limits file\n\n&#34;)
+
+        # with open(limits_filename) as l:
+        #       limits_file = yaml.load(l, Loader=yaml.SafeLoader)
+
+        # reprojection_error_limit = limits_file[&#39;GeometricCalibration&#39;][&#39;reprojection_error&#39;]
+
+
+        if CalibfolderName == &#34;&#34;:
+                now = datetime.now()
+                folderName = file[&#39;GeometricCalibration&#39;][&#39;output_directory&#39;] + &#39;_&#39; + str(now.strftime(&#39;%Y%m%d_%H%M%S&#39;))
+        else:
+                folderName = os.path.join(CalibfolderName, file[&#39;GeometricCalibration&#39;][&#39;output_directory&#39;])
+        
+        if not os.path.exists(folderName):
+                os.mkdir(folderName)
+        else:
+                now = datetime.now()
+                print(&#39;\nALERT: &#39; + folderName + &#39; already exists&#39;)
+                old_folderName = folderName + str(now.strftime(&#39;_old_%Y%m%d_%H%M%S&#39;))
+                os.rename(folderName, old_folderName)
+                print(&#39;ALERT: RENAMING OLD FOLDER: &#39; + folderName + &#39; as &#39;+ old_folderName +&#39;\n&#39;)
+                os.mkdir(folderName)
+
+        if calibration_mode == &#39;csv&#39;:
+                GeoCSV.GenerateGeometricIntrinsicsfromcsv(config_file=config_file, CalibfolderName=CalibfolderName)
+
+        elif calibration_mode == &#39;image&#39;:
+                input_file = file[&#39;GeometricCalibration&#39;][&#39;input_file_png&#39;]
+                now = datetime.now()
+                geo_dict = dict()
+                geo_dict[&#39;info&#39;] = dict()
+                geo_dict[&#39;info&#39;][&#39;CheckSum&#39;] = 0
+                geo_dict[&#39;info&#39;][&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                geo_dict[&#39;info&#39;][&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                geo_dict[&#39;info&#39;][&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                geo_dict[&#39;info&#39;][&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                geo_dict[&#39;info&#39;][&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                geo_dict[&#39;info&#39;][&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                geo_dict[&#39;info&#39;][&#39;configuration_file&#39;] = file[&#39;GeometricCalibration&#39;][&#39;configuration_file&#39;]
+
+                img = plt.imread(input_file)
+                geo_dict = GeoFN.GeometricCal(img, file, folderName, geo_dict)
+
+        elif calibration_mode == &#39;capture&#39;:
+                #ADI IR lamp setup
+                if file[&#39;GeometricCalibration&#39;][&#39;lamp_control&#39;] == True:
+                        irl, id_check = ir_lamp_control.lamp_setup()
+
+                print(&#34;\nTurning on camera...\n&#34;)
+                module_class = file[&#39;module_class&#39;] # MZ: Type of Imager Module (Walden_R1, Toro, Ofilm)
+                now = datetime.now()
+                geo_dict = dict()
+                geo_dict[&#39;info&#39;] = dict()
+                geo_dict[&#39;info&#39;][&#39;CheckSum&#39;] = 0
+                geo_dict[&#39;info&#39;][&#39;Year&#39;] = int(now.strftime(&#39;%Y&#39;))
+                geo_dict[&#39;info&#39;][&#39;Month&#39;] = int(now.strftime(&#39;%m&#39;))
+                geo_dict[&#39;info&#39;][&#39;Day&#39;] = int(now.strftime(&#39;%d&#39;))
+                geo_dict[&#39;info&#39;][&#39;Hour&#39;] = int(now.strftime(&#39;%H&#39;))
+                geo_dict[&#39;info&#39;][&#39;Minute&#39;] = int(now.strftime(&#39;%M&#39;))
+                geo_dict[&#39;info&#39;][&#39;Second&#39;] = int(now.strftime(&#39;%S&#39;))
+                geo_dict[&#39;info&#39;][&#39;configuration_file&#39;] = file[&#39;GeometricCalibration&#39;][&#39;configuration_file&#39;]
+                geo_dict[&#39;info&#39;][&#39;Pass&#39;] = 0
+
+                cam = tof.CalibAPI(module_class = module_class)
+                cam.ConnectSensor(Mode=3, fps=10, cfg = file[&#39;GeometricCalibration&#39;][&#39;configuration_file&#39;])
+
+                # cam.LoadGainOffsetCalib(file[&#39;GeometricCalibration&#39;][&#39;gainOffsetCorrection&#39;])
+                # Check if gain and offset calibration file is found
+                gainOffsetFileName = str(os.path.join(CalibfolderName, 
+                                                                                          file[&#39;GainOffsetCalibration&#39;][&#39;output_directory&#39;],
+                                                                                          file[&#39;GainOffsetCalibration&#39;][&#39;output_file_csv&#39;])) + &#39;.csv&#39;
+                if os.path.exists(gainOffsetFileName):
+                        print(&#34;\nGain and Offset file found\n&#34;)
+                        cam.LoadGainOffsetCalib(gainOffsetFileName)
+                else:
+                        raise Exception(&#39;Gain and Offset calibration must be done before P0 Calibration&#39;)
+                        
+
+                cb_file = os.path.join(folderName, file[&#39;GeometricCalibration&#39;][&#39;output_file_frames_pkl&#39;])
+
+                also_save_image_as_bin = file[&#39;GeometricCalibration&#39;][&#39;also_save_image_as_bin&#39;]
+                hdrTemp = dict(
+                                                nFrames = int(file[&#39;GeometricCalibration&#39;][&#39;Nframes&#39;]),
+                                                outputFormat = &#39;pkl&#39;,
+                                                also_save_image_as_bin = also_save_image_as_bin,
+                                                fileName = cb_file + &#39;.pkl&#39;
+                                                )
+
+                #Img, Hdr = cam.StreamAndCapturePCM(hdrTemp)
+                _, frames = cam.StreamAndCapturePCM(hdrTemp)
+                Img = frames[&#39;Image&#39;]
+                Hdr = frames[&#39;Header&#39;]
+                print(&#39;Frames Captured&#39;)
+                cam.DisconnectSensor()
+                avg_frame = np.mean(Img, axis = 3)
+                avg_frame = np.float32(np.squeeze(avg_frame))
+                # print(np.max(avg_frame),np.min(avg_frame))
+                avg_frame = (avg_frame - np.min(avg_frame))
+                avg_frame = avg_frame / np.max(avg_frame)
+                avg_frame2 = np.uint8(avg_frame * 255)
+                cv2.imwrite(os.path.join(folderName, &#39;checkerboard.png&#39;), avg_frame2)
+
+                # rgh = plt.imread(os.path.join(folderName, &#39;checkerboard.png&#39;))
+                # print(np.max(rgh),np.min(rgh))
+                # plt.figure()
+                # plt.imshow(rgh*255)
+                # plt.show()
+
+                geo_dict = GeoFN.GeometricCal(avg_frame, file, folderName, geo_dict)
+
+                #ADI IR lamp setup
+                if file[&#39;GeometricCalibration&#39;][&#39;lamp_control&#39;] == True:
+                        ir_lamp_control.lamp_shutdown(irl, id_check)
+                
+        else:
+                print(&#34;Invalid options. Valid options for calibration_mode are:&#34;)
+                print(&#39;&#34;capture&#34;&#39;)
+                print(&#39;&#34;image&#34;&#39;)
+                print(&#39;&#34;csv&#34;&#39;)
+
+        
+        if calibration_mode == &#39;image&#39; or &#39;capture&#39;:
+                geo_dict[&#39;Geometric_pass&#39;] = True #Initialize to True
+
+                if geo_dict[&#39;Rerr&#39;]  &lt; limits[&#39;reprojection_error&#39;][1]:
+                        Rerr_status = &#34;PASSED&#34;
+                else:
+                        Rerr_status = &#34;FAILED&#34;
+                        print(&#39;\nReprojection Error FAIL(&#39; +str( geo_dict[&#39;Rerr&#39;])+&#39;), please redo calibration.\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;Rerr&#39;] = [geo_dict[&#39;Rerr&#39;], Rerr_status, limits[&#39;reprojection_error&#39;][0], limits[&#39;reprojection_error&#39;][1]]
+
+                if limits[&#39;Fc1&#39;][0] &lt; geo_dict[&#39;Fc1&#39;]  &lt; limits[&#39;Fc1&#39;][1]:
+                        Fc1_status = &#34;PASSED&#34;
+                else:
+                        Fc1_status = &#34;FAILED&#34;
+                        print(&#39;\nFc1 Error FAIL\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;Fc1&#39;] = [geo_dict[&#39;Fc1&#39;], Fc1_status, limits[&#39;Fc1&#39;][0], limits[&#39;Fc1&#39;][1]]
+
+                if limits[&#39;Fc2&#39;][0] &lt; geo_dict[&#39;Fc2&#39;]  &lt; limits[&#39;Fc2&#39;][1]:
+                        Fc2_status = &#34;PASSED&#34;
+                else:
+                        Fc2_status = &#34;FAILED&#34;
+                        print(&#39;\nFc2 Error FAIL\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;Fc2&#39;] = [geo_dict[&#39;Fc2&#39;], Fc2_status, limits[&#39;Fc2&#39;][0], limits[&#39;Fc2&#39;][1]]
+
+                if limits[&#39;cc1&#39;][0] &lt; geo_dict[&#39;cc1&#39;]  &lt; limits[&#39;cc1&#39;][1]:
+                        cc1_status = &#34;PASSED&#34;
+                else:
+                        cc1_status = &#34;FAILED&#34;
+                        print(&#39;\ncc1 Error FAIL\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;cc1&#39;] = [geo_dict[&#39;cc1&#39;], cc1_status, limits[&#39;cc1&#39;][0], limits[&#39;cc1&#39;][1]]
+
+                if limits[&#39;cc2&#39;][0] &lt; geo_dict[&#39;cc2&#39;]  &lt; limits[&#39;cc2&#39;][1]:
+                        cc2_status = &#34;PASSED&#34;
+                else:
+                        cc2_status = &#34;FAILED&#34;
+                        print(&#39;\ncc2 Error FAIL\n&#39;)
+                        geo_dict[&#39;Geometric_pass&#39;] = False
+                geo_dict[&#39;cc2&#39;] = [geo_dict[&#39;cc2&#39;], cc2_status, limits[&#39;cc2&#39;][0], limits[&#39;cc2&#39;][1]]
+
+                geo_dict[&#39;info&#39;][&#39;Pass&#39;] = geo_dict[&#39;Geometric_pass&#39;]
+
+                f = open(os.path.join(folderName, file[&#39;GeometricCalibration&#39;][&#39;output_file_pkl&#39;]+&#39;.pkl&#39;), &#39;wb&#39;)
+                pickle.dump(geo_dict, f)
+                f.close()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="GeometricCalibrate.Geometric_calibrate" href="#GeometricCalibrate.Geometric_calibrate">Geometric_calibrate</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
